@@ -22,3 +22,7 @@ STRUCTURE OF EACH DIRECTORY
     * dep.txt: dependency relationship
     * z3.time: analysis time for doing this analysis
     * numConstraints.txt: number of constraints generated
+    
+* If you run artemis scripts, it will produce these files under "artemis-result" directory for each file
+    * artemis-new.stdout: the print result by running a modified version of Artemis with dependency relationship information
+    * artemis-old.stdout: the print result by running a old version of Artemis

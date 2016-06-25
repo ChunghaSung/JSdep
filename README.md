@@ -62,7 +62,7 @@ USAGE
         * z3.time: analysis time
         * numConstraints.txt: number of constraints generated
 
-===== You have to install modifed version of Artemis we provide to run these comand below =====
+===== You have to install the modifed version of Artemis we provide to run these comands below =====
 * make run-old-Artemis name=[filename]
     - run previous version of Artemis with a specified file
 * make run-dep-Artemis name=[filename] 
