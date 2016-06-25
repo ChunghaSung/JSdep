@@ -5,14 +5,14 @@ MIT License
 
 DOM-DEPENDENCY ANALYSIS
 =========================
-* This is the tool to find DOM-event dependency using datalog constraints.
+* This is the tool to find DOM-event dependency of a web application using datalog constraints.
 
 * It traverses one JavaScript file statically and finds the relationship between two events of DOMs.
 
 * This tool includes a modified version of Artemis to show the evaluation as presented in the FSE paper (to appear).
 
 * The characteristics of this tool
-    - Interprocedural & Context-insensitive alias anlaysis
+    - Static & interprocedural & context-insensitive alias anlaysis
     - This tool does not support DOM-alias anlaysis
     - This tool does not support extraction of Javascript from HTML (All JavaScripts extracted manually for the benchmarks we have)
 
@@ -48,33 +48,33 @@ PROGRAM DEPENDENCIES
 
 USAGE
 =========================
-	* make build-dep name=[filename]
-        - build dependency relationships for a specified file
-        - it will make these files under "info" directory under each file directory
-                * dep.txt: dependency relationships of a specified file
-                * z3.time: analysis time
-                * numConstraints.txt: number of constraints generated
+* make build-dep name=[filename]
+    - build dependency relationships for a specified file
+    - it will make these files under "info" directory under each file directory
+        * dep.txt: dependency relationships of a specified file
+        * z3.time: analysis time
+        * numConstraints.txt: number of constraints generated
 
-	* make build-dep-all
-        - build dependency relationships for all files
-        - it will make these files under "info" directory under each file directory
-                * dep.txt: dependency relationships of a specified file
-                * z3.time: analysis time
-                * numConstraints.txt: number of constraints generated
+* make build-dep-all
+    - build dependency relationships for all files
+    - it will make these files under "info" directory under each file directory
+        * dep.txt: dependency relationships of a specified file
+        * z3.time: analysis time
+        * numConstraints.txt: number of constraints generated
 
-===== You have to install modifed version of Artemis we provide to run these comand below
-	* make run-old-Artemis name=[filename] 	
-        - run previous version of Artemis with a specified file
-	* make run-dep-Artemis name=[filename] 
-        - run modified version of Artemis with a specified file
-	* make run-old-Artemis-all 	
-        - run previous version of Artemis with all files"
-	* make run-dep-Artemis-all 	
-        - run modified version of Artemis with all files"
-	* make run-Artemis name=[filename] 	
-        - run previous and modified version of Artemis with a specified file"
-	* make run-Artemis-all 
-        - run previous and modified version of Artemis with all files"
+===== You have to install modifed version of Artemis we provide to run these comand below =====
+* make run-old-Artemis name=[filename]
+    - run previous version of Artemis with a specified file
+* make run-dep-Artemis name=[filename] 
+    - run modified version of Artemis with a specified file
+* make run-old-Artemis-all 	
+    - run previous version of Artemis with all files"
+* make run-dep-Artemis-all 	
+    - run modified version of Artemis with all files"
+* make run-Artemis name=[filename] 	
+    - run previous and modified version of Artemis with a specified file"
+* make run-Artemis-all 
+    - run previous and modified version of Artemis with all files"
 
 
 
