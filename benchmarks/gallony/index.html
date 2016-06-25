@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0040)http://www.lutanho.net/play/gallony.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="description" content="Gallony is a PC-Game, which is a part of the &#39;7 by one stroke&#39; package, translated from C++ into HTML and JavaScript">
+<meta name="author" content="Lutz Tautenhahn">
+<meta name="keywords" content="Game, Gallony, Streich, Stroke, JavaScript">
+
+<meta http-equiv="imagetoolbar" content="false">
+<title>Gallony</title>
+<script language="JavaScript">
+var IsNetscape;
+if(navigator.appName == "Netscape")
+{
+    IsNetscape = true;
+    document.captureEvents(Event.RESIZE)
+
+} else {
+
+    IsNetscape = false;
+}
+var n, m, I_Sel, IsOver=true, Moves=0, StartTime, EndTime;
+Fld = new Array(4);
+LevelMax = new Array(4);
+LevelMax[0]=8;
+LevelMax[1]=5;
+LevelMax[2]=0;
+LevelMax[3]=0;
+LevelIs = new Array(4);
+Pic = new Array(4);
+Pic[0]= new Array(LevelMax[0]+1);
+for (n=0; n<=LevelMax[0]; n++) 
+{
+    Pic[0][n] = new Image(); 
+    Pic[0][n].src = "gally_8"+eval(n)+".gif";
+}
+Pic[1]= new Array(LevelMax[1]+1);
+for (n=0; n<=LevelMax[1]; n++)
+{
+    Pic[1][n] = new Image(); 
+    Pic[1][n].src = "gally_5"+eval(n)+".gif";
+}
+//Pic[2] = new Image(); Pic[2].src = "gally_00.gif"; 
+Pic[3] = new Array(8);
+Pic[3][0] = new Image(); 
+Pic[3][0].src = "gally_01.gif";
+Pic[3][1] = new Image(); 
+Pic[3][1].src = "gally_10.gif";
+Pic[3][2] = new Image(); 
+Pic[3][2].src = "gally_20.gif";
+Pic[3][3] = new Image(); 
+Pic[3][3].src = "gally_30.gif";
+Pic[3][4] = new Image(); 
+Pic[3][4].src = "gally_01.gif";
+Pic[3][5] = new Image(); 
+Pic[3][5].src = "gally_11.gif";
+Pic[3][6] = new Image();
+Pic[3][6].src = "gally_21.gif";
+Pic[3][7] = new Image(); 
+Pic[3][7].src = "gally_31.gif";
+
+Arrow = new Array(3);
+for (n=0; n<3; n++) {
+
+    Arrow[n] = new Array(5);
+}
+for (n=0; n<3; n++)
+{ 
+    for (m=0; m<5; m++)
+    {
+        Arrow[n][m] = new Image(); 
+        Arrow[n][m].src = "gallya"+eval(n+1)+eval(m)+".gif"; 
+    }
+}
+
+function Init()
+{ 
+    LevelIs[0]=0;
+    LevelIs[1]=0;
+    LevelIs[2]=0;
+    LevelIs[3]=0;
+    LevelMax[2]=0;
+    LevelMax[3] = (Math.round(Math.random()*1000)) % (LevelMax[0]-1) + 1;
+    while (LevelMax[3]==LevelMax[1]) {
+        LevelMax[3] = (Math.round(Math.random()*1000)) % (LevelMax[0]-1) + 1;
+    }
+    I_Sel=-1;
+    IsOver=false;
+    Moves=0;
+    RefreshScreen();
+    RefreshValues();
+    Now = new Date();
+    StartTime = Now.getTime() / 1000;
+}
+
+function Clicked(ii)
+{
+    window.document.forms[0].Moves.focus();
+    window.document.forms[0].Moves.blur();
+    if (IsOver)
+    {
+        if (ii=3) {
+            Init();
+        }
+        return;
+    }
+    if (I_Sel<0)
+    { 
+        if (ii<3)
+        { 
+            I_Sel=ii;
+            window.document.images[6].src = Arrow[ii][ii+1].src;    
+        } else {
+            Init();
+        }
+        return;
+    }
+    if (ii==I_Sel)
+    { 
+        I_Sel=-1;
+        window.document.images[6].src = Arrow[ii][0].src;   
+        return;
+    }
+    if (ii==3)
+    { 
+        if ((I_Sel<2)&&(LevelIs[I_Sel]==LevelMax[3]))
+        { 
+            LevelIs[3]=LevelIs[I_Sel];
+            LevelIs[I_Sel]=0;
+            Moves++;
+            IsOver=true;
+            RefreshScreen();
+            RefreshValues();
+            Now = new Date();
+            EndTime = Now.getTime() / 1000;
+            n=Math.floor(EndTime - StartTime);
+            if (window.opener)
+            { 
+                if (window.opener.SetHighscores) {
+                    window.opener.SetHighscores("Gallony","",n,-1);
+                }
+            }
+            alert("Super, you solved this game with "+Moves+ " moves in "+n+ " seconds !");
+        }
+        return;    
+    }
+    if (ii==2)
+    { 
+        LevelIs[I_Sel]=0;
+        window.document.images[I_Sel].src = Pic[I_Sel][LevelIs[I_Sel]].src;  
+        window.document.images[6].src = Arrow[ii][0].src;  
+        Moves++;
+        RefreshValues();
+        I_Sel=-1;
+        return;
+    }
+    if (I_Sel==2)
+    { 
+        LevelIs[ii]=LevelMax[ii];
+        window.document.images[ii].src = Pic[ii][LevelIs[ii]].src;    
+        window.document.images[6].src = Arrow[ii][0].src;
+        Moves++;
+        RefreshValues();
+        I_Sel=-1;
+        return;
+    }
+    n=LevelMax[ii]-LevelIs[ii];
+    if (n>LevelIs[I_Sel]) {
+        n=LevelIs[I_Sel];
+    }
+    LevelIs[I_Sel]-=n;
+    LevelIs[ii]+=n;
+    window.document.images[I_Sel].src = Pic[I_Sel][LevelIs[I_Sel]].src;    
+    window.document.images[ii].src = Pic[ii][LevelIs[ii]].src;    
+    window.document.images[6].src = Arrow[ii][0].src;
+    Moves++;
+    RefreshValues();
+    I_Sel=-1;
+}
+
+function Select(ii)
+{
+    if (IsOver) {
+        return;
+    }
+    if (I_Sel<0)
+    { 
+        if (ii<3) {
+            window.document.images[6].src = Arrow[ii][0].src;
+        }
+    } else {
+        if ((I_Sel<2)||(ii<3)) {
+            window.document.images[6].src = Arrow[I_Sel][ii+1].src;
+        }
+    }
+}
+
+function RefreshValues()
+{
+    window.document.forms[0].Moves.value = eval(Moves);
+    window.document.forms[0].Level0.value = eval(LevelIs[0]);
+    window.document.forms[0].Level1.value = eval(LevelIs[1]);
+    window.document.forms[0].Level3.value = eval(LevelMax[3]);
+}
+
+function RefreshScreen()
+{ 
+    var ii1, ii2, ii3;
+    ii1=0;
+    ii2=LevelMax[3];
+    ii3=0;
+    if (LevelMax[3]>3)
+    {
+        ii1=3;
+        ii2=LevelMax[3]-3;
+    }
+    if (LevelMax[3]>6)
+    { 
+        ii1=3;
+        ii2=3;
+        ii3=LevelMax[3]-6;
+    }
+    window.document.images[3].src = Pic[3][4*IsOver+ii1].src;    
+    window.document.images[4].src = Pic[3][4*IsOver+ii2].src;    
+    window.document.images[5].src = Pic[3][4*IsOver+ii3].src;    
+    window.document.images[0].src = Pic[0][LevelIs[0]].src;    
+    window.document.images[1].src = Pic[1][LevelIs[1]].src;  
+    if (! IsOver) {
+        window.document.images[6].src = Arrow[2][0].src;
+    }
+}
+
+function Resize()
+{ 
+    if (IsNetscape) {
+        history.go(0);
+    }
+}
+
+function Help()
+{ 
+    alert("If you give some water to the flowers,"+"\nthey will grow like after showers!"+"\nFor every bloom you need exactly one gallon of water."+"\nYou have two pots which you can fill with water from"+"\nthe well or you can pour the water from one pot into"+"\nanother until you have the required quantity of water."+"\nGood luck!");
+}
+</script>
+<style type="text/css"></style></head>
+<body bgcolor="#00FFFF" background="./gally_bg.gif" onresize="javascript:Resize()">
+<form>
+<div align="center">
+<table noborder="" width="100%" cellpadding="0" cellspacing="0">
+<tbody><tr>
+  <td align="left">
+    <table noborder="" background="./cloud.gif" width="192" height="168" cellpadding="0" cellspacing="0">
+    <tbody><tr><td align="center" valign="middle"><input type="button" value="0" width="35" style="width:35;background-color:#FFFFFF" name="Moves"><br>&nbsp;</td></tr>
+    </tbody></table>
+  </td>
+  <td align="right">
+    <table noborder="" background="./sun.gif" width="168" height="168" cellpadding="0" cellspacing="0">
+    <tbody><tr><td align="center" valign="middle"><input id="c0" type="button" value="?" width="15" style="width:15;background-color:#FFFF00" onclick="Help()"></td></tr>
+    </tbody></table>
+  </td>
+</tr>
+</tbody></table>
+<table noborder="" align="center" cellpadding="2" cellspacing="2"><tbody><tr align="center">
+  <td align="center"><input type="button" value="0" width="35" style="width:35;background-color:#00FFFF" name="Level0"></td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td align="center"><input type="button" value="0" width="35" style="width:35;background-color:#00FFFF" name="Level1"></td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td align="center"><input type="button" value="1" width="35" style="width:35;background-color:#00FFFF" name="Level3"></td>
+  <td>&nbsp;</td>
+  </tr>
+  <tr align="center">
+  <td><a onclick="Clicked(0)" id="b0" onmouseover="Select(0)"><img src="./gally_80.gif" border="0"></a></td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td><a onclick="Clicked(1)" id="b1" onmouseover="Select(1)"><img src="./gally_50.gif" border="0"></a></td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td><a onclick="Clicked(2)" id="b2" onmouseover="Select(2)"><img src="./gally_99.gif" border="0"></a></td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td><a onclick="Clicked(3)" id="b3" onmouseover="Select(3)"><img src="./gally_01.gif" border="0"></a></td>
+  <td><a onclick="Clicked(3)" id="b4" onmouseover="Select(3)"><img src="./gally_10.gif" border="0"></a></td>
+  <td><a onclick="Clicked(3)" id="b5" onmouseover="Select(3)"><img src="./gally_01.gif" border="0"></a></td>
+</tr></tbody></table>
+<table noborder="" align="center" cellpadding="0" cellspacing="0"><tbody><tr align="center">
+  <td><img src="./gallya20.gif" border="0"></td>
+</tr></tbody></table>
+</div>
+</form>
+<script language="JavaScript">
+  Init();
+</script>
+
+
+</body></html>

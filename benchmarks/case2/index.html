@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <p> Simple 4 click related example </P>
+</head>
+<body>
+    <div id="buttons">
+        <button id="test1" type="button"> button1 </button>
+        <button id="test2" type="button"> button2 </button>
+        <button id="test3" type="button"> button3 </button>
+        <button id="test4" type="button"> button4 </button>
+    </div>
+    <script>
+        var a = document.getElementById('test1');
+        var b = document.getElementById('test2');
+        var c = document.getElementById('test3');
+        var d = document.getElementById('test4');
+        var t1 = 0;
+        var x = 0;
+        function makeSomeNoise() {
+            if (x < 2) {
+                // I assume there is bunch of lines here...
+                t1=2;
+                t1=2;
+                t1=2;
+                t1=2;
+                console.log("x is lower than 2");
+            } else if (x < 4) {
+                // I assume there is bunch of lines here...
+                t1=2;
+                t1=2;
+                t1=2;
+                t1=2;
+                console.log("x is lower than 4");
+            } else if (x < 6) {
+                // I assume there is bunch of lines here...
+                t1=2;
+                t1=2;
+                t1=2;
+                t1=2;
+                console.log("x is lower than 6");
+            } else if (x < 8) {
+                // I assume there is bunch of lines here...
+                t1=2;
+                t1=2;
+                t1=2;
+                t1=2;
+                console.log("x is lower than 8");
+            } else {
+                // I assume there is bunch of lines here...
+                t1=2;
+                t1=2;
+                t1=2;
+                t1=2;
+                // I assume there is bunch of lines here...
+                console.log("x is higher than 8");
+            }
+        }
+        a.addEventListener("click", function() {
+            c.onclick = makeSomeNoise;
+        });
+
+        b.addEventListener("click", function() {
+            x = x + 1;
+        });
+
+        d.addEventListener("click", function() {
+            console.log("d is clikced!");
+        });
+    </script>
+</body>
+</html>

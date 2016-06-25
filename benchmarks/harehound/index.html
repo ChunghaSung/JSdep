@@ -1,0 +1,473 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="description" content="Hare and hounds is a PC-Game written in HTML and JavaScript">
+<META NAME="author" content="Lutz Tautenhahn">
+<META NAME="keywords" content="Game, Hare and hounds, JavaScript">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>Hare and hounds</title>
+<script language="JavaScript">
+var i, I_From, I_To, IsOver, Start, Start0=1;
+
+IsPlayer=new Array(2);
+IsPlayer[0]=false;
+IsPlayer[1]=true;
+Level=new Array(2);
+Level[0]=2;
+Level[1]=2;
+
+Fld = new Array(11);
+
+Img2Fld=new Array(1,4,7,0,2,5,8,10,3,6,9);
+Fld2Img=new Array(3,0,4,8,1,5,9,2,6,10,7);
+
+CanGo=new Array(2);
+for (i=0; i<2; i++) {
+    CanGo[i]=new Array(11);
+}
+
+//Hare can go from to
+CanGo[0][0]=new Array(1,2,3);
+CanGo[0][1]=new Array(0,2,4,5);
+CanGo[0][2]=new Array(0,1,3,5);
+CanGo[0][3]=new Array(0,2,5,6);
+CanGo[0][4]=new Array(1,5,7);
+CanGo[0][5]=new Array(1,2,3,4,6,7,8,9);
+CanGo[0][6]=new Array(3,5,9);
+CanGo[0][7]=new Array(4,5,8,10);
+CanGo[0][8]=new Array(5,7,9,10);
+CanGo[0][9]=new Array(5,6,8,10);
+CanGo[0][10]=new Array(7,8,9);
+
+//Hounds can go from to
+CanGo[1][0]=new Array(1,2,3);
+CanGo[1][1]=new Array(2,4,5);
+CanGo[1][2]=new Array(1,3,5);
+CanGo[1][3]=new Array(2,5,6);
+CanGo[1][4]=new Array(5,7);
+CanGo[1][5]=new Array(4,6,7,8,9);
+CanGo[1][6]=new Array(5,9);
+CanGo[1][7]=new Array(8,10);
+CanGo[1][8]=new Array(7,9,10);
+CanGo[1][9]=new Array(8,10);
+CanGo[1][10]=new Array();
+
+Pic= new Array(5);
+for (i=0; i<5; i++)
+{
+    Pic[i] = new Image();
+  Pic[i].src = "harehounds"+i+".gif";
+}
+
+function SetStart1(ss1)
+{
+    Start0=ss1;
+}
+
+function SetStart2(ss2)
+{
+    Start0=ss2;
+}
+
+function SetPlayer1(ii1,nn1)
+{ 
+    IsPlayer[ii1]=nn1;
+}
+function SetPlayer2(ii2,nn2)
+{ 
+    IsPlayer[ii2]=nn2;
+}
+function SetPlayer3(ii3,nn3)
+{ 
+    IsPlayer[ii3]=nn3;
+}
+function SetPlayer4(ii4,nn4)
+{ 
+    IsPlayer[ii4]=nn4;
+}
+
+function SetLevel1(iii1,nnn1)
+{ 
+    Level[iii1]=parseInt(nnn1);
+}
+
+function SetLevel2(iii2,nnn2)
+{ 
+    Level[iii2]=parseInt(nnn2);
+}
+
+function Init()
+{ 
+    var ii;
+  Start=Start0;
+  for (ii=0; ii < 11; ii++) {
+      Fld[ii]=-1;
+  }
+  Fld[10]=0;
+  Fld[0]=1;
+  Fld[1]=1;
+  Fld[3]=1;
+  I_From=-1;
+  I_To=-1;
+  IsOver=0;
+  MoveCount=0;
+  document.OptionsForm.Moves.value=MoveCount;
+  MaxMoveCount=0;
+  N_Sel=-1;
+  RefreshScreen();
+}
+
+function Timer()
+{
+    if (IsOver) {
+        return;
+    }
+
+  var mmove=(MoveCount+Start)%2;
+
+  if (IsPlayer[mmove]) {
+      return;
+  }
+
+  GetBestMove(mmove,2+Level[mmove]);
+  MakeMove(I_From, I_To);
+}
+
+function MakeMove(ff,tt)
+{
+    Fld[tt]=Fld[ff];
+  Fld[ff]=-1;
+  RefreshPic(ff);
+  RefreshPic(tt);
+  I_From=-1;
+  MoveCount++;
+  document.OptionsForm.Moves.value=MoveCount;
+  OverTest(Fld[tt], true);
+}
+
+function Clicked(ii)
+{
+    var nn, mmove=(MoveCount+Start)%2;
+  if (IsOver>0) {
+      return;
+  }
+  if (! IsPlayer[mmove]) {
+      return;
+  }
+  if (Fld[ii]==1-mmove) {
+      return;
+  }
+  if (I_From>=0)
+  {
+      if (Fld[ii]==mmove) 
+    { 
+        nn=I_From;
+      I_From=ii;
+      RefreshPic(nn);
+      RefreshPic(ii);
+      return;
+    }
+    for (nn=0; nn<CanGo[mmove][I_From].length; nn++)
+    { 
+        if (CanGo[mmove][I_From][nn]==ii)
+      { 
+          MakeMove(I_From, ii);
+        return;
+      } 
+    }
+    return;
+  }
+  if (Fld[ii]==mmove)
+  { 
+      I_From=ii;
+    RefreshPic(ii);
+    return;
+  }
+  if (mmove==1) {
+      return;
+  }
+  for (nn=0; nn<CanGo[mmove][ii].length; nn++)
+  { 
+      if (Fld[CanGo[mmove][ii][nn]]==mmove)
+    { 
+        I_From=CanGo[mmove][ii][nn];
+      MakeMove(I_From, ii);
+      return;
+    }
+  }
+}
+
+function GetBestMove(mmove, llevel)
+{ 
+    if (mmove==0) {
+        GetBestMoveHare(0,llevel,30000);
+    }
+  else {
+      GetBestMoveHounds(0,llevel, 30000);
+  }
+}
+
+function GetBestMoveHare(ll,mm,vv_cut)
+{ 
+    var ii, jj, hhound, hhare=0, iibest, vvbest=ll*1000-10000;
+  if (ll==mm)
+  {
+      for (ii=10; ii>=0; ii--)
+    { 
+        if (Fld[ii]==1) {
+            hhound=ii;
+        }
+    }
+  }  
+
+  while (Fld[hhare]!=0) {
+      hhare++;
+  }
+
+  for (ii=0; ii<CanGo[0][hhare].length; ii++)
+  { 
+      jj=CanGo[0][hhare][ii];
+    if (Fld[jj]<0)
+    {
+        Fld[jj]=0;
+      Fld[hhare]=-1;
+      if (ll<mm) {
+          vv=-GetBestMoveHounds(ll+1,mm,-vvbest);
+      }
+      else 
+      { 
+          if (Math.floor((hhare+2)/3)<=Math.floor((hhound+2)/3)) {
+              vv=1000;
+          }
+        else 
+        { 
+            vv=Math.random()*10-hhare;
+          if (Fld[10]==1) {
+              vv+=100; 
+          }
+          if (Fld[8]==1) {
+              vv+=50;
+          }
+        }   
+      }
+      Fld[hhare]=0;
+      Fld[jj]=-1;
+      if (vv>vv_cut) {
+          return(vv);
+      }
+      if (vv>vvbest)
+      { 
+          vvbest=vv;
+        iibest=ii;
+      }
+    }    
+  }
+  if (ll==0)
+  { 
+      I_From=hhare;
+    I_To=CanGo[0][hhare][iibest];
+  }
+  return(vvbest);
+}
+function GetBestMoveHounds(ll,mm,vv_cut)
+{ 
+    var ii, jj=0, kk, hhare=0, hhounds=new Array(3), iibest, kkbest, vvbest=ll*1000-10000;
+  if (ll==mm) { 
+      while (Fld[hhare]!=0) {
+          hhare++; 
+      }
+  }
+  for (ii=0; ii<11; ii++)
+  { 
+      if (Fld[ii]==1) {
+          hhounds[jj++]=ii;
+      }
+  }
+  for (kk=0; kk<3; kk++)
+  { 
+      for (ii=0; ii<CanGo[1][hhounds[kk]].length; ii++)
+    { 
+        jj=CanGo[1][hhounds[kk]][ii];
+      if (Fld[jj]<0)
+      { 
+          Fld[jj]=1;
+        Fld[hhounds[kk]]=-1;
+        if (ll<mm) {
+            vv=-GetBestMoveHare(ll+1,mm,-vvbest);
+        }
+        else 
+        { 
+            vv=hhare-Math.random()*10; 
+          if (Fld[10]==1) {
+              vv-=100; 
+          }
+          if (Fld[8]==1) {
+              vv-=50; 
+          }
+        }
+        Fld[hhounds[kk]]=1;
+        Fld[jj]=-1;
+        if (vv>vv_cut) {
+            return(vv);
+        }
+        if (vv>vvbest)
+        {
+            vvbest=vv;
+          iibest=ii;
+          kkbest=kk;
+        }  
+      }
+    }    
+  }
+  if (ll==0)
+  { 
+      I_From=hhounds[kkbest];
+    I_To=CanGo[1][hhounds[kkbest]][iibest];
+  }
+  return(vvbest);
+}
+
+function OverTest(mmove, mmsg)
+{
+    var ii, hhare, hhound;
+  for (ii=10; ii>=0; ii--)
+  { 
+      if (Fld[ii]==0) {
+          hhare=ii;
+      }
+    if (Fld[ii]==1) {
+        hhound=ii;
+    }
+  }
+  IsOver=true;
+  if (mmove==0) //hare
+  { 
+      if (Math.floor((hhare+2)/3)>Math.floor((hhound+2)/3)) {
+          IsOver=false;
+      }
+    if ((mmsg)&&(IsOver)) {
+        alert("The hare has won !");
+    }
+  }
+  else //hounds
+  { 
+      for (ii=0; ii<CanGo[0][hhare].length; ii++)
+    { 
+        if (Fld[CanGo[0][hhare][ii]]==-1) {
+            IsOver=false;
+        }
+    }
+
+    if ((mmsg)&&(IsOver)) {
+        alert("The hounds have won !");
+    }
+  }
+  if ((!IsOver)&&(MoveCount==49))
+  { 
+      IsOver=true;
+    if (mmsg) {
+        alert("The hare has won !");
+    }
+  }
+  return(IsOver);
+}
+
+function RefreshPic(ii)
+{ 
+    if (Fld[ii]<0) {
+    window.document.images[Fld2Img[ii]].src = Pic[0].src;
+    }
+  else
+  { 
+      if (ii==I_From) {
+      window.document.images[Fld2Img[ii]].src = Pic[Fld[ii]+3].src;
+      }
+    else {
+      window.document.images[Fld2Img[ii]].src = Pic[Fld[ii]+1].src;      
+    }
+  }
+}
+
+function RefreshScreen()
+{ var ii;
+  for (ii=0;ii<11;ii++) RefreshPic(ii);
+}
+
+
+function Help()
+{ 
+    alert("The hounds try to trap the hare, so"+"\nthat it is unable to make any move."+"\nThe hare moves forward and backward"+"\nalong any vertical or diagonal line."+"\nThe hounds can only move forward."+"\nIf after 49 moves the hounds could not"+"\ncatch the hare, then the hare has won.");
+}
+
+function Resize()
+{ 
+    if(navigator.appName == "Netscape") {
+        history.go(0);
+    }
+}
+
+</script>
+</head>
+<BODY bgcolor=#bbccaa text=#000000 onResize="javascript:Resize()">
+<DIV ALIGN=center>
+<form name="OptionsForm">
+<table border=0 cellpadding=0 cellspacing=6 bgcolor=#808080>
+      <tr><td align=center  bgcolor=#a0a0a0 background="harehoundsbg.gif"><nobr><IMG src="harehounds0.gif" width=108 height=108 border=0 id="i0" onClick="javascript:Clicked(1)"><IMG src="harehounds0.gif" width=108 height=108 border=0 id="i1" onClick="javascript:Clicked(4)"><IMG src="harehounds0.gif" width=108 height=108 border=0 onClick="javascript:Clicked(7)"></nobr><br>
+          <nobr><IMG src="harehounds0.gif" width=108 height=108 border=0 id="i2" onClick="javascript:Clicked(0)"><IMG src="harehounds0.gif" width=108 height=108 border=0 id="i3" onClick="javascript:Clicked(2)"><IMG src="harehounds0.gif" width=108 height=108 border=0 id="i4" onClick="javascript:Clicked(5)"><IMG src="harehounds0.gif" width=108 height=108 border=0 id="i5" onClick="javascript:Clicked(8)"><IMG src="harehounds0.gif" width=108 height=108 border=0 id="i6" onClick="javascript:Clicked(10)"></nobr><br>
+          <nobr><IMG src="harehounds0.gif" width=108 height=108 border=0 id="i7" onClick="javascript:Clicked(3)"><IMG src="harehounds0.gif" width=108 height=108 border=0 id="i8" onClick="javascript:Clicked(6)"><IMG src="harehounds0.gif" width=108 height=108 border=0 id="i9" onClick="javascript:Clicked(9)"></nobr></td></tr> 
+</table>
+
+<table noborder cellpadding=2 cellspacing=2>
+<tr>
+  <td><table border=0 cellpadding=3 cellspacing=2 bgcolor=#808080>
+        <tr><td rowspan=2 bgcolor=#c0c0c0><img src="harehounds2.gif" width=72 height=72></td>
+            <td width=90 bgcolor=#DDDDDD><input type=radio name="Hounds" checked value="Player" id="r0" onClick="javascript:SetPlayer1(1,true)"><B>Player</B></td></tr>
+        <tr><td bgcolor=#DDDDDD>
+          <table border=0 cellpadding=0 cellspacing=1>
+          <tr><td><input type=radio name="Hounds" value="Computer" id="r1" onClick="javascript:SetPlayer2(1,false)"><B>Computer</B></td></tr>
+          <tr><td align=right><SELECT NAME="HareLevel" id="r2" onChange="SetLevel1(1, this.options[selectedIndex].value)" SIZE=1>
+          <OPTION VALUE=1>Level 1
+          <OPTION VALUE=2 selected>Level 2
+          <OPTION VALUE=3>Level 3
+          <OPTION VALUE=4>Level 4
+          </SELECT></td></tr></table>
+          </td></tr>
+        </td></tr>
+      </table>
+  </td>
+  <td><table border=0 cellpadding=2 cellspacing=2 bgcolor=#808080>
+        <tr bgcolor=#c0c0c0><td colspan=2 align=center><B>Who moves first:</B></td></tr>
+        <tr bgcolor=#DDDDDD><td width=83><input type=radio name="Start" checked value="Hounds" id="r3" onClick="javascript:SetStart1(1)"><B>Hounds</B></td>
+                            <td width=83><input type=radio name="Start" value="Hare" id="r4" onClick="javascript:SetStart2(0)"><B>Hare</B></td></tr>
+        <tr bgcolor=#DDDDDD><td align=center colspan=2><table border=0 cellpadding=0 cellspacing=0 width=162><tr>
+            <td align=center><input type=button value="&nbsp;New&nbsp;" style="width:60" id="b0" onClick="javascript:Init()"></td>
+            <td align=center><input type=button value="&nbsp;&nbsp;&nbsp;&nbsp;" style="width:40;background-color:#FFFFFF;font-weight:bold" disabled name="Moves"></td>
+            <td align=center><input type=button value="&nbsp;Help&nbsp;" style="width:60" id="b1" onClick="javascript:Help()"></td>
+            </tr></table></td></tr>
+      </table>
+  </td>
+  <td><table border=0 cellpadding=3 cellspacing=2 bgcolor=#808080>
+        <tr><td rowspan=2 bgcolor=#c0c0c0><img src="harehounds1.gif" width=72 height=72></td>
+            <td width=90 bgcolor=#DDDDDD><input type=radio name="Hare" value="Player" id="r5" onClick="javascript:SetPlayer3(0,true)"><B>Player</B></td></tr>
+        <tr><td bgcolor=#DDDDDD>
+          <table border=0 cellpadding=0 cellspacing=1>
+          <tr><td><input type=radio name="Hare" value="Computer" checked id="r6" onClick="javascript:SetPlayer4(0,false)"><B>Computer</B></td></tr>
+          <tr><td align=right><SELECT NAME="HareLevel" id="r7" onChange="SetLevel2(0, this.options[selectedIndex].value)" SIZE=1>
+          <OPTION VALUE=1>Level 1
+          <OPTION VALUE=2 selected>Level 2
+          <OPTION VALUE=3>Level 3
+          <OPTION VALUE=4>Level 4
+          </SELECT></td></tr></table>
+        </td></tr>
+      </table>
+  </td>
+</tr>
+</table>
+</form>
+</DIV>
+<script language="JavaScript">
+  Init();
+  setInterval("Timer()",8);
+</script>
+</BODY>
+</HTML>

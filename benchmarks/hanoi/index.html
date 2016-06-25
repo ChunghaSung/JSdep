@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="description" content="Hanoi is a PC-Game, which is a part of the '7 by one stroke' package, translated from C++ into HTML and JavaScript">
+<META NAME="author" content="Lutz Tautenhahn">
+<META NAME="keywords" content="Game, Hanoi, Streich, Stroke, JavaScript">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META HTTP-EQUIV="imagetoolbar" CONTENT="false">
+<title>Hanoi</title>
+<script language="JavaScript">
+var IsNetscape;
+
+if(navigator.appName == "Netscape")
+{ 
+    IsNetscape = true;
+    document.captureEvents(Event.RESIZE);
+} else {
+    IsNetscape = false;  
+}
+
+var n, I_Sel, J_Sel, IsOver, Moves, MaxMoves, Height, MaxHeight=6, StartTime, EndTime;
+
+Fld = new Array(3);
+
+for (n=0; n<3; n++) {
+    Fld[n] = new Array(MaxHeight);
+}
+
+Pic = new Array(7);
+
+for (n=0; n<7; n++) {
+    Pic[n] = new Image();
+    Pic[n].src = "hanoi"+eval(n)+".gif";
+}
+
+SPic = new Array(7);
+SPic[0] = new Image();
+SPic[0].src = "hanoi0.gif";
+for (n=1; n<7; n++) {
+    SPic[n] = new Image();
+    SPic[n].src = "hanoi"+eval(n)+"x.gif";
+} 
+
+function SetHeight(hh)
+{ 
+    Height=hh;
+    if (hh==4) {
+        MaxMoves=30;
+    }
+    if (hh==5) {
+        MaxMoves=62;
+    }
+    if (hh==6) {
+        MaxMoves=126;
+    }
+    Init();
+} 
+
+function Init()
+{ 
+    var ii, jj;
+    for (ii=0; ii<3; ii++){ 
+        for (jj=0; jj<MaxHeight; jj++) {
+            Fld[ii][jj]=0;
+        }
+    }
+    for (jj=MaxHeight-Height; jj<MaxHeight; jj++) {
+        Fld[0][jj]=jj+Height-5;
+    }
+    I_Sel=-1;
+    Moves=0;
+    IsOver=false;
+    RefreshScreen();
+    Now = new Date();
+    StartTime = Now.getTime() / 1000;
+}
+
+function Clicked(ii)
+{
+    var nn, ffrom, tto;
+    if (IsOver) {
+        return;
+    }
+    Moves++;
+    window.document.MovesForm.Moves.value = eval(Moves)+"/"+eval(MaxMoves);
+    if (I_Sel<0) {
+        for (jj=0; jj<MaxHeight; jj++) { 
+            if (Fld[ii][jj]>0) {
+                I_Sel=ii;
+                J_Sel=jj;
+                RefreshPic(I_Sel, J_Sel);
+                return;
+            }
+        }
+        return;
+    }
+    if (I_Sel==ii){ 
+        I_Sel=-1;
+        RefreshPic(ii, J_Sel);
+        return;
+    }
+    for (jj=1; jj<MaxHeight; jj++) { 
+        if (Fld[ii][jj]>0) { 
+            if (Fld[I_Sel][J_Sel]<Fld[ii][jj]) { 
+                Fld[ii][jj-1]=Fld[I_Sel][J_Sel];
+                Fld[I_Sel][J_Sel]=0;
+                RefreshPic(I_Sel, J_Sel);
+                RefreshPic(ii, jj-1);
+                OverTest();
+                I_Sel=-1;
+                return;
+            }
+            else { 
+                alert("You can lay a piece only on a bigger one or on an empty place !");
+                return;
+            }
+        }
+    }
+    Fld[ii][MaxHeight-1]=Fld[I_Sel][J_Sel];
+    Fld[I_Sel][J_Sel]=0;
+    RefreshPic(I_Sel, J_Sel);
+    RefreshPic(ii, MaxHeight-1);
+    OverTest();
+    I_Sel=-1;
+}
+
+function OverTest()
+{ 
+    var ii, jj;
+    IsOver=true;
+    for (ii=0; ii<2; ii++) {
+        for (jj=0; jj<6; jj++) { 
+            if (Fld[ii][jj]>0) {
+                IsOver=false;
+            }
+        }
+    }
+    if (IsOver) { 
+        Now = new Date();
+        EndTime = Now.getTime() / 1000;
+        ll=Math.floor(EndTime - StartTime);
+        if (window.opener) {
+            if (window.opener.SetHighscores) { 
+                if (Height==4) {
+                    window.opener.SetHighscores("Hanoi","small tower",ll,-1);
+                }
+                if (Height==5) {
+                    window.opener.SetHighscores("Hanoi","medium tower",ll,-1);
+                }
+                if (Height==6) {
+                    window.opener.SetHighscores("Hanoi","big tower",ll,-1);
+                }
+            }
+        }
+        alert("Super, you solved this game with "+Moves+ " moves in "+ll+ " seconds !");
+    }
+    return(IsOver);
+}
+
+function RefreshPic(ii, jj)
+{ 
+    if ((ii==I_Sel)&&(jj==J_Sel)) {
+        window.document.images[jj*3+ii].src = SPic[Fld[ii][jj]].src;
+    }
+    else {
+        window.document.images[jj*3+ii].src = Pic[Fld[ii][jj]].src; 
+    }
+}
+
+function RefreshScreen()
+{ 
+    var ii, jj;
+    for (ii=0; ii < 3; ii++) { 
+        for (jj=0; jj<MaxHeight; jj++) {
+            window.document.images[jj*3+ii].src = Pic[Fld[ii][jj]].src; 
+        }
+    }
+    window.document.MovesForm.Moves.value = eval(Moves)+"/"+eval(MaxMoves);
+}
+
+function Resize()
+{ 
+    if (IsNetscape) {
+        history.go(0);
+    }
+}
+
+function Help()
+{ 
+    alert("This is the game known as \"Towers of Hanoi\". Your task is to move"+
+            "\nthe tower from the start position (left) to the end position (right)."+
+            "\nThe tower consists of several disks which lay on each other. You can"+
+            "\nmove only such a disk which is on the top of a tower. You can move"+
+            "\nthis disk either to an empty position or on top of a disk which is bigger."+
+            "\nGood luck!");
+}
+</script>
+</head>
+<BODY bgcolor=#00FFFF background="hanoi_bg.gif" onResize="javascript:Resize()">
+<form name="MovesForm">
+<DIV ALIGN=center>
+<table noborder width=100% cellpadding=0 cellspacing=0>
+<tr>
+  <td align=left>
+    <table noborder background="cloud.gif" width=192 height=168 cellpadding=0 cellspacing=0>
+    <tr><td align=center valign=middle><input type=button value=" 0/0 " width=50 style="width:60;background-color:#FFFFFF" name="Moves"><br>&nbsp;</td></tr>
+    </table>
+  </td>
+  <td align=right>
+    <table noborder background="sun.gif" width=168 height=168 cellpadding=0 cellspacing=0>
+    <tr><td align=center valign=middle><input type=button id="b0" value="?" width=15 style="width:15;background-color:#FFFF00" onClick="Help()"></td></tr>
+    </table>
+  </td>
+</tr>
+</table>
+<script language="JavaScript">
+document.open("text/plain");
+document.writeln("<table noborder align=center cellpadding=0 cellspacing=0><tr align=center><td>");
+for (n=0; n<MaxHeight; n++) { 
+    var temp = "<IMG id=\"i"+n+"0\" src=\"hanoi0.gif\" border=0 onMouseDown=\"Clicked(0)\">";
+    document.write(temp);
+    temp = "<IMG id=\"i"+n+"1\" src=\"hanoi0.gif\" border=0 onMouseDown=\"Clicked(1)\">";
+    document.write(temp);
+    temp = "<IMG id=\"i"+n+"2\" src=\"hanoi0.gif\" border=0 onMouseDown=\"Clicked(2)\">";
+    document.write(temp);
+    document.writeln("<BR>");
+}
+document.writeln("</td></tr></table>");
+document.close();
+</script>
+<table noborder width=378>
+  <tr align=center>
+      <td><input type=button id="small" value="small tower" width=120 style="width:120" onClick="javascript:SetHeight(4)"></td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
+      <td><input type=button id="medium" value="medium tower" width=120 style="width:120" onClick="javascript:SetHeight(5)"></td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
+      <td><input type=button id="big" value="big tower" width=120 style="width:120" onClick="javascript:SetHeight(6)"></td>
+  </tr>
+</table>
+</DIV>
+</form>
+<script language="JavaScript">
+SetHeight(4);
+</script>
+</BODY>
+</HTML>

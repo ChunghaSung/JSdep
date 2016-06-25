@@ -1,0 +1,23 @@
+{
+    "name": "JS_WALA",
+    "version": "0.1.0",
+    "author": "IBM",
+    "contributors": [
+      {
+        "name": "Max Schaefer",
+	"email": "schaefer@ntu.edu.sg"
+      },
+      {
+        "name": "Manu Sridharan",
+	"email": "msridhar@us.ibm.com"
+      }
+    ],
+    "description": "JavaScript Tools for WALA",
+    "dependencies" : {
+	"esprima": "*",
+	"escodegen": "*",
+	"nodeunit" : "*",
+	"amdefine" : "*"
+    },
+    "license": "Eclipse"
+}

@@ -1,0 +1,2 @@
+for (; ; )
+    alert("stuck!");

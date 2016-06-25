@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0039)http://www.lutanho.net/play/cosmos.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="description" content="Cosmos is a PC-Game, which is a part of the &#39;7 by one stroke&#39; package, translated from C++ into HTML and JavaScript">
+<meta name="author" content="Lutz Tautenhahn">
+<meta name="keywords" content="Game, Mastermind, Streich, Stroke, JavaScript">
+
+<title>Cosmos</title>
+<script language="JavaScript">
+var l, n, m, IsOver, Max=4, num_of_try, num_of_obj, StartTime, EndTime;
+
+symbol = new Array(5);
+fld = new Array(11);
+for (n=0; n < 10; n++)
+{
+    fld[n]=new Array(8); 
+} 
+
+Pic = new Array(10);
+for (l=0; l < 10; l++)
+{ 
+    Pic[l] = new Image(); 
+    Pic[l].src = "cosmos"+eval(l)+".gif"; 
+} 
+
+function SetSize(ll)
+{
+    if (Max!=ll)
+    { 
+        Max=ll;
+        Init();
+    }
+} 
+
+function Clicked(nn)
+{ 
+    if (IsOver) {
+        return;
+    }
+    fld[num_of_try][num_of_obj++]=nn;
+    if (num_of_obj==Max) {
+        Evaluate();
+    } else {
+        RefreshScreen();
+    }
+} 
+
+function Show()
+{
+    if (num_of_try>0)
+    { 
+        if (fld[num_of_try-1][5+Max-1]==8)
+        { 
+            alert("Everything's okay.");
+            return;
+        }
+    }
+    if ((num_of_try<Max+3)&(!IsOver))
+    { 
+        for (i=0; i<Max; i++) {
+            fld[num_of_try][i]=symbol[i];
+        }
+        RefreshScreen();
+        alert("Show is not solve !");
+    }
+    if ((num_of_try==Max+3)&&(fld[3+Max-1][5+Max-1]!=8)) {
+        alert("Too late !");
+    }
+    IsOver=true;
+}
+
+function Init()
+{ 
+    symbol[0]=Math.round(Math.random()*100) % 7 + 1;
+    for (n=1; n<Max; n++)
+    { 
+        l=Math.round(Math.random()*100) % 7 + 1;
+        for (m=0; m<n; m++)
+        { 
+            if (l==symbol[m]) {
+                l=0;
+            }
+        }
+        if (l>0) {
+            symbol[n]=l;
+        }
+        while (l==0) {
+            l=Math.round(Math.random()*100) % 7 + 1;
+            for (m=0; m<n; m++)
+            { 
+                if (l==symbol[m]) {
+                    l=0;
+                }
+            }
+            if (l>0){
+                symbol[n]=l;
+            }
+        }
+    }
+    for (n=0; n<8; n++)
+    { 
+        for (m=0; m<10; m++) {
+            fld[n][m]=0;
+        }
+    }
+    num_of_try=0;
+    num_of_obj=0;
+    IsOver=false;
+    RefreshScreen(); 
+    Now = new Date();
+    StartTime = Now.getTime() / 1000; 
+}
+
+function Evaluate()
+{ 
+    var ii, bb=0, ww=0;
+    for (n=0; n<Max; n++)
+    { 
+        if (fld[num_of_try][n]==symbol[n]) {
+            bb++;
+        } else {
+            m=-1;
+            m++;
+            while ((m<Max-1)&&(fld[num_of_try][n]!=symbol[m])) {
+                m++;
+            }
+            if (fld[num_of_try][n]==symbol[m]) {
+                ww++;
+            }
+        }
+    }
+    m=4;
+    if (bb>0)
+    { 
+        for (n=0; n<bb; n++)
+        {
+            m++;
+            fld[num_of_try][m]=8;
+        }
+    }
+    if (ww>0)
+    { 
+        for (n=0; n<ww; n++)
+        { 
+            m++;
+            fld[num_of_try][m]=9;
+        }
+    }
+    num_of_try++;
+    num_of_obj=0;
+    RefreshScreen();
+    if (bb==Max)
+    {
+        IsOver=true;
+        if (num_of_try==1) {
+            m="That doesn't count !";
+        }
+        if (num_of_try==2) {
+            m="Parapsychic !";
+        }
+        if (num_of_try==4) {
+            m="Mastermind !";
+        }
+        if (num_of_try==Max) {
+            m="Genius !";
+        }
+        if (num_of_try==3) {
+            m="Lucky guy !";
+        }
+        if (num_of_try==Max+1) {
+            m="Good combination !";
+        }
+        if (num_of_try==Max+2) {
+            m="Not bad !";
+        }
+        if (num_of_try==Max+3) {
+            m="Correct solution !";
+        }
+        if ((num_of_try>1)&&(window.opener)) {
+            Now = new Date();
+        }
+        EndTime = Now.getTime() / 1000;
+        ii=Math.floor(EndTime - StartTime);
+        if (window.opener.SetHighscores) {
+            window.opener.SetHighscores("Cosmos",Max+" of 7",ii,-1);
+        }
+
+        alert(m+"\nYou solved this game in "+ii+" seconds!");
+    }
+    if ((bb<Max)&(num_of_try==Max+3))
+    { 
+        IsOver=true;
+        alert("It's not your best day !");
+    }
+}
+
+function RefreshScreen()
+{ 
+    for (m=0; m < 8; m++)
+    { 
+        for (n=0; n < 10; n++)  {
+            window.document.images[10*m+n].src = Pic[fld[m][n]].src;
+        }
+    }
+}
+
+function Help()
+{
+    alert("This is a variant of the well-known game Mastermind."+"\nThe computer has selected 3, 4 or 5 of the 7 objects"+"\nfrom the right side (max.1 of each type). Your task is"+"\nto find out these objects in the right order. To select"+"\nan object click on it by mouse. You will get a filled"+"\ncircle for a correct object that is at the correct place"+"\nand an empty circle if the position isn't right."+"\nYou can try up to seven times. Good luck!");
+}
+</script>
+<style type="text/css"></style></head>
+<body bgcolor="#000000" background="./Cosmos_files/cosmosbg.gif">
+<form>
+<div align="center">
+<table noborder="" cellpadding="0" cellspacing="0">
+<tbody><tr><td><table noborder="" cellpadding="0" cellspacing="0">
+<script language="JavaScript">
+document.open("text/plain");
+for (m=0; m < 8; m++)
+{ 
+    document.writeln("<tr align=center>");
+  for (n=0; n < 10; n++) {
+    document.writeln("<td><IMG src=\"cosmos0.gif\" border=0></td>");
+  }
+  document.writeln("</tr>");
+}
+document.close();
+</script><tbody><tr align="center">
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+</tr>
+<tr align="center">
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+</tr>
+<tr align="center">
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+</tr>
+<tr align="center">
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+</tr>
+<tr align="center">
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+</tr>
+<tr align="center">
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+</tr>
+<tr align="center">
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+</tr>
+<tr align="center">
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+<td><img src="./Cosmos_files/cosmos0.gif" border="0"></td>
+</tr>
+
+</tbody></table></td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td><table noborder="" cellpadding="0" cellspacing="0">
+  <tbody><tr><td><img src="./Cosmos_files/cosmos1.gif" id="r1" border="0" onmousedown="Clicked(1)"></td></tr>
+  <tr><td><img src="./Cosmos_files/cosmos2.gif" id="r2" border="0" onmousedown="Clicked(2)"></td></tr>
+  <tr><td><img src="./Cosmos_files/cosmos3.gif" id="r3" border="0" onmousedown="Clicked(3)"></td></tr>
+  <tr><td><img src="./Cosmos_files/cosmos4.gif" id="r4" border="0" onmousedown="Clicked(4)"></td></tr>
+  <tr><td><img src="./Cosmos_files/cosmos5.gif" id="r5" border="0" onmousedown="Clicked(5)"></td></tr>
+  <tr><td><img src="./Cosmos_files/cosmos6.gif" id="r6" border="0" onmousedown="Clicked(6)"></td></tr>
+  <tr><td><img src="./Cosmos_files/cosmos7.gif" id="r7" border="0" onmousedown="Clicked(7)"></td></tr>
+  <tr><td><img src="./Cosmos_files/cosmos0.gif" border="0"></td></tr>
+</tbody></table></td></tr>
+</tbody></table>
+<br>
+<table noborder="" width="95%">
+  <tbody><tr>
+    <td align="center" width="50%"><table border="" cellpadding="2" cellspacing="0" width="75%">
+        <tbody><tr><td align="center"><input type="radio" id="c0" name="Size" value="3" onclick="javascript:SetSize(3)"><font color="white"> 3 of 7 </font></td></tr>
+        <tr><td align="center"><input type="radio" name="Size" id="c1" checked="" value="4" onclick="javascript:SetSize(4)"><font color="white"> 4 of 7 </font></td></tr>
+        <tr><td align="center"><input type="radio" name="Size" id="c2" value="5" onclick="javascript:SetSize(5)"><font color="white"> 5 of 7 </font></td></tr>
+        </tbody></table>
+    </td>
+    <td align="center" width="50%"><table noborder="">
+        <tbody><tr><td><input type="button" value="NEW GAME" id="b0" width="108" style="width:108; background-color:#000000; color:#FFFFFF" onclick="javascript:Init()"></td></tr>
+        <tr><td><input type="button" value="SHOW" width="108" id="b1" style="width:108; background-color:#000000; color:#FFFFFF" onclick="javascript:Show()"></td></tr>
+        <tr><td><input type="button" value="HELP" width="108" id="b2" style="width:108; background-color:#000000; color:#FFFFFF" onclick="javascript:Help()"></td></tr>
+        </tbody></table>
+    </td>
+  </tr><tr>
+</tr></tbody></table>
+</div>
+</form>
+<script language="JavaScript">
+  Init();
+</script>
+
+
+</body></html>

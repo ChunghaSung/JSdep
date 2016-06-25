@@ -1,0 +1,369 @@
+<!--http://www.lutanho.net/play/matchnim.html--!>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="description" content="Match Nim is a PC-Game written in HTML and JavaScript">
+<META NAME="author" content="Lutz Tautenhahn">
+<META NAME="keywords" content="Game, Match Nim, Streich, Stroke, JavaScript">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>Match Nim</title>
+<style type="text/css">
+input,select {font-size:15px}
+</style>
+<script language="JavaScript">
+var i, IsOver, IsRemoving=false, N, Max=16, Move=0, Start=0, StartTime, EndTime, Mode=0;
+Level = new Array(2);
+Level[0]=0;
+Level[1]=1;
+Fld = new Array(Max);
+Pic= new Array(4);
+Pic[0] = new Image();
+Pic[0].src = "match"+0+".gif"; 
+Pic[1] = new Image();
+Pic[1].src = "match"+1+".gif"; 
+Pic[2] = new Image();
+Pic[2].src = "match"+2+".gif"; 
+Pic[3] = new Image();
+Pic[3].src = "match"+3+".gif"; 
+
+function SetMode(mmS)
+{ 
+    Mode=parseInt(mmS);
+    Init1(false);
+}
+
+function SetStart(ssS)
+{ 
+    if (IsRemoving) {
+        return;
+    }
+  Start=parseInt(ssS);
+  Init1(false);
+}
+
+function SetLevel1(nnL1, mmL1)
+{ 
+    Level[nnL1]=parseInt(mmL1);
+}
+
+function SetLevel2(nnL2, mmL2)
+{ 
+    Level[nnL2]=parseInt(mmL2);
+}
+
+function Timer()
+{ 
+    if (IsOver) {
+        return;
+    }
+  if (IsRemoving) {
+      return;
+  }
+  if (Level[Move]==0) {
+      return;
+  }
+  MakeBestMove();
+}
+
+function Init1(IsNew_init1)
+{ 
+    var ii_init1, ss_init1;
+  if (IsRemoving) {
+      return;
+  }
+  if (IsNew_init1) 
+  {
+      ii_init1=12+Math.floor(Math.random()*5);
+      while(ii_init1==N) {
+      ii_init1=12+Math.floor(Math.random()*5);
+      }
+    N=ii_init1;
+  }
+  ss_init1=Math.floor((Max-N)/2);
+
+  for (ii_init1=0; ii_init1<Max; ii_init1++) {
+      Fld[ii_init1]=0;
+  }
+  for (ii_init1=ss_init1; ii_init1<ss_init1+N; ii_init1++) {
+      Fld[ii_init1]=1;
+  }
+  Move=Start;
+  IsOver=false;
+  window.document.images[0].src = Pic[Fld[0]].src;
+  window.document.images[1].src = Pic[Fld[1]].src;
+  window.document.images[2].src = Pic[Fld[2]].src;
+  window.document.images[3].src = Pic[Fld[3]].src;
+  window.document.images[4].src = Pic[Fld[4]].src;
+  window.document.images[5].src = Pic[Fld[5]].src;
+  window.document.images[6].src = Pic[Fld[6]].src;
+  window.document.images[7].src = Pic[Fld[7]].src;
+  window.document.images[8].src = Pic[Fld[8]].src;
+  window.document.images[9].src = Pic[Fld[9]].src;
+  window.document.images[10].src = Pic[Fld[10]].src;
+  window.document.images[11].src = Pic[Fld[11]].src;
+  window.document.images[12].src = Pic[Fld[12]].src;
+  window.document.images[13].src = Pic[Fld[13]].src;
+  window.document.images[14].src = Pic[Fld[14]].src;
+  window.document.images[15].src = Pic[Fld[15]].src;
+  IsRemoving=false;
+  IsOver=false;
+
+  if (Fld[0]+Fld[1]+Fld[2]+Fld[3]+Fld[4]+Fld[5]+Fld[6]+Fld[7]+Fld[8]+Fld[9]+Fld[10]+Fld[11]+Fld[12]+Fld[13]+Fld[14]+Fld[15] > 0) {
+      return(false);
+  }
+  IsOver=true;
+
+  if ((Move+Mode)%2==0) {
+      alert("The player at the right side has won!");
+  }
+  else {
+      alert("The player at the left side has won!");
+  }
+  return(true);
+  Now = new Date();
+  StartTime = Now.getTime() / 1000;
+}
+
+
+
+
+
+
+
+function Clicked1(ii_click1)
+{ 
+    if (IsOver) {
+        return;
+    }
+    if (IsRemoving) {
+        return;
+    }
+    var jj_click1, nn_click1=0;
+    if (Move==0) { 
+        for (jj_click1=0; jj_click1<=ii_click1; jj_click1++) {
+            nn_click1+=Fld[jj_click1];
+        }
+        if ((nn_click1<1)||(nn_click1>3)) {
+            alert("You must remove 1, 2 or 3 matches \nfrom the left side!");
+        }
+    } else { 
+        if (Move==0)
+        { 
+            for (jj_click1=ii_click1; jj_click1<Max; jj_click1++) {
+                nn_click1+=Fld[jj_click1];
+            }
+            if ((nn_click1<1)||(nn_click1>3)) {
+                alert("You must remove 1, 2 or 3 matches \nfrom the right side!");
+            }
+        }
+    }
+    if ((nn_click1<1)||(nn_click1>3)) {
+        return;
+    }
+     var kk_click1, pp_click1, mm_click1=0;
+  if (Move==0)
+  {
+      kk_click1=0;
+      mm_click1+=Fld[kk_click1];
+    while((mm_click1<nn_click1)&&(kk_click1<Max-1)) {
+        kk_click1++;
+      mm_click1+=Fld[kk_click1];
+    }
+    for (pp_click1=kk_click1-mm_click1+1; pp_click1<=kk_click1; pp_click1++)
+    {
+        Fld[pp_click1]+=2;
+        window.document.images[pp_click1].src = Pic[Fld[pp_click1]].src;
+      Fld[pp_click1]=0;
+    }
+  }
+  else    
+  {
+      kk_click1=Max-1;
+      mm_click1+=Fld[kk_click1];
+    while((mm_click1<nn_click1)&&(kk_click1>0)) {
+        kk_click1--;
+      mm_click1+=Fld[kk_click1];
+    }
+    for (pp_click1=kk_click1; pp_click1<kk_click1+mm_click1; pp_click1++)
+    {
+        Fld[pp_click1]+=2;
+        window.document.images[pp_click1].src = Pic[Fld[pp_click1]].src;
+      Fld[pp_click1]=0;
+    }
+  }
+
+  Move=1-Move;
+  IsRemoving=true;
+  setTimeout("RefreshScreen()",3);  
+}
+
+
+function MakeBestMove()
+{
+    var ii_best, nn_best=0;
+
+    if (Fld[0]+Fld[1]+Fld[2]+Fld[3]+Fld[4]+Fld[5]+Fld[6]+Fld[7]+Fld[8]+Fld[9]+Fld[10]+Fld[11]+Fld[12]+Fld[13]+Fld[14]+Fld[15]>3) 
+    { 
+        if (Level[Move]==1) {
+            nn_best=Math.floor(Math.random()*3)+1;
+        }
+        else {
+            nn_best=(nn_best-Mode)%4;
+        }
+        if (nn_best==0) {
+            nn_best=Math.floor(Math.random()*3)+1;
+        }
+    }
+    else
+    { 
+        if ((Mode==1)&&(nn_best>1)) {
+            nn_best--;    
+        }
+    }
+    var ii_remove, jj_remove, mm_remove=0;
+    if (Move==0)
+    {
+        ii_remove=0;
+        mm_remove+=Fld[ii_remove];
+        while((mm_remove<nn_best)&&(ii_remove<Max-1)) {
+            ii_remove++;
+            mm_remove+=Fld[ii_remove];
+        }
+        for (jj_remove=ii_remove-mm_remove+1; jj_remove<=ii_remove; jj_remove++) {
+            Fld[jj_remove]+=2;
+            window.document.images[jj_remove].src = Pic[Fld[jj_remove]].src;
+            Fld[jj_remove]=0;
+        }
+    } else {
+        ii_remove=Max-1;
+        mm_remove+=Fld[ii_remove];
+        while((mm_remove<nn_best)&&(ii_remove>0)) {
+            ii_remove--;
+            mm_remove+=Fld[ii_remove];
+        }
+        for (jj_remove=ii_remove; jj_remove<ii_remove+mm_remove; jj_remove++)
+        {
+            Fld[jj_remove]+=2;
+            window.document.images[jj_remove].src = Pic[Fld[jj_remove]].src;
+            Fld[jj_remove]=0;
+        }
+    }
+
+    Move=1-Move;
+    IsRemoving=true;
+    setTimeout("RefreshScreen()",3);  
+}
+
+
+function RefreshScreen()
+{
+    window.document.images[0].src = Pic[Fld[0]].src;
+    window.document.images[1].src = Pic[Fld[1]].src;
+    window.document.images[2].src = Pic[Fld[2]].src;
+    window.document.images[3].src = Pic[Fld[3]].src;
+    window.document.images[4].src = Pic[Fld[4]].src;
+    window.document.images[5].src = Pic[Fld[5]].src;
+    window.document.images[6].src = Pic[Fld[6]].src;
+    window.document.images[7].src = Pic[Fld[7]].src;
+    window.document.images[8].src = Pic[Fld[8]].src;
+    window.document.images[9].src = Pic[Fld[9]].src;
+    window.document.images[10].src = Pic[Fld[10]].src;
+    window.document.images[11].src = Pic[Fld[11]].src;
+    window.document.images[12].src = Pic[Fld[12]].src;
+    window.document.images[13].src = Pic[Fld[13]].src;
+    window.document.images[14].src = Pic[Fld[14]].src;
+    window.document.images[15].src = Pic[Fld[15]].src;
+    IsRemoving=false;
+    IsOver=false;
+
+    if (Fld[0]+Fld[1]+Fld[2]+Fld[3]+Fld[4]+Fld[5]+Fld[6]+Fld[7]+Fld[8]+Fld[9]+Fld[10]+Fld[11]+Fld[12]+Fld[13]+Fld[14]+Fld[15] > 0) {
+        return(false);
+    }
+    IsOver=true;
+
+    if ((Move+Mode)%2==0) {
+        alert("The player at the right side has won!");
+    }
+    else {
+        alert("The player at the left side has won!");
+    }
+    return(true);
+}
+
+function ShowHelp()
+{ alert("The players alternately remove 1, 2 or 3 matches from the row."+
+      "\nThe player wins (loses), who removes the last match.");
+}
+</script>
+</head>
+<BODY bgcolor=#887766>
+<DIV ALIGN=center>
+<form>
+<table border=2 cellpadding=6 cellspacing=8 bgcolor=#999999><tr>
+<td bgcolor=#000000>
+<table noborder cellpadding=0 cellspacing=0><tr align=center>
+<script language="JavaScript">
+document.open("text/plain");
+for (i=0; i < Max; i++) {
+    var temp = "<td><IMG src=\"match0.gif\" border=0 id=\"m"+i+"\" onMouseDown=\"Clicked1"+"("+i+")\"></td>";
+    document.writeln(temp);
+}
+document.close();
+</script>
+</tr></table>
+</td>
+</tr></table>
+<br>
+<table border=2 cellpadding=2 cellspacing=4 bgcolor=#999999><tr><td>
+<table border=0 cellpadding=1 cellspacing=1>
+<tr><td colspan=5 align=center>
+  <table border=0 cellpadding=0 cellspacing=0>
+  <tr><td><b><i>The player who takes the last match </i></b></td>
+      <td>
+<SELECT id= "s0" onChange="SetMode(this.options[selectedIndex].value)" SIZE=1>
+<OPTION VALUE=0 selected>wins
+<OPTION VALUE=1>loses
+</SELECT>
+      </td></tr>
+  </table>
+</td></tr>
+<tr><td rowspan=2 align=center valign=bottom><b><i>Left side player:</i></b><br>
+<SELECT id="s1" onChange="SetLevel1(0, this.options[selectedIndex].value)" SIZE=1>
+<OPTION VALUE=0 selected>Human
+<OPTION VALUE=1>Computer - Beginner
+<OPTION VALUE=2>Computer  - Expert
+</SELECT></td>
+    <td align=center>
+      <input type=button id="b0" value="New" width=40 style="width:40" onClick="javascript:Init1(true)">
+    </td>
+    <td align=center>
+      <input type=button id="b1" value="Repeat" width=55 style="width:55" onClick="javascript:Init1(false)">
+    </td>
+    <td align=center>
+      <input type=button id="b2" value="Help" width=45 style="width:45" onClick="javascript:ShowHelp()">
+    </td>
+    <td rowspan=2 align=center valign=bottom><b><i>Right side player:</i></b><br>
+<SELECT id="s2" onChange="SetLevel2(1, this.options[selectedIndex].value)" SIZE=1>
+<OPTION VALUE=0>Human
+<OPTION VALUE=1 selected>Computer - Beginner
+<OPTION VALUE=2>Computer  - Expert
+</SELECT></td>
+</tr>
+<tr>
+<td colspan=3 align=center>
+<SELECT id="s3" onChange="SetStart(this.options[selectedIndex].value)" SIZE=1>
+<OPTION VALUE=0>Left side player begins
+<OPTION VALUE=1>Right side player begins
+</SELECT>
+</td>
+</tr></table>
+</td>
+</tr></table>
+</form>
+</DIV>
+<script language="JavaScript">
+  Init1(true);
+  setInterval("Timer()",3);  
+</script>
+</BODY>
+</HTML>

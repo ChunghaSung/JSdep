@@ -1,0 +1,343 @@
+<!--http://www.lutanho.net/play/chinabox.html--!>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="description" content="ChinaBox is a PC-Game, which is a part of the '7 by one stroke' package, translated from C++ into HTML and JavaScript">
+<META NAME="author" content="Lutz Tautenhahn">
+<META NAME="keywords" content="Game, ChinaBox, Streich, Stroke, JavaScript">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META HTTP-EQUIV="imagetoolbar" CONTENT="false">
+<title>ChinaBox</title>
+<script language="JavaScript">
+var IsNetscape;
+if(navigator.appName == "Netscape")
+{ 
+    IsNetscape = true;
+  document.captureEvents(Event.RESIZE)
+} else {
+    IsNetscape = false;  
+}
+var n, I_Sel, IsOver=false, IsAnimation=false, Moves=0, MaxMoves, IsRepeat;
+var Type=2, Max=8, StartTime, EndTime;
+Fld = new Array(10);
+PreFld = new Array(10);
+Move = new Array(10);
+Pic = new Array(5);
+Pic[0] = new Image(); 
+Pic[0].src = "china_r.gif"; 
+Pic[1] = new Image();
+Pic[1].src = "china_v.gif"; 
+Pic[2] = new Image(); 
+Pic[2].src = "china_b.gif"; 
+Pic[3] = new Image();
+Pic[3].src = "china_t2.gif"; 
+Pic[4] = new Image();
+Pic[4].src = "china_s2.gif"; 
+
+function ChangeType()
+{ 
+    if (Type==2) {
+        Type=3;
+    }
+  else {
+      Type=2;
+  }
+  Init(2);
+} 
+
+function GetMaxMove(mm)
+{
+    var cc, kk, nn=mm-1;
+  for (kk=0; (kk<Max-1)&&(!IsOver); kk++)
+  {
+      I_Sel=kk;
+    Move[MaxMoves-mm]=kk;
+    if ((cc=Pressed())>=0)
+    { 
+        if (mm<=1) {
+            OverTest();
+        }
+      else {
+          GetMaxMove(nn);
+      }
+      I_Sel=cc;
+      Pressed();
+    }
+  }
+}
+
+function Init(nn)
+{ 
+    var ii, jj, mm;
+      for (ii=0; ii<Max; ii++) {
+      Fld[ii]=(Math.round(Math.random()*100)%Type)+1;
+      }
+    ii=Math.round(Math.random()*100)%(Max-1);
+    Fld[ii]=0;
+    Fld[ii+1]=0;
+
+    if (nn==2)
+    { 
+        for (ii=0; ii<Max; ii++) {
+        PreFld[ii]=Fld[ii];
+        }
+    }
+    else
+    { 
+        for (ii=0; ii<Max; ii++) {
+	Fld[ii]=PreFld[ii];
+        }
+    }
+    OverTest();
+    for (jj=0; jj<Type; jj++)
+    { 
+        mm=0;
+      for (ii=0; ii<Max; ii++) {
+        if  (Fld[ii]==jj+1) {
+            mm++;
+        }
+      }
+      if (mm<2) {
+          IsOver=true;
+      }
+    }
+  while(IsOver) {
+      for (ii=0; ii<Max; ii++) {
+      Fld[ii]=(Math.round(Math.random()*100)%Type)+1;
+      }
+    ii=Math.round(Math.random()*100)%(Max-1);
+    Fld[ii]=0;
+    Fld[ii+1]=0;
+
+    if (nn==2)
+    { 
+        for (ii=0; ii<Max; ii++) {
+        PreFld[ii]=Fld[ii];
+        }
+    }
+    else
+    { 
+        for (ii=0; ii<Max; ii++) {
+	Fld[ii]=PreFld[ii];
+        }
+    }
+    OverTest();
+    for (jj=0; jj<Type; jj++)
+    { 
+        mm=0;
+      for (ii=0; ii<Max; ii++) {
+        if  (Fld[ii]==jj+1) {
+            mm++;
+        }
+      }
+      if (mm<2) {
+          IsOver=true;
+      }
+    }
+  }
+  if (nn==2)
+  { 
+      MaxMoves=0;
+    GetMaxMove(++MaxMoves);
+    while ((!IsOver)&&(MaxMoves<=9)) {
+    GetMaxMove(++MaxMoves);
+    }
+    IsRepeat=false;
+  }
+  else {
+      IsRepeat=true;
+  }
+  I_Sel=0;
+  Moves=0;
+  IsOver=false;
+  RefreshScreen();
+  if (nn==1)
+  { 
+      alert("Show is not solve !");
+    IsOver=true;
+    IsAnimation=true;
+  }
+  Now = new Date();
+  StartTime = Now.getTime() / 1000;
+}
+
+function Pressed()
+{ 
+    var ii=-1;
+  if ((Fld[I_Sel]==0)||(Fld[I_Sel+1]==0)) {
+      return(-1);
+  }
+  ii++;
+  while (Fld[ii]!=0) {
+      ii++;
+  }
+  Fld[ii]=Fld[I_Sel];
+  Fld[ii+1]=Fld[I_Sel+1];
+  Fld[I_Sel]=0;
+  Fld[I_Sel+1]=0;
+  return(ii);
+}
+
+function Clicked()
+{ 
+    document.forms[0].ShowButton.focus();
+  document.forms[0].ShowButton.blur();
+  if (IsOver)  {
+      return;
+  }
+  if (Pressed()<0) {
+      return;
+  }
+  Moves++;
+  OverTest();
+  RefreshScreen(); 
+  if (IsOver) 
+  { 
+      Now = new Date();
+    EndTime = Now.getTime() / 1000;
+    ll=Math.floor(EndTime - StartTime);
+    if (! IsRepeat)
+    { 
+        if (window.opener)
+      { 
+          if (window.opener.SetHighscores)
+        { 
+            if (Type==2) {
+                window.opener.SetHighscores("ChinaBox","2 colors",ll,-1);
+            } else {
+                window.opener.SetHighscores("ChinaBox","3 colors",ll,-1);
+            }
+        }
+      }
+    }
+    alert("Super, you solved this game with "+Moves+ " moves in "+ll+ " seconds !");
+  }
+}
+
+function OverTest()
+{ 
+    var ii, cc, mm=1;
+  IsOver=true;
+  for (ii=0; ii<Max; ii++)
+  { 
+      if ((cc=Fld[ii])>0)
+    { 
+        if (cc<mm) {
+            IsOver=false;
+        }
+      else {
+          mm=cc;
+      }
+    }
+  }
+  return(IsOver);
+}
+
+function Select(nn)
+{ 
+    var ii, cc;
+  I_Sel=nn;
+  for (ii=0; ii < Max-1; ii++) {
+    window.document.images[Max+ii].src = Pic[3].src;    
+  }
+  if ((0<=nn)&&(nn<Max-1)) 
+  { 
+      if ((Fld[nn]>0)&&(Fld[nn+1]>0)) {
+        window.document.images[Max+nn].src = Pic[4].src;    
+      }
+  }
+}
+
+function RefreshScreen()
+{ 
+    var ii, cc;
+  window.document.forms[0].Moves.value = eval(Moves)+"/"+eval(MaxMoves);
+  for (ii=0; ii < Max; ii++)
+  { 
+      if ((cc=Fld[ii])>0) {
+      window.document.images[ii].src = Pic[(cc-1)*(4-Type)].src;    
+      }
+    else {
+      window.document.images[ii].src = Pic[3].src;    
+    }
+  }
+}
+
+function Timer()
+{
+    if (IsAnimation)
+  { 
+      if (Moves==MaxMoves-1) {
+          IsAnimation=false;
+      }
+    I_Sel=Move[Moves];
+    Pressed();
+    Moves++;
+    RefreshScreen();
+  }
+}
+
+function Resize()
+{
+    if (IsNetscape) {
+        history.go(0);
+    }
+}
+
+function Help()
+{
+    alert("This game is known as the problem of Chinese chests"+"\nor the China box problem. Several boxes of two colors"+"\nstand in a line. There is an additional empty space for"+"\ntwo boxes either at the left or at the right side of the"+"\nboxes or somewhere between the boxes."+"\nThe aim of the game is to get the boxes in the right"+"\norder, that means to move the red boxes to the left"+"\nside and the blue boxes to the right side. You should"+"\ndo this with a minimum number of moves. You can"+"\nalways move two neighbouring boxes to the empty"+"\nspace, the order of that two boxes will be kept."+"\nThe game is more difficult with boxes of a third color."+"\nNow you have to arrange the red boxes to the left side,"+"\nthe blue boxes to the right side and the violet boxes to"+"\nthe middle. The position of the empty space at the end"+"\nof the game doesn't matter. Good luck!");
+}
+</script>
+</head>
+<BODY bgcolor=#00FFFF background="china_bg.gif" onResize="javascript:Resize()">
+<form>
+<DIV ALIGN=center>
+<table noborder width=100% cellpadding=1 cellspacing=1>
+<tr>
+  <td align=left>
+    <table noborder background="cloud.gif" width=192 height=168 cellpadding=0 cellspacing=0>
+    <tr><td align=center valign=middle><input type=button style="width:50;background-color:#FFFFFF" name="Moves" value="0/0"><br>&nbsp;</td></tr>
+    </table>
+  </td>
+  <td align=right>
+    <table noborder background="sun.gif" width=168 height=168 cellpadding=0 cellspacing=0>
+    <tr><td align=center valign=middle><input type=button id="b0" value="?" width=15 style="width:15;background-color:#FFFF00" onClick="Help()"></td></tr>
+    </table>
+  </td>
+</tr>
+</table>
+<script language="JavaScript">
+document.open("text/plain");
+document.writeln("<table noborder align=center cellpadding=0 cellspacing=0>");
+document.writeln("<tr align=center>");
+for (n=0; n < Max; n++)
+  document.writeln("<td><IMG src=\"china_t2.gif\" border=0></td>");
+document.writeln("</tr></table>");
+document.writeln("<table noborder align=center cellpadding=0 cellspacing=0>");
+document.writeln("<tr align=center>");
+for (n=0; n < Max-1; n++) {
+    var temp = "<td><a href=\"javascript:Clicked()\" id=\"a"+n+"\" onMouseOver=\"Select("+n+")\" onMouseOut=\"Select(-1)\"><IMG src=\"china_t2.gif\" border=0></a></td>";
+}
+  document.writeln();
+document.writeln("</tr></table>");
+document.close();
+</script>
+</table>
+<br>
+<table noborder width=95%>
+  <tr>
+      <td><input type=button id="b1" value="2 <=> 3 COLORS" width=148 style="width:148" onClick="javascript:ChangeType()"></td>
+      <td><input type=button id="b2" value="SHOW" width=74 style="width:74" onClick="javascript:Init(1)" name="ShowButton"></td>
+      <td><input type=button id="b3" value="REPEAT" width=84 style="width:84" onClick="javascript:Init(0)"></td>
+      <td><input type=button id="b4" value="NEW GAME" width=108 style="width:108" onClick="javascript:Init(2)"></td>
+  </tr>
+</table>
+</DIV>
+</form>
+<script language="JavaScript">
+  Init(2);
+  window.setInterval("Timer()",2000);
+</script>
+</BODY>
+</HTML>

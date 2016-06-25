@@ -1,0 +1,600 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META NAME="description" content="Laby is a PC-Game, which is a part of the '7 by one stroke' package, translated from C++ into HTML and JavaScript">
+<META NAME="author" content="Lutz Tautenhahn">
+<META NAME="keywords" content="Game, Laby, Streich, Stroke, JavaScript">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META HTTP-EQUIV="imagetoolbar" CONTENT="false">
+<title>Laby</title>
+<script for=document event="onkeydown()" language="JScript">
+if (window.event) KeyDown(window.event.keyCode);
+</script>
+<script language="JavaScript">
+var i, j, XM, Y0=20, StartTime, EndTime;
+var s, flds, key, xmax=17, ymax=35, Level=1, Ncol=6;
+fld=new Array (xmax);
+for (i=0; i<xmax; i++)
+  fld[i]=new Array(ymax);
+pos= new Array(6);
+fldlr=new Array(2);
+for (i=0; i<2; i++)
+  fldlr[i]=new Array(ymax+2);
+
+xl = new Array(14, 50, 77, 97, 113, 124, 133, 139, 144, 148, 150, 152);
+yo = new Array( 9, 31, 48, 61, 71, 78, 83, 87, 90, 93, 94, 95);
+col = new Array( 0, 1, 1, 2, 3, 4);
+
+var IsNetscape = false, IsNetscape4 = false;
+if (navigator.appName == "Netscape")
+{ IsNetscape = true;
+  if (parseInt(navigator.appVersion)<5) IsNetscape4 = true;
+}
+if (navigator.appName != "Microsoft Internet Explorer")
+  document.captureEvents(Event.KEYDOWN);
+document.onkeydown = NetscapeKeyDown;
+function NetscapeKeyDown(key)
+{ KeyDown(key.which);
+}
+var ebid=(document.getElementById) ? true : false;
+function ElementById(id)
+{ if (ebid)
+    return(document.getElementById(id));
+  else
+    return(eval("document.all."+id));
+}  
+function KeyDown(whichkey)
+{ //alert(whichkey);
+  if (whichkey == 37) Left();
+  if (whichkey == 38) Up();
+  if (whichkey == 39) Right();
+  if (whichkey == 12) Up();
+
+  if (whichkey == 52) Left();
+  if (whichkey == 54) Right();
+  if (whichkey == 56) Up();
+
+  if (whichkey == 100) Left();
+  if (whichkey == 101) Up();
+  if (whichkey == 102) Right();
+
+  if (whichkey == 65460) Left();
+  if (whichkey == 65462) Right();
+  if (whichkey == 65464) Up();
+}  
+
+function Left()
+{ if (key=='z') return;
+  if (key=='s')
+  { PosInit();
+    key='M';
+    MakeStep();
+  }
+  key='K';
+  MakeStep();
+  Gets();
+  RefreshScreen();
+  window.document.MainForm.LeftButton.blur();
+}
+
+function Up()
+{ if (key=='z') return;
+  if (key=='s')
+  { PosInit();
+    key='M';
+    MakeStep();
+    Gets();
+  }
+  else
+  { key='H';
+    MakeStep();
+    Gets();
+  }
+  RefreshScreen();
+  window.document.MainForm.UpButton.blur();
+  if (key=='z')
+  { Now = new Date();
+    EndTime = Now.getTime() / 1000;
+    i=Math.floor(EndTime - StartTime);
+    if (window.opener)
+    { if (window.opener.SetHighscores)
+      { if (Level==1) window.opener.SetHighscores("Laby","Easy",i,-1);
+        if (Level==2) window.opener.SetHighscores("Laby","Medium",i,-1);
+        if (Level==3) window.opener.SetHighscores("Laby","Hard",i,-1);
+      }
+    }
+    alert("Super, you solved this game in "+i+ " seconds !");
+  }
+}
+
+function Right()
+{ if (key=='z') return;
+  if (key=='s') PosInit();
+  key='M';
+  MakeStep();
+  Gets();
+  RefreshScreen();
+  window.document.MainForm.RightButton.blur();
+}
+
+function Init(ll)
+{ var ii1, ii2;
+  if (ll>0) Level=ll;
+  do FldInit(); while (!CanBeSolved());
+  for (ii1=0; ii1<xmax; ii1++)
+  { for (ii2=0; ii2<ymax; ii2++)
+    { if (fld[ii1][ii2]<-1) fld[ii1][ii2]=-1;
+    }
+  }
+  key='s';
+  PosInit();
+  RefreshScreen();
+  window.document.MainForm.NewButton.focus();
+  window.document.MainForm.NewButton.blur();
+  Now = new Date();
+  StartTime = Now.getTime() / 1000;
+}
+
+function random(nn)
+{ return(Math.floor(Math.random()*1000) % nn);
+}
+
+function FldInit()
+{ var ii1,ii2,cc=6*Level+4;
+  for (ii1=0; ii1<xmax; ii1++)
+  { for (ii2=0; ii2<ymax; ii2++)
+      fld[ii1][ii2]=-1;
+  }
+
+  for (ii1=0; ii1<xmax; ii1++)
+  { for (ii2=0; ii2<ymax; ii2++)
+    { if ((ii1%2==0)&&(ii2%2==0))
+        fld[ii1][ii2]=random(Ncol-3)+3;
+    }
+  }
+
+  for (ii1=0; ii1<xmax; ii1++)
+  { ii2=random((ymax+3)/2)+(ymax+1)/4;
+    fld[ii1][ii2]=random(Ncol-3)+3;
+    fld[ii1][ymax-ii2]=random(Ncol-3)+3;
+  }
+
+  for (ii1=0; ii1<xmax; ii1++)
+  { fld[ii1][0]=0;
+    fld[ii1][ymax-1]=0;
+  }
+  for (ii1=0; ii1<ymax; ii1++)
+  { fld[0][ii1]=0;
+    fld[xmax-1][ii1]=0;
+  }
+  fld[1][0]=1;
+  fld[xmax-2][ymax-1]=2;
+
+  for (ii1=1; ii1<xmax-1; ii1++)
+  { for (ii2=2; ii2<ymax-2; ii2++)
+    { if (random(100)<cc)
+	fld[ii1][ii2]=random(Ncol-3)+3;
+    }
+  }
+}
+
+function PosInit()
+{ pos[0]=2;
+  pos[1]=2;
+  pos[2]=1;
+  pos[3]=0;
+  pos[4]=0;
+  pos[5]=-1;
+}
+
+function Gets()
+{ if ((key=='s')||(key=='z')) return;
+  s=-1;
+  do
+  { s++;
+    fldlr[0][s]=fld[pos[0]+s*pos[2]+pos[4]-1][pos[1]+s*pos[3]+pos[5]-1];
+    fldlr[1][s]=fld[pos[0]+s*pos[2]-pos[4]-1][pos[1]+s*pos[3]-pos[5]-1];
+  }
+  while (fld[pos[0]+s*pos[2]-1][pos[1]+s*pos[3]-1]==-1);
+  flds=fld[pos[0]+s*pos[2]-1][pos[1]+s*pos[3]-1];
+  s--;
+}
+
+function MakeStep()
+{ var posh1,posh2;
+  if (key=='H')
+  { posh1=fld[pos[0]+pos[2]-1][pos[1]+pos[3]-1];
+    if (posh1==1) key='s';
+    if (posh1==2) key='z';
+    if (posh1==-1) { pos[0]+=pos[2]; pos[1]+=pos[3]; }
+  }
+  if (key=='K')
+  { posh1=pos[2];posh2=pos[3];
+    pos[2]=pos[4];pos[3]=pos[5];
+    pos[4]=-posh1;pos[5]=-posh2;
+  }
+  if (key=='M')
+  { posh1=pos[2];posh2=pos[3];
+    pos[2]=-pos[4];pos[3]=-pos[5];
+    pos[4]=posh1;pos[5]=posh2;
+  }
+}
+
+function CanBeSolved()
+{ var ii1,ii2,ii3;
+  fld[1][1]=-2;
+  fld[xmax-2][ymax-2]=-3;
+  do
+  { ii3=0;
+    for (ii1=1; ii1<xmax-1; ii1++)
+    { for (ii2=1; ii2<ymax-1; ii2++)
+      { if (fld[ii1][ii2]<-1)
+        { if (fld[ii1+1][ii2]<-1)
+	  { if (fld[ii1+1][ii2]!=fld[ii1][ii2]) return(true);
+          }
+	  if (fld[ii1+1][ii2]==-1) {fld[ii1+1][ii2]=fld[ii1][ii2]; ii3++;}
+	  if (fld[ii1][ii2+1]<-1)
+	  { if (fld[ii1][ii2+1]!=fld[ii1][ii2]) return(true);
+          }
+	  if (fld[ii1][ii2+1]==-1) {fld[ii1][ii2+1]=fld[ii1][ii2]; ii3++;}
+        }
+      }
+      for (ii2=ymax-2; ii2>=1; ii2--)
+      { if (fld[ii1][ii2]<-1)
+        { if (fld[ii1+1][ii2]<-1)
+	  { if (fld[ii1+1][ii2]!=fld[ii1][ii2]) return(true);
+          }
+	  if (fld[ii1+1][ii2]==-1) {fld[ii1+1][ii2]=fld[ii1][ii2]; ii3++;}
+	  if (fld[ii1][ii2-1]<-1)
+	  { if (fld[ii1][ii2-1]!=fld[ii1][ii2]) return(true);
+          }
+	  if (fld[ii1][ii2-1]==-1) {fld[ii1][ii2-1]=fld[ii1][ii2]; ii3++;}
+        }
+      } 
+    }
+    for (ii1=xmax-2; ii1>=1; ii1--)
+    { for (ii2=1; ii2<ymax-1; ii2++)
+      { if (fld[ii1][ii2]<-1)
+        { if (fld[ii1-1][ii2]<-1)
+	  { if (fld[ii1-1][ii2]!=fld[ii1][ii2]) return(true);
+          }
+	  if (fld[ii1-1][ii2]==-1) {fld[ii1-1][ii2]=fld[ii1][ii2]; ii3++;}
+	  if (fld[ii1][ii2+1]<-1)
+	  { if (fld[ii1][ii2+1]!=fld[ii1][ii2]) return(true);
+          }
+	  if (fld[ii1][ii2+1]==-1) {fld[ii1][ii2+1]=fld[ii1][ii2]; ii3++;}
+        }
+      }
+      for (ii2=ymax-2; ii2>=1; ii2--)
+      { if (fld[ii1][ii2]<-1)
+        { if (fld[ii1-1][ii2]<-1)
+	  { if (fld[ii1-1][ii2]!=fld[ii1][ii2]) return(true);
+          }
+	  if (fld[ii1-1][ii2]==-1) {fld[ii1-1][ii2]=fld[ii1][ii2]; ii3++;}
+	  if (fld[ii1][ii2-1]<-1)
+	  { if (fld[ii1][ii2-1]!=fld[ii1][ii2]) return(true);
+	  }
+	  if (fld[ii1][ii2-1]==-1) {fld[ii1][ii2-1]=fld[ii1][ii2]; ii3++;}
+	}
+      }
+    }
+  }
+  while (ii3>0);
+  return(false);
+}
+
+
+function RefreshScreen()
+{ var ii, jj, cc, ss=s;
+  if (ss>11) ss=11;
+  if (IsNetscape4)
+  { if (key=='s') 
+    { document.layers['goal'].visibility="hide";
+      document.layers['start'].visibility="show";
+      return;
+    }
+    if (key=='z') 
+    { document.layers['start'].visibility="hide";
+      document.layers['goal'].visibility="show";
+      return;
+    }
+    document.layers['start'].visibility="hide";
+    document.layers['goal'].visibility="hide";
+    for (ii=0; ii<12; ii++)
+    { if ((ii<=ss)&&(fldlr[0][ii]>=0))
+      { cc=col[fldlr[0][ii]];
+        document.layers['lg'+ii].visibility="show";
+        for (jj=0; jj<Ncol-1; jj++)
+        { if (jj==cc) 
+          { with (document.layers['lc'+ii+'_'+jj])
+            { zIndex=eval(96-6*ii);
+              visibility="show";
+            }
+          }
+          else document.layers['lc'+ii+'_'+jj].visibility="hide";
+        }
+      }
+      else
+      { document.layers['lg'+ii].visibility="hide";
+        for (jj=0; jj<Ncol-1; jj++)
+          document.layers['lc'+ii+'_'+jj].visibility="hide";
+      }
+      if ((ii<=ss)&&(fldlr[1][ii]>=0))
+      { cc=col[fldlr[1][ii]];
+        document.layers['rg'+ii].visibility="show";
+        for (jj=0; jj<Ncol-1; jj++)
+        { if (jj==cc)
+          { with (document.layers['rc'+ii+'_'+jj])
+            { zIndex=eval(96-6*ii);
+              visibility="show";
+            }
+          }
+          else document.layers['rc'+ii+'_'+jj].visibility="hide";
+        }
+      }
+      else
+      { document.layers['rg'+ii].visibility="hide";
+        for (jj=0; jj<Ncol-1; jj++)        
+          document.layers['rc'+ii+'_'+jj].visibility="hide";
+      }
+    }
+    if ((fldlr[0][ss]==-1))//&&((ss>0)||(flds<0)))
+    { cc=fldlr[0][ss+1];
+      if (cc<0) cc=0;
+      with (document.layers['lc'+ss+'_'+col[cc]])
+      { zIndex=eval(94-6*ss);
+        visibility="show";
+      }
+    }
+    if ((fldlr[1][ss]==-1))//&&((ss>0)||(flds<0)))
+    { cc=fldlr[1][ss+1];
+      if (cc<0) cc=0;
+      with (document.layers['rc'+ss+'_'+col[cc]])
+      { zIndex=eval(94-6*ii);
+        visibility="show";
+      }
+    }
+    for (jj=0; jj<Ncol-1; jj++)
+    { if (jj==col[flds]) document.layers['bg'+jj].visibility="show";
+      else document.layers['bg'+jj].visibility="hide";
+    }
+    with (document.layers['lt'])
+    { top=Y0-39+yo[ss];
+      zIndex=eval(95-6*ss);
+      visibility="show";
+    }
+    with (document.layers['lb'])
+    { top=Y0+200-yo[ss];
+      zIndex=eval(95-6*ss);
+      visibility="show";
+    }
+    document.layers['ll'].left=XM-160+xl[ss];
+    document.layers['lr'].left=XM+159-xl[ss];
+  }
+  else
+  { if (key=='s') 
+    { with (ElementById('goal')) style.visibility="hidden";
+      with (ElementById('start')) style.visibility="visible"; 
+      return; 
+    }
+    if (key=='z') 
+    { with (ElementById('start')) style.visibility="hidden";
+      with (ElementById('goal')) style.visibility="visible"; 
+      return; 
+    }
+    with (ElementById('start')) style.visibility="hidden";
+    with (ElementById('goal')) style.visibility="hidden";
+    for (ii=0; ii<12; ii++)
+    { if ((ii<=ss)&&(fldlr[0][ii]>=0))
+      { cc=col[fldlr[0][ii]];
+        with (ElementById('lg'+ii+'0')) style.visibility="visible";
+        for (jj=0; jj<Ncol-1; jj++)
+        { if (jj==cc) 
+          { with (ElementById('lc'+ii+'_'+jj+'0'))
+            { style.zIndex=eval(96-6*ii);
+              style.visibility="visible";
+            }
+          }
+          else with (ElementById('lc'+ii+'_'+jj+'0')) style.visibility="hidden";
+        }
+      }
+      else
+      { with (ElementById('lg'+ii+'0')) style.visibility="hidden";
+        for (jj=0; jj<Ncol-1; jj++)
+          with (ElementById('lc'+ii+'_'+jj+'0')) style.visibility="hidden";
+      }
+      if ((ii<=ss)&&(fldlr[1][ii]>=0))
+      { cc=col[fldlr[1][ii]];
+        with (ElementById('rg'+ii+'0')) style.visibility="visible";
+        for (jj=0; jj<Ncol-1; jj++)
+        { if (jj==cc)
+          { with (ElementById('rc'+ii+'_'+jj+'0'))
+            { style.zIndex=eval(96-6*ii);
+              style.visibility="visible";
+            }
+          }
+          else with (ElementById('rc'+ii+'_'+jj+'0')) style.visibility="hidden";
+        }
+      }
+      else
+      { with (ElementById('rg'+ii+'0')) style.visibility="hidden";
+        for (jj=0; jj<Ncol-1; jj++)        
+          with (ElementById('rc'+ii+'_'+jj+'0')) style.visibility="hidden";
+      }
+    }
+    if ((fldlr[0][ss]==-1))//&&((ss>0)||(flds<0)))
+    { cc=fldlr[0][ss+1];
+      if (cc<0) cc=0;
+      with (ElementById('lc'+ss+'_'+col[cc]+'0'))
+      { style.zIndex=eval(94-6*ss);
+        style.visibility="visible";
+      }
+    }
+    if ((fldlr[1][ss]==-1))//&&((ss>0)||(flds<0)))
+    { cc=fldlr[1][ss+1];
+      if (cc<0) cc=0;
+      with (ElementById('rc'+ss+'_'+col[cc]+'0'))
+      { style.zIndex=eval(94-6*ii);
+        style.visibility="visible";
+      }
+    }
+    for (jj=0; jj<Ncol-1; jj++)
+    { if (jj==col[flds]) with (ElementById('bg'+jj+'0')) style.visibility="visible";
+      else with (ElementById('bg'+jj+'0')) style.visibility="hidden";
+    }
+    with (ElementById('lt'))
+    { style.top=Y0-39+yo[ss];
+      style.zIndex=eval(95-6*ss);
+      style.visibility="visible";
+    }
+    with (ElementById('lb'))
+    { style.top=Y0+200-yo[ss];
+      style.zIndex=eval(95-6*ss);
+      style.visibility="visible";
+    }
+    with (ElementById('ll')) style.left=XM-160+xl[ss];
+    with (ElementById('lr')) style.left=XM+159-xl[ss];
+  }
+}
+
+function Help()
+{ alert("Find a way through the labyrinth! The two white fields, which are at two"+
+      "\nopposite corners of the rectangular labyrinth, are the start end end fields."+
+      "\nThis are the only fields you can go through. In order to walk forward or to"+
+      "\nturn around, press the arrow keys. Every new labyrinth will be generated"+
+      "\nrandomly. There is a way through every labyrinth that you get. Good luck!"); 
+  window.document.MainForm.HelpButton.blur();
+}
+
+</script>
+</head>
+<BODY background="laby_c0.gif" onResize="javascript:history.go(0)">
+<DIV ALIGN=center>
+<br>
+<table noborder cellpadding=0 cellspacing=0>
+<tr><td height=200>&nbsp;</td></tr>
+</table>
+<br>
+<form name="MainForm">
+<table noborder>
+<tr>
+<td><input type=button name="NewButton" value="NEW" width=80 style="width:80" onClick="javascript:Init(0)"></td>
+<td><input type=button name="LeftButton" value="&nbsp;<&nbsp;" width=40 style="width:40" onClick="javascript:Left()"></td>
+<td><input type=button name="UpButton" value="&nbsp;/\&nbsp;" width=40 style="width:40" onClick="javascript:Up()"></td>
+<td><input type=button name="RightButton" value="&nbsp;>&nbsp;" width=40 style="width:40" onClick="javascript:Right()"></td>
+<td><input type=button name="HelpButton" value="HELP" width=80 style="width:80" onClick="javascript:Help()"></td>
+</tr>
+</table>
+<table noborder bgcolor=#b0b0b0 width=296><tr>
+<td><input type=radio name="Level" checked value="1" onClick="javascript:Init(1)"> easy</td>
+<td><input type=radio name="Level" value="2" onClick="javascript:Init(2)"> medium</td>
+<td><input type=radio name="Level" value="3" onClick="javascript:Init(3)"> hard</td>
+</tr></table>
+
+</form>
+</DIV>
+<script language="JavaScript">
+document.open("text/plain");
+if (IsNetscape) XM=eval(Math.floor(window.innerWidth/2));
+else  XM=Math.floor(document.body.clientWidth/2);
+if (isNaN(XM)) XM=180;
+if (IsNetscape4)
+{ for (i=0; i<12; i++)
+  { document.writeln("<layer id='lg"+i+"' top="+Y0+" left="+eval(XM-160)+" width=160 height=202 z-Index="+eval(100-6*i)+" visibility=hide>");
+    document.writeln("<img src=\"laby_l"+i+".gif\">");
+    document.writeln("</layer>");
+    for (j=0; j<Ncol-1; j++)
+    { document.writeln("<layer id='lc"+i+"_"+j+"' top="+Y0+" left="+eval(XM-480+xl[i])+" width=320 height=202 z-Index="+eval(96-6*i)+" visibility=hide>");
+      document.writeln("<img src=\"laby_c"+j+".gif\">");
+      document.writeln("</layer>");
+    }
+    document.writeln("<layer id='rg"+i+"' top="+Y0+" left="+XM+" width=160 height=202 z-Index="+eval(100-6*i)+" visibility=hide>");
+    document.writeln("<img src=\"laby_r"+i+".gif\">");
+    document.writeln("</layer>");
+    for (j=0; j<Ncol-1; j++)
+    { document.writeln("<layer id='rc"+i+"_"+j+"' top="+Y0+" left="+eval(XM+160-xl[i])+" width=320 height=202 z-Index="+eval(96-6*i)+" visibility=hide>");
+      document.writeln("<img src=\"laby_c"+j+".gif\">");
+      document.writeln("</layer>");
+    }
+  }
+  for (j=0; j<Ncol-1; j++)
+  { document.writeln("<layer id='bg"+j+"' top="+Y0+" left="+eval(XM-160)+" width=320 height=202 z-Index=1 visibility=hide>");
+    document.writeln("<img src=\"laby_c"+j+".gif\">");
+    document.writeln("</layer>");
+  }
+  document.writeln("<layer id='lt' top="+eval(Y0+81)+" left="+eval(XM-160)+" width=320 height=40 z-Index=102 visibility=hide>");
+  document.writeln("<img src=\"laby_lt.gif\">");
+  document.writeln("</layer>");
+  document.writeln("<layer id='lb' top="+eval(Y0+81)+" left="+eval(XM-160)+" width=320 height=40 z-Index=102 visibility=hide>");
+  document.writeln("<img src=\"laby_lb.gif\">");
+  document.writeln("</layer>");
+  document.writeln("<layer id='ll' top="+Y0+" left="+XM+" width=40 height=202 z-Index=2 visibility=show>");
+  document.writeln("<img src=\"laby_lv.gif\">");
+  document.writeln("</layer>");
+  document.writeln("<layer id='lr' top="+Y0+" left="+XM+" width=40 height=202 z-Index=2 visibility=show>");
+  document.writeln("<img src=\"laby_lv.gif\">");
+  document.writeln("</layer>");
+  document.writeln("<layer id='start' top="+Y0+" left="+eval(XM-160)+" width=320 height=202 z-Index=104 visibility=hide>");
+  document.writeln("<img src=\"laby_s.gif\">");
+  document.writeln("</layer>");
+  document.writeln("<layer id='goal' top="+Y0+" left="+eval(XM-160)+" width=320 height=202 z-Index=106 visibility=hide>");
+  document.writeln("<img src=\"laby_g.gif\">");
+  document.writeln("</layer>");
+  document.writeln("<layer id='border' top="+eval(Y0-30)+" left="+eval(XM-480)+" width=380 height=262 z-Index=108 visibility=show>");
+  document.writeln("<img src=\"laby_b.gif\">");
+  document.writeln("</layer>");
+}
+else
+{ for (i=0; i<12; i++)
+  { document.writeln("<div id=\"lg"+i+"0\" style=\"position:absolute; top:"+Y0+"; left:"+eval(XM-160)+"; width:160; height:202; z-Index:"+eval(100-6*i)+"; visibility:hidden;\">");
+    document.writeln("<img src=\"laby_l"+i+".gif\">");
+    document.writeln("</div>");
+    for (j=0; j<Ncol-1; j++)
+    { document.writeln("<div id=\"lc"+i+"_"+j+"0\" style=\"position:absolute; top:"+Y0+"; left:"+eval(XM-480+xl[i])+"; width:320; height:202; z-Index:"+eval(96-6*i)+"; visibility:hidden;\">");
+      document.writeln("<img src=\"laby_c"+j+".gif\">");
+      document.writeln("</div>");
+    }
+    document.writeln("<div id=\"rg"+i+"0\" style=\"position:absolute; top:"+Y0+"; left:"+XM+"; width:160; height:202; z-Index:"+eval(100-6*i)+"; visibility:hidden;\">");
+    document.writeln("<img src=\"laby_r"+i+".gif\">");
+    document.writeln("</div>");
+    for (j=0; j<Ncol-1; j++)
+    { document.writeln("<div id=\"rc"+i+"_"+j+"0\" style=\"position:absolute; top:"+Y0+"; left:"+eval(XM+160-xl[i])+"; width:320; height:202; z-Index:"+eval(96-6*i)+"; visibility:hidden;\">");
+      document.writeln("<img src=\"laby_c"+j+".gif\">");
+      document.writeln("</div>");
+    }
+  }
+  for (j=0; j<Ncol-1; j++)
+  { document.writeln("<div id=\"bg"+j+"0\" style=\"position:absolute; top:"+Y0+"; left:"+eval(XM-160)+"; width:320; height:202; z-Index:1; visibility:hidden;\">");
+    document.writeln("<img src=\"laby_c"+j+".gif\">");
+    document.writeln("</div>");
+  }
+  document.writeln("<div id=\"lt\" style=\"position:absolute; top:"+eval(Y0+81)+"; left:"+eval(XM-160)+"; width:320; height:40; z-Index:102; visibility:hidden;\">");
+  document.writeln("<img src=\"laby_lt.gif\">");
+  document.writeln("</div>");
+  document.writeln("<div id=\"lb\" style=\"position:absolute; top:"+eval(Y0+81)+"; left:"+eval(XM-160)+"; width:320; height:40; z-Index:102; visibility:hidden;\">");
+  document.writeln("<img src=\"laby_lb.gif\">");
+  document.writeln("</div>");
+  document.writeln("<div id=\"ll\" style=\"position:absolute; top:"+Y0+"; left:"+XM+"; width:40; height:202; z-Index:2; visibility:visible;\">");
+  document.writeln("<img src=\"laby_lv.gif\">");
+  document.writeln("</div>");
+  document.writeln("<div id=\"lr\" style=\"position:absolute; top:"+Y0+"; left:"+XM+"; width:40; height:202; z-Index:2; visibility:visible;\">");
+  document.writeln("<img src=\"laby_lv.gif\">");
+  document.writeln("</div>");
+  document.writeln("<div id=\"start\" style=\"position:absolute; top:"+Y0+"; left:"+eval(XM-160)+"; width:320; height:202; z-Index:104; visibility:hidden;\">");
+  document.writeln("<img src=\"laby_s.gif\">");
+  document.writeln("</div>");
+  document.writeln("<div id=\"goal\" style=\"position:absolute; top:"+Y0+"; left:"+eval(XM-160)+"; width:320; height:202; z-Index:106; visibility:hidden;\">");
+  document.writeln("<img src=\"laby_g.gif\">");
+  document.writeln("</div>");
+  document.writeln("<div id=\"border\" style=\"position:absolute; top:"+eval(Y0-30)+"; left:"+eval(XM-480)+"; width:380; height:262; z-Index:108; visibility:visible;\">");
+  document.writeln("<img src=\"laby_b.gif\">");
+  document.writeln("</div>");
+}
+document.close;
+
+Init(0);
+
+</script>
+</BODY>
+</HTML>
