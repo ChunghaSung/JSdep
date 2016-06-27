@@ -40,7 +40,6 @@ do
     totalDep=`tail -n 1 ../raw-data/$name/info/numDom.txt`
     echo "$totalDep * $totalDep" | bc >/tmp/totaldep.out
     actualDep=`wc -l < ../raw-data/$name/info/dep.txt`
-    echo "$actualDep"
     actualDep=$(($actualDep / 4))
     echo $actualDep >/tmp/actualdep.out
     tail -n 1 ../raw-data/$name/info/numConstraints.txt >/tmp/cons.out

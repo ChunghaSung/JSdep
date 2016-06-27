@@ -1,17 +1,17 @@
 help:
-	@echo "USAGE (to build dependency relationships):"
-	@echo "    build-dep name=[filename]	- build dependency relationships for a specified file"
-	@echo "    build-dep-all	        - build dependency relationships for all files"
+	@echo "USAGE1 (to build dependency relationships):"
+	@echo "* build-dep name=[filename] - build dependency relationships for a specified file"
+	@echo "* build-dep-all - build dependency relationships for all files"
 	@echo "==========================================="
-	@echo "USAGE (to run artemis):"
-	@echo "    run-Artemis name=[filename] 	- run previous and modified version of Artemis with a specified file. It will produce new_artemis.stdout and old_artemis.stdout under artemis-result directory of each benchmark folder"
-	@echo "    run-Artemis-all             - run previous and modified version of Artemis with all files. It will produce new_artemis.stdout and old_artemis.stdout under artemis-result directory of each benchmark folder"
+	@echo "USAGE2 (to run artemis):"
+	@echo "* run-Artemis name=[filename] - run previous and modified version of Artemis with a specified file. It will produce new_artemis.stdout and old_artemis.stdout under artemis-result directory of each benchmark folder"
+	@echo "* run-Artemis-all - run previous and modified version of Artemis with all files. It will produce new_artemis.stdout and old_artemis.stdout under artemis-result directory of each benchmark folder"
 	@echo "==========================================="
-	@echo "USAGE (to make tables):"
-	@echo "    fetch-data   - if you run Artemis newly, by running this command you can fetch new data from benchmarks to raw-data (Simply, data update)"
-	@echo "    table1   - using data under raw-data, it will build table 1 and print it as same as table 1 in the paper"
-	@echo "    table2   - using data under raw-data, it will build table 2 and print it as same as table 2 in the paper"
-	@echo "    table3   - using data under raw-data, it will build table 3 and print it as same as table 3 in the paper"
+	@echo "USAGE3 (to make tables):"
+	@echo "* fetch-data - if you run Artemis newly, by running this command you can fetch new data from benchmarks to raw-data (Simply, data update)"
+	@echo "* table1 - using data under raw-data, it will build table 1 and print it as same as table 1 in the paper"
+	@echo "* table2 - using data under raw-data, it will build table 2 and print it as same as table 2 in the paper"
+	@echo "* table3 - using data under raw-data, it will build table 3 and print it as same as table 3 in the paper"
 
 
 SOLO_RUN = ./dep_soloRun.sh
@@ -37,4 +37,4 @@ table2:
 
 table3:
 	@echo "make table3 (just copy the print and past to latex)"
-	cd scripts && ${TABLE3} 
+	cd scripts && ${TABLE3} 500

@@ -31,7 +31,6 @@ echo "Name & Iter. & Cov.(\%) & Cov.(\%)  & Iter. & Cov.(\%) & Cov.(\%) & Iter. 
 echo "\\midrule" >> $TMPPATH
 for name in $TESTS
 do
-    echo "============================================="
     # extract tables first
     TABLE_NAME=/tmp/tbl_new.csv
     echo "Iterations, Runtime (s), Coverage" >$TABLE_NAME
@@ -40,9 +39,6 @@ do
     echo "Iterations, Runtime (s), Coverage" >$TABLE_NAME
     grep '^\#Iteration: ' ../raw-data/$name/artemis-result/old_artemis.stdout | sed 's/^\#Iteration: //' >>$TABLE_NAME
 
-    filename=tmp/tbl_new.csv
-    echo "start file: $filename"
-    
     # read line info from lines.info file
     filename2=../raw-data/$name/info/lines.txt
     line=`sed -n '1p' $filename2`
