@@ -1,0 +1,1593 @@
+!!!!!!!!!!!!!!!!!!!!!!!Dependency Test!!!!!!!!!!!!!!!!!!!!!
+Artemis - Automated tester for JavaScript
+Started: Sun Mar 6 16:10:08 2016
+Compilation date: 06-03-2016_15:30:38
+-----
+
+/home/chungha/Artemis-2.0.0
+Read done!!!
+#Iteration: 0, 0.135347, 0
+#Iteration2: 0, 1, 0, 0
+#TimeTakes: 0, 0.135347, 4e-06
+#Iteration: 1, 0.154217, 9
+#Iteration2: 1, 4, 0, 0
+#TimeTakes: 1, 0.154217, 1.9e-05
+#Iteration: 2, 0.157552, 10
+#Iteration2: 2, 8, 3, 1
+#TimeTakes: 2, 0.157552, 3.9e-05
+#Iteration: 3, 0.159784, 11
+#Iteration2: 3, 11, 5, 2
+#TimeTakes: 3, 0.159784, 5.2e-05
+#Iteration: 4, 0.162111, 11
+#Iteration2: 4, 15, 7, 3
+#TimeTakes: 4, 0.162111, 6.9e-05
+#Iteration: 5, 0.164014, 12
+#Iteration2: 5, 18, 10, 6
+#TimeTakes: 5, 0.164014, 8.1e-05
+#Iteration: 6, 0.166601, 12
+#Iteration2: 6, 21, 12, 7
+#TimeTakes: 6, 0.166601, 9.6e-05
+#Iteration: 7, 0.16908, 12
+#Iteration2: 7, 25, 14, 8
+#TimeTakes: 7, 0.16908, 0.000114
+#Iteration: 8, 0.171471, 18
+#Iteration2: 8, 29, 18, 11
+#TimeTakes: 8, 0.171471, 0.000134
+#Iteration: 9, 0.174108, 18
+#Iteration2: 9, 33, 22, 14
+#TimeTakes: 9, 0.174108, 0.000152
+#Iteration: 10, 0.177297, 24
+#Iteration2: 10, 37, 26, 17
+#TimeTakes: 10, 0.177297, 0.000176
+#Iteration: 11, 0.179931, 24
+#Iteration2: 11, 41, 30, 21
+#TimeTakes: 11, 0.179931, 0.000195
+#Iteration: 12, 0.183071, 24
+#Iteration2: 12, 45, 34, 25
+#TimeTakes: 12, 0.183071, 0.000217
+#Iteration: 13, 0.186438, 24
+#Iteration2: 13, 49, 38, 29
+#TimeTakes: 13, 0.186438, 0.000242
+#Iteration: 14, 0.189575, 24
+#Iteration2: 14, 53, 42, 33
+#TimeTakes: 14, 0.189575, 0.000264
+#Iteration: 15, 0.191662, 24
+#Iteration2: 15, 57, 46, 37
+#TimeTakes: 15, 0.191662, 0.000281
+#Iteration: 16, 0.194327, 24
+#Iteration2: 16, 61, 50, 41
+#TimeTakes: 16, 0.194327, 0.000299
+#Iteration: 17, 0.197211, 24
+#Iteration2: 17, 65, 52, 42
+#TimeTakes: 17, 0.197211, 0.000323
+#Iteration: 18, 0.199869, 24
+#Iteration2: 18, 68, 55, 45
+#TimeTakes: 18, 0.199869, 0.00034
+#Iteration: 19, 0.202376, 24
+#Iteration2: 19, 71, 57, 46
+#TimeTakes: 19, 0.202376, 0.000358
+#Iteration: 20, 0.20564, 24
+#Iteration2: 20, 75, 61, 50
+#TimeTakes: 20, 0.20564, 0.000383
+#Iteration: 21, 0.208967, 24
+#Iteration2: 21, 79, 65, 53
+#TimeTakes: 21, 0.208967, 0.000408
+#Iteration: 22, 0.211789, 24
+#Iteration2: 22, 82, 67, 54
+#TimeTakes: 22, 0.211789, 0.000427
+#Iteration: 23, 0.214679, 24
+#Iteration2: 23, 85, 70, 57
+#TimeTakes: 23, 0.214679, 0.000446
+#Iteration: 24, 0.21685, 24
+#Iteration2: 24, 88, 73, 60
+#TimeTakes: 24, 0.21685, 0.00046
+#Iteration: 25, 0.219973, 24
+#Iteration2: 25, 91, 75, 61
+#TimeTakes: 25, 0.219973, 0.000481
+#Iteration: 26, 0.223183, 24
+#Iteration2: 26, 94, 78, 64
+#TimeTakes: 26, 0.223183, 0.000501
+#Iteration: 27, 0.227004, 24
+#Iteration2: 27, 98, 82, 68
+#TimeTakes: 27, 0.227004, 0.000529
+#Iteration: 28, 0.230227, 24
+#Iteration2: 28, 102, 84, 69
+#TimeTakes: 28, 0.230227, 0.000556
+#Iteration: 29, 0.23383, 24
+#Iteration2: 29, 105, 87, 72
+#TimeTakes: 29, 0.23383, 0.000578
+#Iteration: 30, 0.237471, 24
+#Iteration2: 30, 109, 89, 73
+#TimeTakes: 30, 0.237471, 0.000605
+#Iteration: 31, 0.240988, 24
+#Iteration2: 31, 112, 91, 74
+#TimeTakes: 31, 0.240988, 0.000628
+#Iteration: 32, 0.244616, 24
+#Iteration2: 32, 116, 95, 78
+#TimeTakes: 32, 0.244616, 0.000657
+#Iteration: 33, 0.248577, 24
+#Iteration2: 33, 120, 99, 82
+#TimeTakes: 33, 0.248577, 0.000688
+#Iteration: 34, 0.25267, 24
+#Iteration2: 34, 123, 102, 85
+#TimeTakes: 34, 0.25267, 0.000726
+#Iteration: 35, 0.256736, 30
+#Iteration2: 35, 127, 106, 88
+#TimeTakes: 35, 0.256736, 0.000756
+#Iteration: 36, 0.260667, 30
+#Iteration2: 36, 131, 110, 91
+#TimeTakes: 36, 0.260667, 0.000794
+#Iteration: 37, 0.264499, 30
+#Iteration2: 37, 134, 112, 92
+#TimeTakes: 37, 0.264499, 0.000821
+#Iteration: 38, 0.269103, 30
+#Iteration2: 38, 138, 116, 96
+#TimeTakes: 38, 0.269103, 0.000855
+#Iteration: 39, 0.273291, 30
+#Iteration2: 39, 142, 120, 100
+#TimeTakes: 39, 0.273291, 0.000884
+#Iteration: 40, 0.277305, 30
+#Iteration2: 40, 146, 122, 101
+#TimeTakes: 40, 0.277305, 0.000915
+#Iteration: 41, 0.281601, 30
+#Iteration2: 41, 149, 125, 104
+#TimeTakes: 41, 0.281601, 0.000944
+#Iteration: 42, 0.286141, 30
+#Iteration2: 42, 153, 127, 105
+#TimeTakes: 42, 0.286141, 0.000979
+#Iteration: 43, 0.290468, 30
+#Iteration2: 43, 156, 129, 106
+#TimeTakes: 43, 0.290468, 0.001009
+#Iteration: 44, 0.294837, 30
+#Iteration2: 44, 160, 133, 110
+#TimeTakes: 44, 0.294837, 0.001043
+#Iteration: 45, 0.299761, 30
+#Iteration2: 45, 164, 137, 114
+#TimeTakes: 45, 0.299761, 0.00108
+#Iteration: 46, 0.304782, 30
+#Iteration2: 46, 167, 140, 117
+#TimeTakes: 46, 0.304782, 0.00111
+#Iteration: 47, 0.309615, 36
+#Iteration2: 47, 171, 144, 120
+#TimeTakes: 47, 0.309615, 0.001149
+#Iteration: 48, 0.314312, 36
+#Iteration2: 48, 175, 148, 123
+#TimeTakes: 48, 0.314312, 0.001184
+#Iteration: 49, 0.31914, 36
+#Iteration2: 49, 178, 150, 124
+#TimeTakes: 49, 0.31914, 0.001214
+#Iteration: 50, 0.324422, 36
+#Iteration2: 50, 182, 154, 128
+#TimeTakes: 50, 0.324422, 0.001251
+#Iteration: 51, 0.329261, 36
+#Iteration2: 51, 186, 158, 132
+#TimeTakes: 51, 0.329261, 0.001288
+#Iteration: 52, 0.334166, 36
+#Iteration2: 52, 190, 160, 133
+#TimeTakes: 52, 0.334166, 0.001324
+#Iteration: 53, 0.339112, 36
+#Iteration2: 53, 193, 163, 136
+#TimeTakes: 53, 0.339112, 0.001355
+#Iteration: 54, 0.344185, 36
+#Iteration2: 54, 197, 165, 137
+#TimeTakes: 54, 0.344185, 0.001394
+#Iteration: 55, 0.349139, 36
+#Iteration2: 55, 200, 167, 138
+#TimeTakes: 55, 0.349139, 0.001427
+#Iteration: 56, 0.354199, 36
+#Iteration2: 56, 204, 171, 142
+#TimeTakes: 56, 0.354199, 0.001466
+#Iteration: 57, 0.359713, 36
+#Iteration2: 57, 208, 175, 146
+#TimeTakes: 57, 0.359713, 0.001507
+#Iteration: 58, 0.365288, 36
+#Iteration2: 58, 211, 178, 149
+#TimeTakes: 58, 0.365288, 0.001541
+#Iteration: 59, 0.370964, 41
+#Iteration2: 59, 215, 182, 152
+#TimeTakes: 59, 0.370964, 0.001582
+#Iteration: 60, 0.376517, 41
+#Iteration2: 60, 219, 186, 155
+#TimeTakes: 60, 0.376517, 0.001621
+#Iteration: 61, 0.381821, 41
+#Iteration2: 61, 222, 188, 156
+#TimeTakes: 61, 0.381821, 0.001653
+#Iteration: 62, 0.387875, 41
+#Iteration2: 62, 226, 192, 160
+#TimeTakes: 62, 0.387875, 0.001697
+#Iteration: 63, 0.393474, 41
+#Iteration2: 63, 230, 196, 164
+#TimeTakes: 63, 0.393474, 0.001737
+#Iteration: 64, 0.399017, 41
+#Iteration2: 64, 234, 198, 165
+#TimeTakes: 64, 0.399017, 0.001779
+#Iteration: 65, 0.404689, 41
+#Iteration2: 65, 237, 201, 168
+#TimeTakes: 65, 0.404689, 0.001814
+#Iteration: 66, 0.410649, 41
+#Iteration2: 66, 241, 203, 169
+#TimeTakes: 66, 0.410649, 0.001859
+#Iteration: 67, 0.416618, 41
+#Iteration2: 67, 244, 205, 170
+#TimeTakes: 67, 0.416618, 0.001894
+#Iteration: 68, 0.422754, 41
+#Iteration2: 68, 248, 209, 174
+#TimeTakes: 68, 0.422754, 0.001938
+#Iteration: 69, 0.428826, 41
+#Iteration2: 69, 252, 213, 178
+#TimeTakes: 69, 0.428826, 0.001984
+#Iteration: 70, 0.434965, 41
+#Iteration2: 70, 255, 216, 181
+#TimeTakes: 70, 0.434965, 0.002022
+#Iteration: 71, 0.441534, 41
+#Iteration2: 71, 259, 220, 184
+#TimeTakes: 71, 0.441534, 0.002072
+#Iteration: 72, 0.447573, 41
+#Iteration2: 72, 263, 224, 187
+#TimeTakes: 72, 0.447573, 0.002116
+#Iteration: 73, 0.453564, 41
+#Iteration2: 73, 266, 226, 188
+#TimeTakes: 73, 0.453564, 0.002155
+#Iteration: 74, 0.460604, 41
+#Iteration2: 74, 270, 230, 192
+#TimeTakes: 74, 0.460604, 0.002204
+#Iteration: 75, 0.46707, 41
+#Iteration2: 75, 274, 234, 196
+#TimeTakes: 75, 0.46707, 0.00225
+#Iteration: 76, 0.473222, 41
+#Iteration2: 76, 278, 236, 197
+#TimeTakes: 76, 0.473222, 0.002298
+#Iteration: 77, 0.479887, 41
+#Iteration2: 77, 281, 239, 200
+#TimeTakes: 77, 0.479887, 0.002338
+#Iteration: 78, 0.486373, 41
+#Iteration2: 78, 285, 241, 201
+#TimeTakes: 78, 0.486373, 0.002387
+#Iteration: 79, 0.493007, 41
+#Iteration2: 79, 288, 243, 202
+#TimeTakes: 79, 0.493007, 0.00243
+#Iteration: 80, 0.499684, 41
+#Iteration2: 80, 292, 247, 206
+#TimeTakes: 80, 0.499684, 0.002479
+#Iteration: 81, 0.507034, 41
+#Iteration2: 81, 296, 251, 210
+#TimeTakes: 81, 0.507034, 0.00253
+#Iteration: 82, 0.513975, 41
+#Iteration2: 82, 299, 254, 213
+#TimeTakes: 82, 0.513975, 0.002571
+#Iteration: 83, 0.521202, 41
+#Iteration2: 83, 303, 258, 216
+#TimeTakes: 83, 0.521202, 0.002622
+#Iteration: 84, 0.528266, 41
+#Iteration2: 84, 307, 262, 219
+#TimeTakes: 84, 0.528266, 0.002672
+#Iteration: 85, 0.535244, 41
+#Iteration2: 85, 310, 264, 220
+#TimeTakes: 85, 0.535244, 0.00272
+#Iteration: 86, 0.542823, 41
+#Iteration2: 86, 314, 268, 224
+#TimeTakes: 86, 0.542823, 0.002775
+#Iteration: 87, 0.550221, 41
+#Iteration2: 87, 318, 272, 228
+#TimeTakes: 87, 0.550221, 0.002826
+#Iteration: 88, 0.557276, 41
+#Iteration2: 88, 322, 274, 229
+#TimeTakes: 88, 0.557276, 0.00288
+#Iteration: 89, 0.564515, 41
+#Iteration2: 89, 325, 277, 232
+#TimeTakes: 89, 0.564515, 0.002923
+#Iteration: 90, 0.571817, 41
+#Iteration2: 90, 329, 279, 233
+#TimeTakes: 90, 0.571817, 0.002977
+#Iteration: 91, 0.578937, 41
+#Iteration2: 91, 332, 281, 234
+#TimeTakes: 91, 0.578937, 0.00302
+#Iteration: 92, 0.586198, 41
+#Iteration2: 92, 336, 285, 238
+#TimeTakes: 92, 0.586198, 0.003075
+#Iteration: 93, 0.593788, 41
+#Iteration2: 93, 340, 289, 242
+#TimeTakes: 93, 0.593788, 0.003133
+#Iteration: 94, 0.601721, 41
+#Iteration2: 94, 343, 292, 245
+#TimeTakes: 94, 0.601721, 0.003178
+#Iteration: 95, 0.609742, 41
+#Iteration2: 95, 347, 296, 248
+#TimeTakes: 95, 0.609742, 0.003235
+#Iteration: 96, 0.61716, 41
+#Iteration2: 96, 351, 300, 251
+#TimeTakes: 96, 0.61716, 0.003289
+#Iteration: 97, 0.624636, 41
+#Iteration2: 97, 354, 302, 252
+#TimeTakes: 97, 0.624636, 0.003334
+#Iteration: 98, 0.632772, 41
+#Iteration2: 98, 358, 306, 256
+#TimeTakes: 98, 0.632772, 0.003426
+#Iteration: 99, 0.640822, 41
+#Iteration2: 99, 362, 310, 260
+#TimeTakes: 99, 0.640822, 0.003487
+#Iteration: 100, 0.648504, 41
+#Iteration2: 100, 366, 312, 261
+#TimeTakes: 100, 0.648504, 0.003546
+#Iteration: 101, 0.656411, 41
+#Iteration2: 101, 369, 315, 264
+#TimeTakes: 101, 0.656411, 0.003596
+#Iteration: 102, 0.664599, 41
+#Iteration2: 102, 373, 317, 265
+#TimeTakes: 102, 0.664599, 0.003657
+#Iteration: 103, 0.672441, 41
+#Iteration2: 103, 376, 319, 266
+#TimeTakes: 103, 0.672441, 0.003706
+#Iteration: 104, 0.68076, 41
+#Iteration2: 104, 380, 323, 270
+#TimeTakes: 104, 0.68076, 0.003767
+#Iteration: 105, 0.689212, 41
+#Iteration2: 105, 384, 327, 274
+#TimeTakes: 105, 0.689212, 0.00383
+#Iteration: 106, 0.698009, 41
+#Iteration2: 106, 387, 330, 277
+#TimeTakes: 106, 0.698009, 0.00388
+#Iteration: 107, 0.706484, 41
+#Iteration2: 107, 391, 334, 280
+#TimeTakes: 107, 0.706484, 0.003942
+#Iteration: 108, 0.714564, 41
+#Iteration2: 108, 395, 338, 283
+#TimeTakes: 108, 0.714564, 0.004003
+#Iteration: 109, 0.723132, 41
+#Iteration2: 109, 398, 340, 284
+#TimeTakes: 109, 0.723132, 0.004053
+#Iteration: 110, 0.732074, 41
+#Iteration2: 110, 402, 344, 288
+#TimeTakes: 110, 0.732074, 0.004121
+#Iteration: 111, 0.740997, 41
+#Iteration2: 111, 406, 348, 292
+#TimeTakes: 111, 0.740997, 0.004181
+#Iteration: 112, 0.749699, 41
+#Iteration2: 112, 410, 350, 293
+#TimeTakes: 112, 0.749699, 0.004245
+#Iteration: 113, 0.758192, 41
+#Iteration2: 113, 413, 353, 296
+#TimeTakes: 113, 0.758192, 0.004299
+#Iteration: 114, 0.767014, 41
+#Iteration2: 114, 417, 355, 297
+#TimeTakes: 114, 0.767014, 0.004368
+#Iteration: 115, 0.775948, 41
+#Iteration2: 115, 420, 357, 298
+#TimeTakes: 115, 0.775948, 0.00442
+#Iteration: 116, 0.784855, 41
+#Iteration2: 116, 424, 361, 302
+#TimeTakes: 116, 0.784855, 0.004488
+#Iteration: 117, 0.794025, 41
+#Iteration2: 117, 428, 365, 306
+#TimeTakes: 117, 0.794025, 0.00456
+#Iteration: 118, 0.80372, 41
+#Iteration2: 118, 431, 368, 309
+#TimeTakes: 118, 0.80372, 0.004617
+#Iteration: 119, 0.813156, 41
+#Iteration2: 119, 435, 372, 312
+#TimeTakes: 119, 0.813156, 0.004768
+#Iteration: 120, 0.822417, 41
+#Iteration2: 120, 439, 376, 315
+#TimeTakes: 120, 0.822417, 0.004839
+#Iteration: 121, 0.831239, 41
+#Iteration2: 121, 442, 378, 316
+#TimeTakes: 121, 0.831239, 0.004894
+#Iteration: 122, 0.841133, 41
+#Iteration2: 122, 446, 382, 320
+#TimeTakes: 122, 0.841133, 0.004968
+#Iteration: 123, 0.850237, 41
+#Iteration2: 123, 450, 386, 324
+#TimeTakes: 123, 0.850237, 0.005036
+#Iteration: 124, 0.859341, 41
+#Iteration2: 124, 454, 388, 325
+#TimeTakes: 124, 0.859341, 0.005105
+#Iteration: 125, 0.868582, 41
+#Iteration2: 125, 457, 391, 328
+#TimeTakes: 125, 0.868582, 0.005164
+#Iteration: 126, 0.878175, 41
+#Iteration2: 126, 461, 393, 329
+#TimeTakes: 126, 0.878175, 0.005239
+#Iteration: 127, 0.887876, 41
+#Iteration2: 127, 464, 395, 330
+#TimeTakes: 127, 0.887876, 0.005301
+#Iteration: 128, 0.898081, 41
+#Iteration2: 128, 468, 399, 334
+#TimeTakes: 128, 0.898081, 0.005377
+#Iteration: 129, 0.908201, 41
+#Iteration2: 129, 472, 403, 338
+#TimeTakes: 129, 0.908201, 0.005452
+#Iteration: 130, 0.918108, 41
+#Iteration2: 130, 475, 406, 341
+#TimeTakes: 130, 0.918108, 0.005513
+#Iteration: 131, 0.928015, 41
+#Iteration2: 131, 479, 410, 344
+#TimeTakes: 131, 0.928015, 0.005584
+#Iteration: 132, 0.937809, 41
+#Iteration2: 132, 483, 414, 347
+#TimeTakes: 132, 0.937809, 0.005658
+#Iteration: 133, 0.9475, 41
+#Iteration2: 133, 486, 416, 348
+#TimeTakes: 133, 0.9475, 0.005721
+#Iteration: 134, 0.958167, 41
+#Iteration2: 134, 490, 420, 352
+#TimeTakes: 134, 0.958167, 0.0058
+#Iteration: 135, 0.968169, 41
+#Iteration2: 135, 494, 424, 356
+#TimeTakes: 135, 0.968169, 0.005876
+#Iteration: 136, 0.97792, 41
+#Iteration2: 136, 498, 426, 357
+#TimeTakes: 136, 0.97792, 0.005952
+#Iteration: 137, 0.98799, 41
+#Iteration2: 137, 501, 429, 360
+#TimeTakes: 137, 0.98799, 0.006013
+#Iteration: 138, 0.998501, 41
+#Iteration2: 138, 505, 431, 361
+#TimeTakes: 138, 0.998501, 0.006091
+#Iteration: 139, 1.0087, 41
+#Iteration2: 139, 508, 433, 362
+#TimeTakes: 139, 1.0087, 0.006158
+#Iteration: 140, 1.01914, 41
+#Iteration2: 140, 512, 437, 366
+#TimeTakes: 140, 1.01914, 0.006234
+#Iteration: 141, 1.02955, 41
+#Iteration2: 141, 516, 441, 370
+#TimeTakes: 141, 1.02955, 0.006325
+#Iteration: 142, 1.04034, 41
+#Iteration2: 142, 519, 444, 373
+#TimeTakes: 142, 1.04034, 0.006388
+#Iteration: 143, 1.05119, 41
+#Iteration2: 143, 523, 448, 376
+#TimeTakes: 143, 1.05119, 0.006469
+#Iteration: 144, 1.06167, 41
+#Iteration2: 144, 527, 452, 379
+#TimeTakes: 144, 1.06167, 0.006548
+#Iteration: 145, 1.072, 41
+#Iteration2: 145, 530, 454, 380
+#TimeTakes: 145, 1.072, 0.006611
+#Iteration: 146, 1.08337, 41
+#Iteration2: 146, 534, 458, 384
+#TimeTakes: 146, 1.08337, 0.006695
+#Iteration: 147, 1.09409, 41
+#Iteration2: 147, 538, 462, 388
+#TimeTakes: 147, 1.09409, 0.006776
+#Iteration: 148, 1.10476, 41
+#Iteration2: 148, 542, 464, 389
+#TimeTakes: 148, 1.10476, 0.006856
+#Iteration: 149, 1.11629, 41
+#Iteration2: 149, 545, 467, 392
+#TimeTakes: 149, 1.11629, 0.006925
+#Iteration: 150, 1.12741, 41
+#Iteration2: 150, 549, 469, 393
+#TimeTakes: 150, 1.12741, 0.00701
+#Iteration: 151, 1.13901, 41
+#Iteration2: 151, 552, 471, 394
+#TimeTakes: 151, 1.13901, 0.00708
+#Iteration: 152, 1.1501, 41
+#Iteration2: 152, 556, 475, 398
+#TimeTakes: 152, 1.1501, 0.007164
+#Iteration: 153, 1.16158, 41
+#Iteration2: 153, 560, 479, 402
+#TimeTakes: 153, 1.16158, 0.007252
+#Iteration: 154, 1.17276, 41
+#Iteration2: 154, 563, 482, 405
+#TimeTakes: 154, 1.17276, 0.00732
+#Iteration: 155, 1.18445, 41
+#Iteration2: 155, 567, 486, 408
+#TimeTakes: 155, 1.18445, 0.007406
+#Iteration: 156, 1.19612, 41
+#Iteration2: 156, 571, 490, 411
+#TimeTakes: 156, 1.19612, 0.007489
+#Iteration: 157, 1.20752, 41
+#Iteration2: 157, 574, 492, 412
+#TimeTakes: 157, 1.20752, 0.007557
+#Iteration: 158, 1.21977, 41
+#Iteration2: 158, 578, 496, 416
+#TimeTakes: 158, 1.21977, 0.007646
+#Iteration: 159, 1.23147, 41
+#Iteration2: 159, 582, 500, 420
+#TimeTakes: 159, 1.23147, 0.007731
+#Iteration: 160, 1.24262, 41
+#Iteration2: 160, 586, 502, 421
+#TimeTakes: 160, 1.24262, 0.007815
+#Iteration: 161, 1.25411, 41
+#Iteration2: 161, 589, 505, 424
+#TimeTakes: 161, 1.25411, 0.007881
+#Iteration: 162, 1.26607, 41
+#Iteration2: 162, 593, 507, 425
+#TimeTakes: 162, 1.26607, 0.007968
+#Iteration: 163, 1.27816, 41
+#Iteration2: 163, 596, 509, 426
+#TimeTakes: 163, 1.27816, 0.008095
+#Iteration: 164, 1.29048, 41
+#Iteration2: 164, 600, 513, 430
+#TimeTakes: 164, 1.29048, 0.008184
+#Iteration: 165, 1.30281, 41
+#Iteration2: 165, 604, 517, 434
+#TimeTakes: 165, 1.30281, 0.008273
+#Iteration: 166, 1.31498, 41
+#Iteration2: 166, 607, 520, 437
+#TimeTakes: 166, 1.31498, 0.008345
+#Iteration: 167, 1.32774, 41
+#Iteration2: 167, 611, 524, 440
+#TimeTakes: 167, 1.32774, 0.008436
+#Iteration: 168, 1.33979, 41
+#Iteration2: 168, 615, 528, 443
+#TimeTakes: 168, 1.33979, 0.008525
+#Iteration: 169, 1.35161, 41
+#Iteration2: 169, 618, 530, 444
+#TimeTakes: 169, 1.35161, 0.008594
+#Iteration: 170, 1.36455, 41
+#Iteration2: 170, 622, 534, 448
+#TimeTakes: 170, 1.36455, 0.008688
+#Iteration: 171, 1.37661, 41
+#Iteration2: 171, 626, 538, 452
+#TimeTakes: 171, 1.37661, 0.008778
+#Iteration: 172, 1.38927, 41
+#Iteration2: 172, 630, 540, 453
+#TimeTakes: 172, 1.38927, 0.008868
+#Iteration: 173, 1.40173, 41
+#Iteration2: 173, 633, 543, 456
+#TimeTakes: 173, 1.40173, 0.008939
+#Iteration: 174, 1.41458, 41
+#Iteration2: 174, 637, 545, 457
+#TimeTakes: 174, 1.41458, 0.009033
+#Iteration: 175, 1.4267, 41
+#Iteration2: 175, 640, 547, 458
+#TimeTakes: 175, 1.4267, 0.009103
+#Iteration: 176, 1.43914, 41
+#Iteration2: 176, 644, 551, 462
+#TimeTakes: 176, 1.43914, 0.009197
+#Iteration: 177, 1.45218, 41
+#Iteration2: 177, 648, 555, 466
+#TimeTakes: 177, 1.45218, 0.009296
+#Iteration: 178, 1.46476, 41
+#Iteration2: 178, 651, 558, 469
+#TimeTakes: 178, 1.46476, 0.00937
+#Iteration: 179, 1.47804, 41
+#Iteration2: 179, 655, 562, 472
+#TimeTakes: 179, 1.47804, 0.009467
+#Iteration: 180, 1.49093, 41
+#Iteration2: 180, 659, 566, 475
+#TimeTakes: 180, 1.49093, 0.009562
+#Iteration: 181, 1.50405, 41
+#Iteration2: 181, 662, 568, 476
+#TimeTakes: 181, 1.50405, 0.009641
+#Iteration: 182, 1.51798, 41
+#Iteration2: 182, 666, 572, 480
+#TimeTakes: 182, 1.51798, 0.009742
+#Iteration: 183, 1.53121, 41
+#Iteration2: 183, 670, 576, 484
+#TimeTakes: 183, 1.53121, 0.009837
+#Iteration: 184, 1.54403, 41
+#Iteration2: 184, 674, 578, 485
+#TimeTakes: 184, 1.54403, 0.009934
+#Iteration: 185, 1.55711, 41
+#Iteration2: 185, 677, 581, 488
+#TimeTakes: 185, 1.55711, 0.010015
+#Iteration: 186, 1.5707, 41
+#Iteration2: 186, 681, 583, 489
+#TimeTakes: 186, 1.5707, 0.010116
+#Iteration: 187, 1.5843, 41
+#Iteration2: 187, 684, 585, 490
+#TimeTakes: 187, 1.5843, 0.010195
+#Iteration: 188, 1.59731, 41
+#Iteration2: 188, 688, 589, 494
+#TimeTakes: 188, 1.59731, 0.010296
+#Iteration: 189, 1.61057, 41
+#Iteration2: 189, 692, 593, 498
+#TimeTakes: 189, 1.61057, 0.010394
+#Iteration: 190, 1.62405, 41
+#Iteration2: 190, 695, 596, 501
+#TimeTakes: 190, 1.62405, 0.010475
+#Iteration: 191, 1.63761, 41
+#Iteration2: 191, 699, 600, 504
+#TimeTakes: 191, 1.63761, 0.010587
+#Iteration: 192, 1.65166, 41
+#Iteration2: 192, 703, 604, 507
+#TimeTakes: 192, 1.65166, 0.01069
+#Iteration: 193, 1.6655, 41
+#Iteration2: 193, 706, 606, 508
+#TimeTakes: 193, 1.6655, 0.010775
+#Iteration: 194, 1.68027, 41
+#Iteration2: 194, 710, 610, 512
+#TimeTakes: 194, 1.68027, 0.010883
+#Iteration: 195, 1.69395, 41
+#Iteration2: 195, 714, 614, 516
+#TimeTakes: 195, 1.69395, 0.010982
+#Iteration: 196, 1.70788, 41
+#Iteration2: 196, 718, 616, 517
+#TimeTakes: 196, 1.70788, 0.011086
+#Iteration: 197, 1.72177, 41
+#Iteration2: 197, 721, 619, 520
+#TimeTakes: 197, 1.72177, 0.011171
+#Iteration: 198, 1.73599, 41
+#Iteration2: 198, 725, 621, 521
+#TimeTakes: 198, 1.73599, 0.011281
+#Iteration: 199, 1.7497, 41
+#Iteration2: 199, 728, 623, 522
+#TimeTakes: 199, 1.7497, 0.011363
+#Iteration: 200, 1.76416, 41
+#Iteration2: 200, 732, 627, 526
+#TimeTakes: 200, 1.76416, 0.011472
+#Iteration: 201, 1.77811, 41
+#Iteration2: 201, 736, 631, 530
+#TimeTakes: 201, 1.77811, 0.011578
+#Iteration: 202, 1.79245, 41
+#Iteration2: 202, 739, 634, 533
+#TimeTakes: 202, 1.79245, 0.011661
+#Iteration: 203, 1.807, 41
+#Iteration2: 203, 743, 638, 536
+#TimeTakes: 203, 1.807, 0.011767
+#Iteration: 204, 1.82178, 41
+#Iteration2: 204, 747, 642, 539
+#TimeTakes: 204, 1.82178, 0.011871
+#Iteration: 205, 1.8363, 41
+#Iteration2: 205, 750, 644, 540
+#TimeTakes: 205, 1.8363, 0.011954
+#Iteration: 206, 1.85106, 41
+#Iteration2: 206, 754, 648, 544
+#TimeTakes: 206, 1.85106, 0.012065
+#Iteration: 207, 1.86531, 41
+#Iteration2: 207, 758, 652, 548
+#TimeTakes: 207, 1.86531, 0.012173
+#Iteration: 208, 1.87981, 41
+#Iteration2: 208, 762, 654, 549
+#TimeTakes: 208, 1.87981, 0.012281
+#Iteration: 209, 1.89481, 41
+#Iteration2: 209, 765, 657, 552
+#TimeTakes: 209, 1.89481, 0.012368
+#Iteration: 210, 1.90941, 41
+#Iteration2: 210, 769, 659, 553
+#TimeTakes: 210, 1.90941, 0.012477
+#Iteration: 211, 1.92435, 41
+#Iteration2: 211, 772, 661, 554
+#TimeTakes: 211, 1.92435, 0.012564
+#Iteration: 212, 1.93935, 41
+#Iteration2: 212, 776, 665, 558
+#TimeTakes: 212, 1.93935, 0.012674
+#Iteration: 213, 1.95492, 41
+#Iteration2: 213, 780, 669, 562
+#TimeTakes: 213, 1.95492, 0.012784
+#Iteration: 214, 1.9703, 41
+#Iteration2: 214, 783, 672, 565
+#TimeTakes: 214, 1.9703, 0.012872
+#Iteration: 215, 1.98551, 41
+#Iteration2: 215, 787, 676, 568
+#TimeTakes: 215, 1.98551, 0.012985
+#Iteration: 216, 2.00101, 41
+#Iteration2: 216, 791, 680, 571
+#TimeTakes: 216, 2.00101, 0.013095
+#Iteration: 217, 2.01614, 41
+#Iteration2: 217, 794, 682, 572
+#TimeTakes: 217, 2.01614, 0.013181
+#Iteration: 218, 2.03159, 41
+#Iteration2: 218, 798, 686, 576
+#TimeTakes: 218, 2.03159, 0.013295
+#Iteration: 219, 2.04666, 41
+#Iteration2: 219, 802, 690, 580
+#TimeTakes: 219, 2.04666, 0.013404
+#Iteration: 220, 2.0618, 41
+#Iteration2: 220, 806, 692, 581
+#TimeTakes: 220, 2.0618, 0.013515
+#Iteration: 221, 2.07711, 41
+#Iteration2: 221, 809, 695, 584
+#TimeTakes: 221, 2.07711, 0.013607
+#Iteration: 222, 2.09279, 41
+#Iteration2: 222, 813, 697, 585
+#TimeTakes: 222, 2.09279, 0.013732
+#Iteration: 223, 2.10798, 41
+#Iteration2: 223, 816, 699, 586
+#TimeTakes: 223, 2.10798, 0.013826
+#Iteration: 224, 2.1235, 41
+#Iteration2: 224, 820, 703, 590
+#TimeTakes: 224, 2.1235, 0.013938
+#Iteration: 225, 2.1389, 41
+#Iteration2: 225, 824, 707, 594
+#TimeTakes: 225, 2.1389, 0.014051
+#Iteration: 226, 2.15478, 41
+#Iteration2: 226, 827, 710, 597
+#TimeTakes: 226, 2.15478, 0.014144
+#Iteration: 227, 2.17087, 41
+#Iteration2: 227, 831, 714, 600
+#TimeTakes: 227, 2.17087, 0.014261
+#Iteration: 228, 2.18684, 41
+#Iteration2: 228, 835, 718, 603
+#TimeTakes: 228, 2.18684, 0.014374
+#Iteration: 229, 2.20271, 41
+#Iteration2: 229, 838, 720, 604
+#TimeTakes: 229, 2.20271, 0.01447
+#Iteration: 230, 2.21983, 41
+#Iteration2: 230, 842, 724, 608
+#TimeTakes: 230, 2.21983, 0.01459
+#Iteration: 231, 2.23596, 41
+#Iteration2: 231, 846, 728, 612
+#TimeTakes: 231, 2.23596, 0.014703
+#Iteration: 232, 2.25131, 41
+#Iteration2: 232, 850, 730, 613
+#TimeTakes: 232, 2.25131, 0.014821
+#Iteration: 233, 2.26778, 41
+#Iteration2: 233, 853, 733, 616
+#TimeTakes: 233, 2.26778, 0.014915
+#Iteration: 234, 2.28376, 41
+#Iteration2: 234, 857, 735, 617
+#TimeTakes: 234, 2.28376, 0.015037
+#Iteration: 235, 2.29995, 41
+#Iteration2: 235, 860, 737, 618
+#TimeTakes: 235, 2.29995, 0.01513
+#Iteration: 236, 2.31635, 41
+#Iteration2: 236, 864, 741, 622
+#TimeTakes: 236, 2.31635, 0.015251
+#Iteration: 237, 2.33285, 41
+#Iteration2: 237, 868, 745, 626
+#TimeTakes: 237, 2.33285, 0.015373
+#Iteration: 238, 2.34971, 41
+#Iteration2: 238, 871, 748, 629
+#TimeTakes: 238, 2.34971, 0.01547
+#Iteration: 239, 2.36666, 41
+#Iteration2: 239, 875, 752, 632
+#TimeTakes: 239, 2.36666, 0.015594
+#Iteration: 240, 2.38302, 41
+#Iteration2: 240, 879, 756, 635
+#TimeTakes: 240, 2.38302, 0.015711
+#Iteration: 241, 2.39911, 41
+#Iteration2: 241, 882, 758, 636
+#TimeTakes: 241, 2.39911, 0.015808
+#Iteration: 242, 2.41671, 41
+#Iteration2: 242, 886, 762, 640
+#TimeTakes: 242, 2.41671, 0.015944
+#Iteration: 243, 2.43304, 41
+#Iteration2: 243, 890, 766, 644
+#TimeTakes: 243, 2.43304, 0.016066
+#Iteration: 244, 2.44939, 41
+#Iteration2: 244, 894, 768, 645
+#TimeTakes: 244, 2.44939, 0.01619
+#Iteration: 245, 2.46571, 41
+#Iteration2: 245, 897, 771, 648
+#TimeTakes: 245, 2.46571, 0.016291
+#Iteration: 246, 2.48249, 41
+#Iteration2: 246, 901, 773, 649
+#TimeTakes: 246, 2.48249, 0.016413
+#Iteration: 247, 2.49983, 41
+#Iteration2: 247, 904, 775, 650
+#TimeTakes: 247, 2.49983, 0.016511
+#Iteration: 248, 2.51651, 41
+#Iteration2: 248, 908, 779, 654
+#TimeTakes: 248, 2.51651, 0.016638
+#Iteration: 249, 2.53372, 41
+#Iteration2: 249, 912, 783, 658
+#TimeTakes: 249, 2.53372, 0.016768
+#Iteration: 250, 2.55155, 41
+#Iteration2: 250, 915, 786, 661
+#TimeTakes: 250, 2.55155, 0.016868
+#Iteration: 251, 2.56916, 41
+#Iteration2: 251, 919, 790, 664
+#TimeTakes: 251, 2.56916, 0.016996
+#Iteration: 252, 2.58693, 41
+#Iteration2: 252, 923, 794, 667
+#TimeTakes: 252, 2.58693, 0.017122
+#Iteration: 253, 2.60354, 41
+#Iteration2: 253, 926, 796, 668
+#TimeTakes: 253, 2.60354, 0.017219
+#Iteration: 254, 2.62125, 41
+#Iteration2: 254, 930, 800, 672
+#TimeTakes: 254, 2.62125, 0.01735
+#Iteration: 255, 2.6388, 41
+#Iteration2: 255, 934, 804, 676
+#TimeTakes: 255, 2.6388, 0.017486
+#Iteration: 256, 2.65584, 41
+#Iteration2: 256, 938, 806, 677
+#TimeTakes: 256, 2.65584, 0.017616
+#Iteration: 257, 2.67317, 41
+#Iteration2: 257, 941, 809, 680
+#TimeTakes: 257, 2.67317, 0.017723
+#Iteration: 258, 2.69086, 41
+#Iteration2: 258, 945, 811, 681
+#TimeTakes: 258, 2.69086, 0.017859
+#Iteration: 259, 2.70915, 41
+#Iteration2: 259, 948, 813, 682
+#TimeTakes: 259, 2.70915, 0.017967
+#Iteration: 260, 2.72749, 41
+#Iteration2: 260, 952, 817, 686
+#TimeTakes: 260, 2.72749, 0.018099
+#Iteration: 261, 2.74523, 41
+#Iteration2: 261, 956, 821, 690
+#TimeTakes: 261, 2.74523, 0.01823
+#Iteration: 262, 2.76315, 41
+#Iteration2: 262, 959, 824, 693
+#TimeTakes: 262, 2.76315, 0.018336
+#Iteration: 263, 2.78152, 41
+#Iteration2: 263, 963, 828, 696
+#TimeTakes: 263, 2.78152, 0.01847
+#Iteration: 264, 2.79956, 41
+#Iteration2: 264, 967, 832, 699
+#TimeTakes: 264, 2.79956, 0.018603
+#Iteration: 265, 2.81794, 41
+#Iteration2: 265, 970, 834, 700
+#TimeTakes: 265, 2.81794, 0.018713
+#Iteration: 266, 2.83672, 41
+#Iteration2: 266, 974, 838, 704
+#TimeTakes: 266, 2.83672, 0.018857
+#Iteration: 267, 2.8544, 41
+#Iteration2: 267, 978, 842, 708
+#TimeTakes: 267, 2.8544, 0.018988
+#Iteration: 268, 2.87199, 41
+#Iteration2: 268, 982, 844, 709
+#TimeTakes: 268, 2.87199, 0.019118
+#Iteration: 269, 2.88988, 41
+#Iteration2: 269, 985, 847, 712
+#TimeTakes: 269, 2.88988, 0.019222
+#Iteration: 270, 2.90802, 41
+#Iteration2: 270, 989, 849, 713
+#TimeTakes: 270, 2.90802, 0.019361
+#Iteration: 271, 2.92573, 41
+#Iteration2: 271, 992, 851, 714
+#TimeTakes: 271, 2.92573, 0.019469
+#Iteration: 272, 2.94426, 41
+#Iteration2: 272, 996, 855, 718
+#TimeTakes: 272, 2.94426, 0.019605
+#Iteration: 273, 2.96364, 41
+#Iteration2: 273, 1000, 859, 722
+#TimeTakes: 273, 2.96364, 0.01974
+#Iteration: 274, 2.98261, 41
+#Iteration2: 274, 1003, 862, 725
+#TimeTakes: 274, 2.98261, 0.019857
+#Iteration: 275, 3.00138, 41
+#Iteration2: 275, 1007, 866, 728
+#TimeTakes: 275, 3.00138, 0.019993
+#Iteration: 276, 3.02006, 41
+#Iteration2: 276, 1011, 870, 731
+#TimeTakes: 276, 3.02006, 0.020127
+#Iteration: 277, 3.03809, 41
+#Iteration2: 277, 1014, 872, 732
+#TimeTakes: 277, 3.03809, 0.020236
+#Iteration: 278, 3.05751, 41
+#Iteration2: 278, 1018, 876, 736
+#TimeTakes: 278, 3.05751, 0.020378
+#Iteration: 279, 3.07588, 41
+#Iteration2: 279, 1022, 880, 740
+#TimeTakes: 279, 3.07588, 0.020516
+#Iteration: 280, 3.09526, 41
+#Iteration2: 280, 1026, 882, 741
+#TimeTakes: 280, 3.09526, 0.020661
+#Iteration: 281, 3.11468, 41
+#Iteration2: 281, 1029, 885, 744
+#TimeTakes: 281, 3.11468, 0.020773
+#Iteration: 282, 3.13411, 41
+#Iteration2: 282, 1033, 887, 745
+#TimeTakes: 282, 3.13411, 0.020914
+#Iteration: 283, 3.15273, 41
+#Iteration2: 283, 1036, 889, 746
+#TimeTakes: 283, 3.15273, 0.02103
+#Iteration: 284, 3.17186, 41
+#Iteration2: 284, 1040, 893, 750
+#TimeTakes: 284, 3.17186, 0.021172
+#Iteration: 285, 3.1915, 41
+#Iteration2: 285, 1044, 897, 754
+#TimeTakes: 285, 3.1915, 0.021316
+#Iteration: 286, 3.21112, 41
+#Iteration2: 286, 1047, 900, 757
+#TimeTakes: 286, 3.21112, 0.021431
+#Iteration: 287, 3.23077, 41
+#Iteration2: 287, 1051, 904, 760
+#TimeTakes: 287, 3.23077, 0.021573
+#Iteration: 288, 3.25029, 41
+#Iteration2: 288, 1055, 908, 763
+#TimeTakes: 288, 3.25029, 0.021712
+#Iteration: 289, 3.26984, 41
+#Iteration2: 289, 1058, 910, 764
+#TimeTakes: 289, 3.26984, 0.021827
+#Iteration: 290, 3.28969, 41
+#Iteration2: 290, 1062, 914, 768
+#TimeTakes: 290, 3.28969, 0.021972
+#Iteration: 291, 3.30913, 41
+#Iteration2: 291, 1066, 918, 772
+#TimeTakes: 291, 3.30913, 0.022116
+#Iteration: 292, 3.32906, 41
+#Iteration2: 292, 1070, 920, 773
+#TimeTakes: 292, 3.32906, 0.022258
+#Iteration: 293, 3.3482, 41
+#Iteration2: 293, 1073, 923, 776
+#TimeTakes: 293, 3.3482, 0.022374
+#Iteration: 294, 3.36764, 41
+#Iteration2: 294, 1077, 925, 777
+#TimeTakes: 294, 3.36764, 0.022517
+#Iteration: 295, 3.38719, 41
+#Iteration2: 295, 1080, 927, 778
+#TimeTakes: 295, 3.38719, 0.02263
+#Iteration: 296, 3.40682, 41
+#Iteration2: 296, 1084, 931, 782
+#TimeTakes: 296, 3.40682, 0.022774
+#Iteration: 297, 3.4269, 41
+#Iteration2: 297, 1088, 935, 786
+#TimeTakes: 297, 3.4269, 0.022921
+#Iteration: 298, 3.44739, 41
+#Iteration2: 298, 1091, 938, 789
+#TimeTakes: 298, 3.44739, 0.02304
+#Iteration: 299, 3.46771, 41
+#Iteration2: 299, 1095, 942, 792
+#TimeTakes: 299, 3.46771, 0.023192
+#Iteration: 300, 3.48858, 41
+#Iteration2: 300, 1099, 946, 795
+#TimeTakes: 300, 3.48858, 0.023335
+#Iteration: 301, 3.5084, 41
+#Iteration2: 301, 1102, 948, 796
+#TimeTakes: 301, 3.5084, 0.023448
+#Iteration: 302, 3.5291, 41
+#Iteration2: 302, 1106, 952, 800
+#TimeTakes: 302, 3.5291, 0.023617
+#Iteration: 303, 3.54997, 41
+#Iteration2: 303, 1110, 956, 804
+#TimeTakes: 303, 3.54997, 0.023762
+#Iteration: 304, 3.57028, 41
+#Iteration2: 304, 1114, 958, 805
+#TimeTakes: 304, 3.57028, 0.023906
+#Iteration: 305, 3.59079, 41
+#Iteration2: 305, 1117, 961, 808
+#TimeTakes: 305, 3.59079, 0.024029
+#Iteration: 306, 3.61165, 41
+#Iteration2: 306, 1121, 963, 809
+#TimeTakes: 306, 3.61165, 0.024183
+#Iteration: 307, 3.63226, 41
+#Iteration2: 307, 1124, 965, 810
+#TimeTakes: 307, 3.63226, 0.0243
+#Iteration: 308, 3.65379, 41
+#Iteration2: 308, 1128, 969, 814
+#TimeTakes: 308, 3.65379, 0.024463
+#Iteration: 309, 3.67481, 41
+#Iteration2: 309, 1132, 973, 818
+#TimeTakes: 309, 3.67481, 0.024612
+#Iteration: 310, 3.69654, 41
+#Iteration2: 310, 1135, 976, 821
+#TimeTakes: 310, 3.69654, 0.024738
+#Iteration: 311, 3.71757, 41
+#Iteration2: 311, 1139, 980, 824
+#TimeTakes: 311, 3.71757, 0.024894
+#Iteration: 312, 3.7382, 41
+#Iteration2: 312, 1143, 984, 827
+#TimeTakes: 312, 3.7382, 0.025043
+#Iteration: 313, 3.7593, 41
+#Iteration2: 313, 1146, 986, 828
+#TimeTakes: 313, 3.7593, 0.025166
+#Iteration: 314, 3.7815, 41
+#Iteration2: 314, 1150, 990, 832
+#TimeTakes: 314, 3.7815, 0.02532
+#Iteration: 315, 3.80298, 41
+#Iteration2: 315, 1154, 994, 836
+#TimeTakes: 315, 3.80298, 0.025469
+#Iteration: 316, 3.82366, 41
+#Iteration2: 316, 1158, 996, 837
+#TimeTakes: 316, 3.82366, 0.025619
+#Iteration: 317, 3.8452, 41
+#Iteration2: 317, 1161, 999, 840
+#TimeTakes: 317, 3.8452, 0.025745
+#Iteration: 318, 3.86612, 41
+#Iteration2: 318, 1165, 1001, 841
+#TimeTakes: 318, 3.86612, 0.025902
+#Iteration: 319, 3.88738, 41
+#Iteration2: 319, 1168, 1003, 842
+#TimeTakes: 319, 3.88738, 0.026025
+#Iteration: 320, 3.90934, 41
+#Iteration2: 320, 1172, 1007, 846
+#TimeTakes: 320, 3.90934, 0.02618
+#Iteration: 321, 3.93147, 41
+#Iteration2: 321, 1176, 1011, 850
+#TimeTakes: 321, 3.93147, 0.026332
+#Iteration: 322, 3.95403, 41
+#Iteration2: 322, 1179, 1014, 853
+#TimeTakes: 322, 3.95403, 0.026457
+#Iteration: 323, 3.97642, 41
+#Iteration2: 323, 1183, 1018, 856
+#TimeTakes: 323, 3.97642, 0.026616
+#Iteration: 324, 3.99832, 41
+#Iteration2: 324, 1187, 1022, 859
+#TimeTakes: 324, 3.99832, 0.026768
+#Iteration: 325, 4.0198, 41
+#Iteration2: 325, 1190, 1024, 860
+#TimeTakes: 325, 4.0198, 0.026894
+#Iteration: 326, 4.04215, 41
+#Iteration2: 326, 1194, 1028, 864
+#TimeTakes: 326, 4.04215, 0.027056
+#Iteration: 327, 4.06406, 41
+#Iteration2: 327, 1198, 1032, 868
+#TimeTakes: 327, 4.06406, 0.027211
+#Iteration: 328, 4.08664, 41
+#Iteration2: 328, 1202, 1034, 869
+#TimeTakes: 328, 4.08664, 0.027364
+#Iteration: 329, 4.10955, 41
+#Iteration2: 329, 1205, 1037, 872
+#TimeTakes: 329, 4.10955, 0.027493
+#Iteration: 330, 4.13155, 41
+#Iteration2: 330, 1209, 1039, 873
+#TimeTakes: 330, 4.13155, 0.027651
+#Iteration: 331, 4.15326, 41
+#Iteration2: 331, 1212, 1041, 874
+#TimeTakes: 331, 4.15326, 0.027777
+#Iteration: 332, 4.17529, 41
+#Iteration2: 332, 1216, 1045, 878
+#TimeTakes: 332, 4.17529, 0.027937
+#Iteration: 333, 4.19754, 41
+#Iteration2: 333, 1220, 1049, 882
+#TimeTakes: 333, 4.19754, 0.0281
+#Iteration: 334, 4.22041, 41
+#Iteration2: 334, 1223, 1052, 885
+#TimeTakes: 334, 4.22041, 0.028228
+#Iteration: 335, 4.24348, 41
+#Iteration2: 335, 1227, 1056, 888
+#TimeTakes: 335, 4.24348, 0.028389
+#Iteration: 336, 4.26537, 41
+#Iteration2: 336, 1231, 1060, 891
+#TimeTakes: 336, 4.26537, 0.028549
+#Iteration: 337, 4.28747, 41
+#Iteration2: 337, 1234, 1062, 892
+#TimeTakes: 337, 4.28747, 0.028679
+#Iteration: 338, 4.31088, 41
+#Iteration2: 338, 1238, 1066, 896
+#TimeTakes: 338, 4.31088, 0.028847
+#Iteration: 339, 4.33291, 41
+#Iteration2: 339, 1242, 1070, 900
+#TimeTakes: 339, 4.33291, 0.02901
+#Iteration: 340, 4.35576, 41
+#Iteration2: 340, 1246, 1072, 901
+#TimeTakes: 340, 4.35576, 0.029172
+#Iteration: 341, 4.37885, 41
+#Iteration2: 341, 1249, 1075, 904
+#TimeTakes: 341, 4.37885, 0.029302
+#Iteration: 342, 4.40159, 41
+#Iteration2: 342, 1253, 1077, 905
+#TimeTakes: 342, 4.40159, 0.029468
+#Iteration: 343, 4.42363, 41
+#Iteration2: 343, 1256, 1079, 906
+#TimeTakes: 343, 4.42363, 0.029596
+#Iteration: 344, 4.44641, 41
+#Iteration2: 344, 1260, 1083, 910
+#TimeTakes: 344, 4.44641, 0.029763
+#Iteration: 345, 4.47056, 41
+#Iteration2: 345, 1264, 1087, 914
+#TimeTakes: 345, 4.47056, 0.029931
+#Iteration: 346, 4.49349, 41
+#Iteration2: 346, 1267, 1090, 917
+#TimeTakes: 346, 4.49349, 0.03007
+#Iteration: 347, 4.51629, 41
+#Iteration2: 347, 1271, 1094, 920
+#TimeTakes: 347, 4.51629, 0.030236
+#Iteration: 348, 4.53926, 41
+#Iteration2: 348, 1275, 1098, 923
+#TimeTakes: 348, 4.53926, 0.030399
+#Iteration: 349, 4.56269, 41
+#Iteration2: 349, 1278, 1100, 924
+#TimeTakes: 349, 4.56269, 0.030532
+#Iteration: 350, 4.58648, 41
+#Iteration2: 350, 1282, 1104, 928
+#TimeTakes: 350, 4.58648, 0.030705
+#Iteration: 351, 4.61014, 41
+#Iteration2: 351, 1286, 1108, 932
+#TimeTakes: 351, 4.61014, 0.030875
+#Iteration: 352, 4.63287, 41
+#Iteration2: 352, 1290, 1110, 933
+#TimeTakes: 352, 4.63287, 0.031076
+#Iteration: 353, 4.65688, 41
+#Iteration2: 353, 1293, 1113, 936
+#TimeTakes: 353, 4.65688, 0.031223
+#Iteration: 354, 4.68016, 41
+#Iteration2: 354, 1297, 1115, 937
+#TimeTakes: 354, 4.68016, 0.0314
+#Iteration: 355, 4.70373, 41
+#Iteration2: 355, 1300, 1117, 938
+#TimeTakes: 355, 4.70373, 0.031539
+#Iteration: 356, 4.72728, 41
+#Iteration2: 356, 1304, 1121, 942
+#TimeTakes: 356, 4.72728, 0.031711
+#Iteration: 357, 4.75116, 41
+#Iteration2: 357, 1308, 1125, 946
+#TimeTakes: 357, 4.75116, 0.03188
+#Iteration: 358, 4.77524, 41
+#Iteration2: 358, 1311, 1128, 949
+#TimeTakes: 358, 4.77524, 0.032024
+#Iteration: 359, 4.79946, 41
+#Iteration2: 359, 1315, 1132, 952
+#TimeTakes: 359, 4.79946, 0.032208
+#Iteration: 360, 4.82365, 41
+#Iteration2: 360, 1319, 1136, 955
+#TimeTakes: 360, 4.82365, 0.032378
+#Iteration: 361, 4.84682, 41
+#Iteration2: 361, 1322, 1138, 956
+#TimeTakes: 361, 4.84682, 0.032517
+#Iteration: 362, 4.8714, 41
+#Iteration2: 362, 1326, 1142, 960
+#TimeTakes: 362, 4.8714, 0.03269
+#Iteration: 363, 4.89599, 41
+#Iteration2: 363, 1330, 1146, 964
+#TimeTakes: 363, 4.89599, 0.032863
+#Iteration: 364, 4.91985, 41
+#Iteration2: 364, 1334, 1148, 965
+#TimeTakes: 364, 4.91985, 0.033036
+#Iteration: 365, 4.94513, 41
+#Iteration2: 365, 1337, 1151, 968
+#TimeTakes: 365, 4.94513, 0.033183
+#Iteration: 366, 4.96904, 41
+#Iteration2: 366, 1341, 1153, 969
+#TimeTakes: 366, 4.96904, 0.03336
+#Iteration: 367, 4.99283, 41
+#Iteration2: 367, 1344, 1155, 970
+#TimeTakes: 367, 4.99283, 0.033503
+#Iteration: 368, 5.01695, 41
+#Iteration2: 368, 1348, 1159, 974
+#TimeTakes: 368, 5.01695, 0.033677
+#Iteration: 369, 5.04196, 41
+#Iteration2: 369, 1352, 1163, 978
+#TimeTakes: 369, 5.04196, 0.033856
+#Iteration: 370, 5.06688, 41
+#Iteration2: 370, 1355, 1166, 981
+#TimeTakes: 370, 5.06688, 0.034
+#Iteration: 371, 5.0914, 41
+#Iteration2: 371, 1359, 1170, 984
+#TimeTakes: 371, 5.0914, 0.034178
+#Iteration: 372, 5.11549, 41
+#Iteration2: 372, 1363, 1174, 987
+#TimeTakes: 372, 5.11549, 0.034351
+#Iteration: 373, 5.13997, 41
+#Iteration2: 373, 1366, 1176, 988
+#TimeTakes: 373, 5.13997, 0.034495
+#Iteration: 374, 5.16548, 41
+#Iteration2: 374, 1370, 1180, 992
+#TimeTakes: 374, 5.16548, 0.034684
+#Iteration: 375, 5.18983, 41
+#Iteration2: 375, 1374, 1184, 996
+#TimeTakes: 375, 5.18983, 0.034858
+#Iteration: 376, 5.21415, 41
+#Iteration2: 376, 1378, 1186, 997
+#TimeTakes: 376, 5.21415, 0.035037
+#Iteration: 377, 5.23898, 41
+#Iteration2: 377, 1381, 1189, 1000
+#TimeTakes: 377, 5.23898, 0.035184
+#Iteration: 378, 5.26405, 41
+#Iteration2: 378, 1385, 1191, 1001
+#TimeTakes: 378, 5.26405, 0.035372
+#Iteration: 379, 5.2888, 41
+#Iteration2: 379, 1388, 1193, 1002
+#TimeTakes: 379, 5.2888, 0.035518
+#Iteration: 380, 5.31413, 41
+#Iteration2: 380, 1392, 1197, 1006
+#TimeTakes: 380, 5.31413, 0.035699
+#Iteration: 381, 5.33975, 41
+#Iteration2: 381, 1396, 1201, 1010
+#TimeTakes: 381, 5.33975, 0.035888
+#Iteration: 382, 5.36566, 41
+#Iteration2: 382, 1399, 1204, 1013
+#TimeTakes: 382, 5.36566, 0.036038
+#Iteration: 383, 5.39156, 41
+#Iteration2: 383, 1403, 1208, 1016
+#TimeTakes: 383, 5.39156, 0.036227
+#Iteration: 384, 5.41673, 41
+#Iteration2: 384, 1407, 1212, 1019
+#TimeTakes: 384, 5.41673, 0.036422
+#Iteration: 385, 5.44261, 41
+#Iteration2: 385, 1410, 1214, 1020
+#TimeTakes: 385, 5.44261, 0.036573
+#Iteration: 386, 5.46856, 41
+#Iteration2: 386, 1414, 1218, 1024
+#TimeTakes: 386, 5.46856, 0.036768
+#Iteration: 387, 5.49398, 41
+#Iteration2: 387, 1418, 1222, 1028
+#TimeTakes: 387, 5.49398, 0.036957
+#Iteration: 388, 5.52005, 41
+#Iteration2: 388, 1422, 1224, 1029
+#TimeTakes: 388, 5.52005, 0.037147
+#Iteration: 389, 5.54546, 41
+#Iteration2: 389, 1425, 1227, 1032
+#TimeTakes: 389, 5.54546, 0.037303
+#Iteration: 390, 5.57135, 41
+#Iteration2: 390, 1429, 1229, 1033
+#TimeTakes: 390, 5.57135, 0.037492
+#Iteration: 391, 5.59774, 41
+#Iteration2: 391, 1432, 1231, 1034
+#TimeTakes: 391, 5.59774, 0.03764
+#Iteration: 392, 5.62363, 41
+#Iteration2: 392, 1436, 1235, 1038
+#TimeTakes: 392, 5.62363, 0.037833
+#Iteration: 393, 5.64944, 41
+#Iteration2: 393, 1440, 1239, 1042
+#TimeTakes: 393, 5.64944, 0.038043
+#Iteration: 394, 5.6772, 41
+#Iteration2: 394, 1443, 1242, 1045
+#TimeTakes: 394, 5.6772, 0.038204
+#Iteration: 395, 5.70334, 41
+#Iteration2: 395, 1447, 1246, 1048
+#TimeTakes: 395, 5.70334, 0.038401
+#Iteration: 396, 5.72986, 41
+#Iteration2: 396, 1451, 1250, 1051
+#TimeTakes: 396, 5.72986, 0.038589
+#Iteration: 397, 5.75592, 41
+#Iteration2: 397, 1454, 1252, 1052
+#TimeTakes: 397, 5.75592, 0.038743
+#Iteration: 398, 5.7829, 41
+#Iteration2: 398, 1458, 1256, 1056
+#TimeTakes: 398, 5.7829, 0.038941
+#Iteration: 399, 5.80897, 41
+#Iteration2: 399, 1462, 1260, 1060
+#TimeTakes: 399, 5.80897, 0.039139
+#Iteration: 400, 5.83562, 41
+#Iteration2: 400, 1466, 1262, 1061
+#TimeTakes: 400, 5.83562, 0.039331
+#Iteration: 401, 5.86214, 41
+#Iteration2: 401, 1469, 1265, 1064
+#TimeTakes: 401, 5.86214, 0.039491
+#Iteration: 402, 5.889, 41
+#Iteration2: 402, 1473, 1267, 1065
+#TimeTakes: 402, 5.889, 0.039689
+#Iteration: 403, 5.91506, 41
+#Iteration2: 403, 1476, 1269, 1066
+#TimeTakes: 403, 5.91506, 0.039841
+#Iteration: 404, 5.94177, 41
+#Iteration2: 404, 1480, 1273, 1070
+#TimeTakes: 404, 5.94177, 0.04004
+#Iteration: 405, 5.96912, 41
+#Iteration2: 405, 1484, 1277, 1074
+#TimeTakes: 405, 5.96912, 0.040237
+#Iteration: 406, 5.9971, 41
+#Iteration2: 406, 1487, 1280, 1077
+#TimeTakes: 406, 5.9971, 0.040395
+#Iteration: 407, 6.02447, 41
+#Iteration2: 407, 1491, 1284, 1080
+#TimeTakes: 407, 6.02447, 0.040594
+#Iteration: 408, 6.05131, 41
+#Iteration2: 408, 1495, 1288, 1083
+#TimeTakes: 408, 6.05131, 0.040786
+#Iteration: 409, 6.07787, 41
+#Iteration2: 409, 1498, 1290, 1084
+#TimeTakes: 409, 6.07787, 0.040951
+#Iteration: 410, 6.10569, 41
+#Iteration2: 410, 1502, 1294, 1088
+#TimeTakes: 410, 6.10569, 0.041156
+#Iteration: 411, 6.13299, 41
+#Iteration2: 411, 1506, 1298, 1092
+#TimeTakes: 411, 6.13299, 0.041351
+#Iteration: 412, 6.16075, 41
+#Iteration2: 412, 1510, 1300, 1093
+#TimeTakes: 412, 6.16075, 0.041567
+#Iteration: 413, 6.18794, 41
+#Iteration2: 413, 1513, 1303, 1096
+#TimeTakes: 413, 6.18794, 0.041732
+#Iteration: 414, 6.21517, 41
+#Iteration2: 414, 1517, 1305, 1097
+#TimeTakes: 414, 6.21517, 0.041935
+#Iteration: 415, 6.24219, 41
+#Iteration2: 415, 1520, 1307, 1098
+#TimeTakes: 415, 6.24219, 0.042096
+#Iteration: 416, 6.2697, 41
+#Iteration2: 416, 1524, 1311, 1102
+#TimeTakes: 416, 6.2697, 0.042295
+#Iteration: 417, 6.29734, 41
+#Iteration2: 417, 1528, 1315, 1106
+#TimeTakes: 417, 6.29734, 0.042497
+#Iteration: 418, 6.32499, 41
+#Iteration2: 418, 1531, 1318, 1109
+#TimeTakes: 418, 6.32499, 0.04266
+#Iteration: 419, 6.35292, 41
+#Iteration2: 419, 1535, 1322, 1112
+#TimeTakes: 419, 6.35292, 0.042865
+#Iteration: 420, 6.38031, 41
+#Iteration2: 420, 1539, 1326, 1115
+#TimeTakes: 420, 6.38031, 0.043067
+#Iteration: 421, 6.40761, 41
+#Iteration2: 421, 1542, 1328, 1116
+#TimeTakes: 421, 6.40761, 0.043232
+#Iteration: 422, 6.43536, 41
+#Iteration2: 422, 1546, 1332, 1120
+#TimeTakes: 422, 6.43536, 0.04344
+#Iteration: 423, 6.46317, 41
+#Iteration2: 423, 1550, 1336, 1124
+#TimeTakes: 423, 6.46317, 0.043643
+#Iteration: 424, 6.49041, 41
+#Iteration2: 424, 1554, 1338, 1125
+#TimeTakes: 424, 6.49041, 0.043845
+#Iteration: 425, 6.51797, 41
+#Iteration2: 425, 1557, 1341, 1128
+#TimeTakes: 425, 6.51797, 0.044009
+#Iteration: 426, 6.54606, 41
+#Iteration2: 426, 1561, 1343, 1129
+#TimeTakes: 426, 6.54606, 0.044214
+#Iteration: 427, 6.57369, 41
+#Iteration2: 427, 1564, 1345, 1130
+#TimeTakes: 427, 6.57369, 0.044376
+#Iteration: 428, 6.6016, 41
+#Iteration2: 428, 1568, 1349, 1134
+#TimeTakes: 428, 6.6016, 0.044586
+#Iteration: 429, 6.62958, 41
+#Iteration2: 429, 1572, 1353, 1138
+#TimeTakes: 429, 6.62958, 0.044792
+#Iteration: 430, 6.65781, 41
+#Iteration2: 430, 1575, 1356, 1141
+#TimeTakes: 430, 6.65781, 0.044975
+#Iteration: 431, 6.68637, 41
+#Iteration2: 431, 1579, 1360, 1144
+#TimeTakes: 431, 6.68637, 0.04519
+#Iteration: 432, 6.71411, 41
+#Iteration2: 432, 1583, 1364, 1147
+#TimeTakes: 432, 6.71411, 0.045399
+#Iteration: 433, 6.74247, 41
+#Iteration2: 433, 1586, 1366, 1148
+#TimeTakes: 433, 6.74247, 0.04557
+#Iteration: 434, 6.77236, 41
+#Iteration2: 434, 1590, 1370, 1152
+#TimeTakes: 434, 6.77236, 0.045785
+#Iteration: 435, 6.80093, 41
+#Iteration2: 435, 1594, 1374, 1156
+#TimeTakes: 435, 6.80093, 0.045992
+#Iteration: 436, 6.83027, 41
+#Iteration2: 436, 1598, 1376, 1157
+#TimeTakes: 436, 6.83027, 0.046199
+#Iteration: 437, 6.85974, 41
+#Iteration2: 437, 1601, 1379, 1160
+#TimeTakes: 437, 6.85974, 0.046374
+#Iteration: 438, 6.8896, 41
+#Iteration2: 438, 1605, 1381, 1161
+#TimeTakes: 438, 6.8896, 0.046585
+#Iteration: 439, 6.91866, 41
+#Iteration2: 439, 1608, 1383, 1162
+#TimeTakes: 439, 6.91866, 0.046753
+#Iteration: 440, 6.94738, 41
+#Iteration2: 440, 1612, 1387, 1166
+#TimeTakes: 440, 6.94738, 0.04697
+#Iteration: 441, 6.97624, 41
+#Iteration2: 441, 1616, 1391, 1170
+#TimeTakes: 441, 6.97624, 0.04718
+#Iteration: 442, 7.00508, 41
+#Iteration2: 442, 1619, 1394, 1173
+#TimeTakes: 442, 7.00508, 0.047355
+#Iteration: 443, 7.03441, 41
+#Iteration2: 443, 1623, 1398, 1176
+#TimeTakes: 443, 7.03441, 0.047573
+#Iteration: 444, 7.06521, 41
+#Iteration2: 444, 1627, 1402, 1179
+#TimeTakes: 444, 7.06521, 0.047787
+#Iteration: 445, 7.09419, 41
+#Iteration2: 445, 1630, 1404, 1180
+#TimeTakes: 445, 7.09419, 0.047963
+#Iteration: 446, 7.12381, 41
+#Iteration2: 446, 1634, 1408, 1184
+#TimeTakes: 446, 7.12381, 0.048182
+#Iteration: 447, 7.15378, 41
+#Iteration2: 447, 1638, 1412, 1188
+#TimeTakes: 447, 7.15378, 0.048395
+#Iteration: 448, 7.18229, 41
+#Iteration2: 448, 1642, 1414, 1189
+#TimeTakes: 448, 7.18229, 0.048607
+#Iteration: 449, 7.21209, 41
+#Iteration2: 449, 1645, 1417, 1192
+#TimeTakes: 449, 7.21209, 0.048781
+#Iteration: 450, 7.24216, 41
+#Iteration2: 450, 1649, 1419, 1193
+#TimeTakes: 450, 7.24216, 0.048998
+#Iteration: 451, 7.27212, 41
+#Iteration2: 451, 1652, 1421, 1194
+#TimeTakes: 451, 7.27212, 0.049167
+#Iteration: 452, 7.30131, 41
+#Iteration2: 452, 1656, 1425, 1198
+#TimeTakes: 452, 7.30131, 0.049388
+#Iteration: 453, 7.3314, 41
+#Iteration2: 453, 1660, 1429, 1202
+#TimeTakes: 453, 7.3314, 0.049606
+#Iteration: 454, 7.36175, 41
+#Iteration2: 454, 1663, 1432, 1205
+#TimeTakes: 454, 7.36175, 0.049784
+#Iteration: 455, 7.39206, 41
+#Iteration2: 455, 1667, 1436, 1208
+#TimeTakes: 455, 7.39206, 0.050006
+#Iteration: 456, 7.42184, 41
+#Iteration2: 456, 1671, 1440, 1211
+#TimeTakes: 456, 7.42184, 0.050223
+#Iteration: 457, 7.45179, 41
+#Iteration2: 457, 1674, 1442, 1212
+#TimeTakes: 457, 7.45179, 0.050402
+#Iteration: 458, 7.48267, 41
+#Iteration2: 458, 1678, 1446, 1216
+#TimeTakes: 458, 7.48267, 0.050625
+#Iteration: 459, 7.5128, 41
+#Iteration2: 459, 1682, 1450, 1220
+#TimeTakes: 459, 7.5128, 0.050846
+#Iteration: 460, 7.54211, 41
+#Iteration2: 460, 1686, 1452, 1221
+#TimeTakes: 460, 7.54211, 0.05106
+#Iteration: 461, 7.57193, 41
+#Iteration2: 461, 1689, 1455, 1224
+#TimeTakes: 461, 7.57193, 0.051236
+#Iteration: 462, 7.60255, 41
+#Iteration2: 462, 1693, 1457, 1225
+#TimeTakes: 462, 7.60255, 0.051463
+#Iteration: 463, 7.63244, 41
+#Iteration2: 463, 1696, 1459, 1226
+#TimeTakes: 463, 7.63244, 0.05164
+#Iteration: 464, 7.66318, 41
+#Iteration2: 464, 1700, 1463, 1230
+#TimeTakes: 464, 7.66318, 0.051878
+#Iteration: 465, 7.6947, 41
+#Iteration2: 465, 1704, 1467, 1234
+#TimeTakes: 465, 7.6947, 0.052101
+#Iteration: 466, 7.72552, 41
+#Iteration2: 466, 1707, 1470, 1237
+#TimeTakes: 466, 7.72552, 0.052293
+#Iteration: 467, 7.75612, 41
+#Iteration2: 467, 1711, 1474, 1240
+#TimeTakes: 467, 7.75612, 0.052518
+#Iteration: 468, 7.78712, 41
+#Iteration2: 468, 1715, 1478, 1243
+#TimeTakes: 468, 7.78712, 0.052744
+#Iteration: 469, 7.81729, 41
+#Iteration2: 469, 1718, 1480, 1244
+#TimeTakes: 469, 7.81729, 0.052929
+#Iteration: 470, 7.84866, 41
+#Iteration2: 470, 1722, 1484, 1248
+#TimeTakes: 470, 7.84866, 0.053161
+#Iteration: 471, 7.88082, 41
+#Iteration2: 471, 1726, 1488, 1252
+#TimeTakes: 471, 7.88082, 0.053385
+#Iteration: 472, 7.91218, 41
+#Iteration2: 472, 1730, 1490, 1253
+#TimeTakes: 472, 7.91218, 0.053608
+#Iteration: 473, 7.94223, 41
+#Iteration2: 473, 1733, 1493, 1256
+#TimeTakes: 473, 7.94223, 0.053793
+#Iteration: 474, 7.97429, 41
+#Iteration2: 474, 1737, 1495, 1257
+#TimeTakes: 474, 7.97429, 0.054028
+#Iteration: 475, 8.0058, 41
+#Iteration2: 475, 1740, 1497, 1258
+#TimeTakes: 475, 8.0058, 0.054211
+#Iteration: 476, 8.03728, 41
+#Iteration2: 476, 1744, 1501, 1262
+#TimeTakes: 476, 8.03728, 0.054442
+#Iteration: 477, 8.06953, 41
+#Iteration2: 477, 1748, 1505, 1266
+#TimeTakes: 477, 8.06953, 0.054671
+#Iteration: 478, 8.10139, 41
+#Iteration2: 478, 1751, 1508, 1269
+#TimeTakes: 478, 8.10139, 0.054859
+#Iteration: 479, 8.13263, 41
+#Iteration2: 479, 1755, 1512, 1272
+#TimeTakes: 479, 8.13263, 0.055087
+#Iteration: 480, 8.16488, 41
+#Iteration2: 480, 1759, 1516, 1275
+#TimeTakes: 480, 8.16488, 0.055315
+#Iteration: 481, 8.19657, 41
+#Iteration2: 481, 1762, 1518, 1276
+#TimeTakes: 481, 8.19657, 0.0555
+#Iteration: 482, 8.22904, 41
+#Iteration2: 482, 1766, 1522, 1280
+#TimeTakes: 482, 8.22904, 0.055735
+#Iteration: 483, 8.26061, 41
+#Iteration2: 483, 1770, 1526, 1284
+#TimeTakes: 483, 8.26061, 0.055963
+#Iteration: 484, 8.29298, 41
+#Iteration2: 484, 1774, 1528, 1285
+#TimeTakes: 484, 8.29298, 0.056197
+#Iteration: 485, 8.32571, 41
+#Iteration2: 485, 1777, 1531, 1288
+#TimeTakes: 485, 8.32571, 0.056391
+#Iteration: 486, 8.35752, 41
+#Iteration2: 486, 1781, 1533, 1289
+#TimeTakes: 486, 8.35752, 0.056628
+#Iteration: 487, 8.38974, 41
+#Iteration2: 487, 1784, 1535, 1290
+#TimeTakes: 487, 8.38974, 0.056815
+#Iteration: 488, 8.42166, 41
+#Iteration2: 488, 1788, 1539, 1294
+#TimeTakes: 488, 8.42166, 0.057049
+#Iteration: 489, 8.45349, 41
+#Iteration2: 489, 1792, 1543, 1298
+#TimeTakes: 489, 8.45349, 0.057285
+#Iteration: 490, 8.48525, 41
+#Iteration2: 490, 1795, 1546, 1301
+#TimeTakes: 490, 8.48525, 0.057481
+#Iteration: 491, 8.51764, 41
+#Iteration2: 491, 1799, 1550, 1304
+#TimeTakes: 491, 8.51764, 0.057717
+#Iteration: 492, 8.54897, 41
+#Iteration2: 492, 1803, 1554, 1307
+#TimeTakes: 492, 8.54897, 0.057948
+#Iteration: 493, 8.58187, 41
+#Iteration2: 493, 1806, 1556, 1308
+#TimeTakes: 493, 8.58187, 0.05814
+#Iteration: 494, 8.61446, 41
+#Iteration2: 494, 1810, 1560, 1312
+#TimeTakes: 494, 8.61446, 0.058382
+#Iteration: 495, 8.64773, 41
+#Iteration2: 495, 1814, 1564, 1316
+#TimeTakes: 495, 8.64773, 0.058634
+#Iteration: 496, 8.6809, 41
+#Iteration2: 496, 1818, 1566, 1317
+#TimeTakes: 496, 8.6809, 0.05887
+#Iteration: 497, 8.71345, 41
+#Iteration2: 497, 1821, 1569, 1320
+#TimeTakes: 497, 8.71345, 0.059071
+#Iteration: 498, 8.74614, 41
+#Iteration2: 498, 1825, 1571, 1321
+#TimeTakes: 498, 8.74614, 0.059326
+#Iteration: 499, 8.77888, 41
+#Iteration2: 499, 1828, 1573, 1322
+#TimeTakes: 499, 8.77888, 0.059525
+--------------- WORKLIST ----------------
+1 => DomInput(click@test1) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test4) => 
+1 => DomInput(click@test1) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test4) => 
+1 => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => 
+1 => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test4) => 
+1 => DomInput(click@test1) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => 
+1 => DomInput(click@test1) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test3) => 
+1 => DomInput(click@test1) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test2) => DomInput(click@test3) => 
+Artemis: Testing done...
+=== Coverage information for execution ===
+Coverage for source located at URL: file:////home/chungha/web-project/project_test/benchmarks/paperExamples/case2/index.html  line 
+   
+>>>        var a = document.getElementById('test1');
+>>>        var b = document.getElementById('test2');
+>>>        var c = document.getElementById('test3');
+>>>        var d = document.getElementById('test4');
+>>>        var t1 = 0;
+>>>        var x = 0;
+           function makeSomeNoise() {
+>>>            if (x < 2) {
+                   // I assume there is bunch of lines here...
+>>>                t1=2;
+>>>                t1=2;
+>>>                t1=2;
+>>>                t1=2;
+>>>                console.log("x is lower than 2");
+>>>            } else if (x < 4) {
+                   // I assume there is bunch of lines here...
+>>>                t1=2;
+>>>                t1=2;
+>>>                t1=2;
+>>>                t1=2;
+>>>                console.log("x is lower than 4");
+>>>            } else if (x < 6) {
+                   // I assume there is bunch of lines here...
+>>>                t1=2;
+>>>                t1=2;
+>>>                t1=2;
+>>>                t1=2;
+>>>                console.log("x is lower than 6");
+>>>            } else if (x < 8) {
+                   // I assume there is bunch of lines here...
+>>>                t1=2;
+>>>                t1=2;
+>>>                t1=2;
+>>>                t1=2;
+>>>                console.log("x is lower than 8");
+               } else {
+                   // I assume there is bunch of lines here...
+>>>                t1=2;
+>>>                t1=2;
+>>>                t1=2;
+>>>                t1=2;
+                   // I assume there is bunch of lines here...
+>>>                console.log("x is higher than 8");
+               }
+           }
+>>>        a.addEventListener("click", function() {
+>>>            c.onclick = makeSomeNoise;
+           });
+   
+>>>        b.addEventListener("click", function() {
+>>>            x = x + 1;
+           });
+   
+>>>        d.addEventListener("click", function() {
+>>>            console.log("d is clikced!");
+           });
+       
+#Iteration: 500, 8.81328, 41
+#Iteration2: 500, 1832, 1577, 1326
+#TimeTakes: 500, 8.81328, 0.059766
+
+=== Statistics ===
+
+WebKit::coverage::covered-unique: 41
+InputGenerator::added-configurations: 1831
+WebKit::writtenproperties: 24574
+WebKit::coverage::covered: 27119
+WebKit::readproperties: 29707
+
+=== Statistics END ===
+
+
+Artemis terminated on: Sun Mar 6 16:10:17 2016
