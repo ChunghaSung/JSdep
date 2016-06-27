@@ -9,5 +9,5 @@ RAW-DATA
         - z3.time: analysis time for doing this analysis
         - numConstraints.txt: number of constraints generated
     * artemis-result
-        - artemis-new.stdout: the print result by running a modified version of Artemis with dependency relationship information
-        - artemis-old.stdout: the print result by running a old version of Artemis
+        - new_artemis.stdout: the print result by running a modified version of Artemis with dependency relationship information
+        - old_artemis.stdout: the print result by running a old version of Artemis
