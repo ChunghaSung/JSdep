@@ -59,9 +59,6 @@ TIME=`awk -F\& '{sum += $6} END {print sum}' $TMPPATH`
 NUM_LINES=`wc -l < $TMPPATH`
 NUM_LINES=$(($NUM_LINES -1))
 
-echo "total lines: $NUM_LINES"
-
 echo "\\midrule" >> $TMPPATH
-
 echo "\\textbf{Total} & $LOC & $DEPTOTAL & $DEPACTUAL & $CONST & $TIME \\\\" >>$TMPPATH
 cat $TMPPATH 

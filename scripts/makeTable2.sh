@@ -25,7 +25,6 @@ match"
 NUM=(100 200 300 400 500)
 
 # generate latex table
-
 TMPPATH=/tmp/tbl.out
 echo " & & Artemis & Art. JSdep & & Artemis & Art. JSdep  & & Artemis & Art. JSdep  & & Artemis & Art. JSdep  &  & Artemis & Art. JSdep \\\\" > $TMPPATH
 echo "Name & Iter. & Cov.(\%) & Cov.(\%)  & Iter. & Cov.(\%) & Cov.(\%) & Iter. & Cov.(\%) & Cov.(\%) & Iter. & Cov.(\%) & Cov.(\%) & Iter. & Cov.(\%) & Cov.(\%) \\\\" >> $TMPPATH
@@ -65,15 +64,12 @@ do
         awk -v line="$ACTUAL_LINE" -F, '{printf("%.2f", $3/line*100)}' /tmp/old.out > /tmp/old1.out && mv /tmp/old1.out /tmp/old.out
         awk -v line="$ACTUAL_LINE" -F, '{printf("%.2f" , $3/line*100)}' /tmp/new.out > /tmp/new1.out && mv /tmp/new1.out /tmp/new.out
 
-
         paste -d, /tmp/iter.out /tmp/old.out /tmp/new.out >/tmp/sum_${i}.out
-
-        cat /tmp/sum_${i}.out
     done
 
         paste -d, /tmp/name.out /tmp/sum_100.out  /tmp/sum_200.out /tmp/sum_300.out /tmp/sum_400.out /tmp/sum_500.out | sed 's/,/\&/g' | tr '\n' '@' | sed 's/@/ \\\\\n/g' >>$TMPPATH
-
 done
+
 OLD_COV1=`awk -F\& '{sum += $3} END {print sum}' $TMPPATH`
 NEW_COV1=`awk -F\& '{sum += $4} END {print sum}' $TMPPATH`
 OLD_COV2=`awk -F\& '{sum += $6} END {print sum}' $TMPPATH`
@@ -87,8 +83,6 @@ NEW_COV5=`awk -F\& '{sum += $16} END {print sum}' $TMPPATH`
 
 NUM_LINES=`wc -l < $TMPPATH`
 NUM_LINES=$(($NUM_LINES -3))
-
-echo "total lines: $NUM_LINES"
 
 OLD_COV1=`bc <<< "scale=2; $OLD_COV1/$NUM_LINES"`
 NEW_COV1=`bc <<< "scale=2; $NEW_COV1/$NUM_LINES"`

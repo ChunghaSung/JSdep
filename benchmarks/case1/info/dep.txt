@@ -1,8 +1,0 @@
-test1
-click
-test2
-click
-test2
-click
-test2
-click
