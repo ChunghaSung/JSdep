@@ -6,7 +6,7 @@
 
       git clone git://conde.qt.io/qt/qt.git 
       cd qt
-	  echo -e 'o\nyes\n' | ./configure -prefix 'pwd' -no-webkit
+      echo -e 'o\nyes\n' | ./configure -prefix 'pwd' -no-webkit
       make
 
     This will fetch and compile a compatible Qt version and place it in
