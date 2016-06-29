@@ -1,13 +1,16 @@
- 0. Fetch all software dependencies using
+ Fetch all software dependencies using
     
       make fetch-[apt|yum] (requires root privileges)
 	
-    If you have no Qt or a version older than 4.8.x then run: 
+    If you have no Qt or a version older than 4.8.x then type these commands: 
 
-      make fetch-qt
+      git clone git://conde.qt.io/qt/qt.git 
+      cd qt
+	  echo -e 'o\nyes\n' | ./configure -prefix 'pwd' -no-webkit
+      make
 
     This will fetch and compile a compatible Qt version and place it in
-    the ``qt/`` folder.
+    the ``qt/`` folder with installing it.
 
     You can check your qt version using the command ``qmake --version``
     (if qmake is not present then Qt is not installed).

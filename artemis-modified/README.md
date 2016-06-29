@@ -4,7 +4,7 @@ Artemis
 This version is modified to use JSdep
 Written by Chungha Sung.
 
-All modified parts are commented by "//MODIFIED by CH"
+All modified parts are tagged by "//MODIFIED by CH"
 
 -------------------
 Copyright 2013 Aarhus University
