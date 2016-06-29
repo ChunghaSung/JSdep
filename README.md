@@ -45,17 +45,20 @@ USAGE
 =========================
 * make build-dep name=[filename]
     - build dependency relationships for a specified file
-    - it will make these files under "info" directory under each file directory
+    - it will make these files under info directory under each benchmark directory
         * dep.txt: dependency relationships of a specified file
         * z3.time: analysis time
         * numConstraints.txt: number of constraints generated
 
 * make build-dep-all
     - build dependency relationships for all files
-    - it will make these files under "info" directory under each file directory
+    - it will make these files under info directory under each benchmark directory
         * dep.txt: dependency relationships of a specified file
         * z3.time: analysis time
         * numConstraints.txt: number of constraints generated
+
+* make fetch-data
+    - fetch all data needed to make result tables from benchmark directory to raw-data directory
 
 * make table1
     - build a table1 used in the FSE paper using raw-data
