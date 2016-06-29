@@ -11,6 +11,8 @@ JSdep (DOM-DEPENDENCY ANALYSIS)
     - This tool does not support DOM-alias anlaysis
     - This tool does not support extraction of Javascript from HTML (All JavaScripts extracted manually for the benchmarks we have)
 
+* Structure of JSdep
+![output](https://cloud.githubusercontent.com/assets/8551376/16468537/5d6c5dd4-3e1a-11e6-8e29-0e60dc3480cf.png)
 
 Contributors
 =========================
