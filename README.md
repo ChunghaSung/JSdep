@@ -1,6 +1,6 @@
 JSdep (DOM-DEPENDENCY ANALYSIS)
 =========================
-* JSdep is the tool to find DOM-event dependency of a web application using datalog constraints.
+* JSdep is a tool to find DOM-event dependency of a web application using datalog constraints.
 
 * It traverses one JavaScript file statically and finds the relationship between two events of DOMs.
 
@@ -65,11 +65,14 @@ USAGE
 
 * make table3
     - build a table3 used in the FSE paper using raw-data
+    - you can change the iteration number in Makefile to build a table with a different number of iterations
 
 ===== You have to install the modifed version of Artemis we provide to run these comands below =====
 * make run-artemis name=[filename] iter=[iteration]
+    - you have to run dependency analysis to get dep.txt first
     - run previous version of Artemis with a specified file and a specified iteration number
 * make run-artemis-all iter=[iteration]	
+    - you have to run dependency analysis to get dep.txt first
     - run previous version of Artemis with all files with a specified interation number
 
 
@@ -77,7 +80,7 @@ USAGE
 HOW TO INTERPRET THE RESULT?
 =========================
 
-If you run the program, you can see the file named "dep.txt" file under "info" directory.
+If you run the program, you can see the file named dep.txt file under info directory.
 
 There are lines of text, and each depedency relationships consist of 4 lines of text.
 
@@ -94,8 +97,4 @@ dom1 and dom2 are name of DOM nodes and click and mousemove are the type of even
 The meaning of these four lines is mousemove of test2 depends on click of test1.
 
 Each four lines are related (e.g. 1~4, 5~8 ...)
-
-
-
-
 
