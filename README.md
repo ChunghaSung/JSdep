@@ -3,9 +3,9 @@ LICENSE
 MIT License
 
 
-DOM-DEPENDENCY ANALYSIS
+JSdep (DOM-DEPENDENCY ANALYSIS)
 =========================
-* This is the tool to find DOM-event dependency of a web application using datalog constraints.
+* JSdep is the tool to find DOM-event dependency of a web application using datalog constraints.
 
 * It traverses one JavaScript file statically and finds the relationship between two events of DOMs.
 
@@ -22,9 +22,9 @@ Contributors
 The following people have contributed to the this appliacation and the paper:
 
 * Chungha Sung (sch8906/at/vt/edu)
-* Markus Kusano
+* Markus Kusano (mukusano/at/vt/edu)
 * Nishant Sinha
-* Chao Wang
+* Chao Wang (chaowang/at/vt/edu)
 
 
 PROGRAM DEPENDENCIES 
@@ -37,7 +37,7 @@ PROGRAM DEPENDENCIES
 1. To run only static analysis to run DOM-dependency relationships,
     it needs these dependencies:
 
-    * z3 (https://github.com/Z3Prover/z3), any version (tested with 4.4.1).
+    * Z3 (https://github.com/Z3Prover/z3), any version (tested with 4.4.1).
     * nodejs (To install this, type "sudo apt-get install nodejs")
 
 2. To test with Artemis, you have to install a modified version of Artemis first.
@@ -62,19 +62,20 @@ USAGE
         * z3.time: analysis time
         * numConstraints.txt: number of constraints generated
 
+* make table1
+    - build a table1 used in the FSE paper using raw-data
+
+* make table2
+    - build a table2 used in the FSE paper using raw-data
+
+* make table3
+    - build a table3 used in the FSE paper using raw-data
+
 ===== You have to install the modifed version of Artemis we provide to run these comands below =====
-* make run-old-Artemis name=[filename]
-    - run previous version of Artemis with a specified file
-* make run-dep-Artemis name=[filename] 
-    - run modified version of Artemis with a specified file
-* make run-old-Artemis-all 	
-    - run previous version of Artemis with all files"
-* make run-dep-Artemis-all 	
-    - run modified version of Artemis with all files"
-* make run-Artemis name=[filename] 	
-    - run previous and modified version of Artemis with a specified file"
-* make run-Artemis-all 
-    - run previous and modified version of Artemis with all files"
+* make run-artemis name=[filename] iter=[iteration]
+    - run previous version of Artemis with a specified file and a specified iteration number
+* make run-artemis-all iter=[iteration]	
+    - run previous version of Artemis with all files with a specified interation number
 
 
 

@@ -1,7 +1,12 @@
 
 Artemis
 =======
+This version is modified to use JSdep
+Written by Chungha Sung.
 
+All modified parts are commented by "//MODIFIED by CH"
+
+-------------------
 Copyright 2013 Aarhus University
 
 Artemis is a tool that performs automated, feedback-directed testing

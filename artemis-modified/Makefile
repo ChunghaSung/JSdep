@@ -46,7 +46,7 @@ artemis-format-code:
 	cd artemis-code && astyle --style=kr --indent=spaces --break-blocks --indent-labels --pad-header --unpad-paren --break-closing-brackets --add-one-line-brackets --min-conditional-indent=0 --pad-oper --align-pointer=type --recursive "./src/*.cpp" "./src/*.h"
 
 fetch-qt:
-	git clone git://gitorious.org/qt/qt.git && cd qt && echo -e 'o\nyes\n' | ./configure -prefix `pwd` -no-webkit && make
+	git clone git://code.qt.io/qt/qt.git && cd qt && echo -e 'o\nyes\n' | ./configure -prefix `pwd` -no-webkit && make
 
 check:
 	@echo "Testing for software dependencies - if an error occurs, consult your local package manager for the program immeadiately checked for"
