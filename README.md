@@ -1,8 +1,3 @@
-LICENSE
-=========================
-MIT License
-
-
 JSdep (DOM-DEPENDENCY ANALYSIS)
 =========================
 * JSdep is the tool to find DOM-event dependency of a web application using datalog constraints.
