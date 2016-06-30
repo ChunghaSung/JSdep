@@ -6,6 +6,9 @@ Written by Chungha Sung.
 
 All modified parts are tagged by "//MODIFIED by CH"
 
+The installation time of artemis-modified with all dependencies is 
+about 1~2 hour depending on systems.
+
 -------------------
 Copyright 2013 Aarhus University
 
