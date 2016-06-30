@@ -1,6 +1,6 @@
 JSdep (DOM-DEPENDENCY ANALYSIS)
 =========================
-* JSdep is a tool to find DOM-event dependency of a web application using datalog constraints.
+* JSdep is a tool to find DOM-event dependency of a web application including traditional control and data-dependency using datalog constraints.
 
 * It traverses one JavaScript file statically and finds the relationship between two events of DOMs.
 
