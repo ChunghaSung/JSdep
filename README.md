@@ -49,7 +49,7 @@ PROGRAM DEPENDENCIES
 
 USAGE
 =========================
-* make build-dep name=[filename]
+* make build-dep file=[filename]
     - build dependency relationships for a specified file
     - it will make these files under info directory under each benchmark directory
         * dep.txt: dependency relationships of a specified file
@@ -77,7 +77,7 @@ USAGE
     - you can change the iteration number in Makefile to build a table with a different number of iterations
 
 ===== You have to install the modifed version of Artemis we provide to run these comands below =====
-* make run-artemis name=[filename] iter=[iteration]
+* make run-artemis file=[filename] iter=[iteration]
     - you have to run dependency analysis to get dep.txt first
     - run previous version of Artemis with a specified file and a specified iteration number
 * make run-artemis-all iter=[iteration]	
