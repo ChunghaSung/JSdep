@@ -1,21 +1,15 @@
- Fetch all software dependencies using
+ 0. Fetch all software dependencies using
     
       make fetch-[apt|yum] (requires root privileges)
 	
-    If you have no Qt or a version older than 4.8.x then type these commands: 
+    Due to previous version of Artemis does not provide correct link of qt, we provide the link to download compatible qt version. Therefore, if you have no Qt or a version older than 4.8.x then type these commands: 
 
-      git clone git://code.qt.io/qt/qt.git 
-      cd qt
-      echo -e 'o\nyes\n' | ./configure -prefix 'pwd' -no-webkit
-      make
+      ./fetch-qt
 
     This will fetch and compile a compatible Qt version and place it in
     the ``qt/`` folder with installing it.
 
-    You can check your qt version using the command ``qmake --version``
-    (if qmake is not present then Qt is not installed).
-    
- 1. Set up your environment variables by running
+1. Set up your environment variables by running
     
       export QTDIR=<qtpath>
       export PATH=$QTDIR/bin:$PATH
@@ -25,6 +19,10 @@
     from step 0.
 
     On Ubuntu this is /usr/share/qt4
+
+    You can check your qt version using the command ``qmake --version``
+    (if qmake is not present then Qt is not installed).
+    
      
  2. Build and install Artemis
    
