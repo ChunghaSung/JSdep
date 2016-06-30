@@ -86,7 +86,7 @@ USAGE
 
 
 
-HOW TO INTERPRET THE RESULT?
+HOW TO INTERPRET dep.txt?
 =========================
 
 If you run the program, you can see the file named dep.txt file under info directory.
