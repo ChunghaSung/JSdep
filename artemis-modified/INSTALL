@@ -8,7 +8,7 @@
 
       ./fetch-qt
 
-    This will download and extract a compatible Qt version, and compile it in
+    This will download and extract a compatible Qt version (4.8), and compile it in
     the ``qt/`` folder with installing it.
 
 1. Set up your environment variables by running
