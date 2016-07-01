@@ -6,7 +6,10 @@
     we provide the link to download compatible qt version. Therefore, if 
     you have no Qt or a version older than 4.8.x then type this commands: 
 
-      ./fetch-qt
+      git clone git://code.qt.io/qt/qt.git 
+      cd qt
+      echo -e 'o\nyes\n' | ./configure -prefix 'pwd' -no-webkit
+      make
 
     This will download and extract a compatible Qt version (4.8), and compile it in
     the ``qt/`` folder with installing it.
