@@ -1,14 +1,17 @@
  0. Fetch all software dependencies using
     
       make fetch-[apt|yum] (requires root privileges)
-	
+    After running this command, please check the gcc and g++ versions are 
+    4.7.x. It sometimes doesn't update it (If the version is not correct,
+    please install 4.7 version of gcc and g++).
+    
     Due to previous version of Artemis does not provide correct link of qt,
     we provide the link to download compatible qt version. Therefore, if 
     you have no Qt or a version older than 4.8.x then type this commands: 
 
       git clone git://code.qt.io/qt/qt.git 
       cd qt
-      echo -e 'o\nyes\n' | ./configure -prefix 'pwd' -no-webkit
+      echo -e 'o\nyes\n' | ./configure -no-webkit
       make
 
     This will download and extract a compatible Qt version (4.8), and compile it in
