@@ -24,9 +24,11 @@ TABLE3 = ./makeTable3.sh
 FETCH = ./fetchData.sh
 
 build-dep:
+	make check 
 	cd scripts && ${SOLO_DEP} $(file) 
 
 build-dep-all:
+	make check 
 	@echo "Building dependency relationships for all files"
 	cd scripts && ${ALL_DEP} 
 
@@ -51,3 +53,9 @@ table2:
 table3:
 	@echo "make table3 (just copy the print and past to latex)"
 	cd scripts && ${TABLE3} 500
+
+check:
+	@echo "check dependencies needed"
+	which z3 > /dev/null
+	which node > /dev/null
+
