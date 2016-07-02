@@ -1,6 +1,6 @@
 MODIFIED version of Artemis
 =========================
-* This directory includes the Artemis version 2.0.0 (this is an official release in https://github.com/cs-au-dk/Artemis) and source code modified by ours to use dependency information.
+* This directory includes the Artemis version 2.0.0 (this is an official release in https://github.com/cs-au-dk/Artemis) and source code (`src` directory) modified by ours to use dependency information.
 
 * Modification part tagged by "// MODIFIED by CH" in src directory.
 
@@ -17,7 +17,11 @@ MODIFIED version of Artemis
   This will fetch and compile a compatible Qt version and place it in the ``qt/`` folder under Artemis.
 
     You can check your qt version using the command ``qmake --version``
-    (if qmake is not present then Qt is not installed).
+    (if qmake is not present then Qt is not installed)
+    
+  Please check gcc and g++ version are 4.7 (It requires in Artemis)
+  
+* Below Instructions are almost same as INSTALL under Artemis directory.
 
 3. And then set QTDIR and PATH
 
@@ -28,7 +32,7 @@ MODIFIED version of Artemis
     the one provided by your distribution or the ``qt/`` folder 
     from step 0.
 
-    On Ubuntu this is /usr/share/qt4
+    On Ubuntu this is /usr/share/qt4 or /usr/
 
 4. Then, build and install Artemis by typping with root privilege
 
