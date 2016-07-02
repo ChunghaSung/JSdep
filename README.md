@@ -40,7 +40,7 @@ PROGRAM DEPENDENCIES
 
     * Z3 (https://github.com/Z3Prover/z3), any version (tested with 4.4.1).
     * nodejs (To install this, type ``sudo apt-get install nodejs``)
-    * realpath (To install this, type ``sudo apt-get install realpaht``)
+    * realpath (To install this, type ``sudo apt-get install realpath``)
 
 2. To test with Artemis, you have to install a modified version of Artemis first.
 
