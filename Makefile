@@ -58,4 +58,5 @@ check:
 	@echo "check dependencies needed"
 	which z3 > /dev/null
 	which node > /dev/null
+	which realpath > /dev/null
 
