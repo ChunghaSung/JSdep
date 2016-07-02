@@ -1,6 +1,0 @@
-IF ("${PORT}" STREQUAL "Efl")
-    ADD_SUBDIRECTORY(DumpRenderTree/efl)
-    ADD_SUBDIRECTORY(EWebLauncher)
-ELSEIF ("${PORT}" STREQUAL "WinCE")
-    ADD_SUBDIRECTORY(WinCELauncher)
-ENDIF()
