@@ -1,10 +1,10 @@
 help:
 	@echo "USAGE1 (to build dependency relationships):"
-	@echo "* build-dep name=[filename] - build dependency relationships for a specified file"
+	@echo "* build-dep file=[filename] - build dependency relationships for a specified file"
 	@echo "* build-dep-all - build dependency relationships for all files"
 	@echo "==========================================="
 	@echo "USAGE2 (to run artemis):"
-	@echo "* run-artemis name=[filename] iter=[iteration] - run previous and modified version of Artemis with a specified file with specified iteration numbers. It will produce new_artemis.stdout and old_artemis.stdout under artemis-result directory of each benchmark folder"
+	@echo "* run-artemis file=[filename] iter=[iteration] - run previous and modified version of Artemis with a specified file with specified iteration numbers. It will produce new_artemis.stdout and old_artemis.stdout under artemis-result directory of each benchmark folder"
 	@echo "* run-artemis-all iter=[iteration] - run previous and modified version of Artemis with all files. It will produce new_artemis.stdout and old_artemis.stdout under artemis-result directory of each benchmark folder"
 	@echo "==========================================="
 	@echo "USAGE3 (to make tables):"
