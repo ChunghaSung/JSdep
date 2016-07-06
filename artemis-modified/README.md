@@ -16,10 +16,6 @@ MODIFIED version of Artemis
 
   This will fetch and compile a compatible Qt version and place it in the ``qt/`` folder under Artemis.
 
-    You can check your qt version using the command ``qmake --version``
-    (if qmake is not present then Qt is not installed)
-    
-  Please check gcc and g++ version are 4.7 (It requires in Artemis)
   
 * Below Instructions are almost same as INSTALL under Artemis directory.
 
@@ -33,6 +29,8 @@ MODIFIED version of Artemis
     from step 0.
 
     On Ubuntu this is /usr/share/qt4 or /usr/
+    After setting this, you can check your qt version using the command ``qmake --version``
+    (if qmake is not present then Qt is not installed)
 
 4. Then, build and install Artemis by typping with root privilege
 
