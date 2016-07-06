@@ -61,7 +61,7 @@ run_artemis() {
     OUT=${DIRNAME}/artemis-result/old_artemis.stdout
     $ARTEMIS $BIG_PATH -i $2 -q 0 --strategy-priority all 1>"${OUT}"
 
-    cp $depFile dep.txt
+    cp $depFile Artemis/dep.txt
     echo "running new version: $ARTEMIS $BIG_PATH -i $2 -q 1"
     OUT=${DIRNAME}/artemis-result/new_artemis.stdout
     $ARTEMIS $BIG_PATH -i $2 -q 1 1>"${OUT}"
