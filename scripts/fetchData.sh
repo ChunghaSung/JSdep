@@ -24,10 +24,10 @@ match"
 
 for name in $TESTS
 do
-    mv ../benchmarks/$name/info/numConstraints.txt ../raw-data/$name/info/numConstraints.txt
-    mv ../benchmarks/$name/info/z3.time ../raw-data/$name/info/z3.time
-    mv ../benchmarks/$name/info/dep.txt ../raw-data/$name/info/dep.txt
-    mv ../benchmarks/$name/artemis-result/new_artemis.stdout ../raw-data/$name/artemis-result/new_artemis.stdout
-    mv ../benchmarks/$name/artemis-result/old_artemis.stdout ../raw-data/$name/artemis-result/old_artemis.stdout
+    cp ../benchmarks/$name/info/numConstraints.txt ../raw-data/$name/info/numConstraints.txt
+    cp ../benchmarks/$name/info/z3.time ../raw-data/$name/info/z3.time
+    cp ../benchmarks/$name/info/dep.txt ../raw-data/$name/info/dep.txt
+    cp ../benchmarks/$name/artemis-result/new_artemis.stdout ../raw-data/$name/artemis-result/new_artemis.stdout
+    cp ../benchmarks/$name/artemis-result/old_artemis.stdout ../raw-data/$name/artemis-result/old_artemis.stdout
 
 done
