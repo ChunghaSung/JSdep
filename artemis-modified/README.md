@@ -37,7 +37,8 @@ MODIFIED version of Artemis
 
     ``cd Artemis && make install``
 
-  Note that QTDIR and PATH are set correctly with root privilege.
+  Note that QTDIR and PATH are set correctly with root privilege. 
+  And gcc version has to be 4.7 or 4.6 as we checked.
 
 5. Add the instrumented WebKit library to your library path
 
