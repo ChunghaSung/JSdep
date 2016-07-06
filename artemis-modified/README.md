@@ -25,7 +25,7 @@ MODIFIED version of Artemis
 
 3. And then set QTDIR and PATH
 
-      export QTDIR=<qtpath>
+      export QTDIR=`<qtpath>`
       export PATH=$QTDIR/bin:$PATH
 
     where `<qtpath>` is the QT 4.8 installation directory, either
