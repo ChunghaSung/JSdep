@@ -42,7 +42,7 @@ MODIFIED version of Artemis
 
 5. Add the instrumented WebKit library to your library path
 
-      export LD_LIBRARY_PATH=<path>/WebKit/WebKitBuild/Release/lib  
+      export LD_LIBRARY_PATH=`<path>`/WebKit/WebKitBuild/Release/lib  
 
     where `<path>` is the root directory of the Artemis repository.
 
