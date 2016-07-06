@@ -29,6 +29,7 @@ MODIFIED version of Artemis
     from step 0.
 
     On Ubuntu this is /usr/share/qt4 or /usr/
+   
     After setting this, you can check your qt version using the command ``qmake --version``
     (if qmake is not present then Qt is not installed)
 
