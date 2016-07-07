@@ -47,7 +47,7 @@ PROGRAM DEPENDENCIES
     * You can follow the instruction under artemis-modified directory to install it (it sometimes hard to install correctly, however due to the size limitation we cannot provide fully compiled version).
     * You have to use the version we provide because this version is modified to compare the previous version of Artemis and the modified version of Artemis which uses dependency relationships of our program.
     
-3. We have a virtual disk image with full configuration. However, because of the limitation of size we cannot upload it (The size is about 3.6 GB). If you want to use it, please contact to Chungha.
+3. We have a virtual disk image with full configuration. However, because of the limitation of size we cannot upload it (The size is about 3.1 GB). If you want to use it, please contact to Chungha.
 
 
 USAGE
