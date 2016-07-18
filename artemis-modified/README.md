@@ -26,7 +26,7 @@ MODIFIED version of Artemis
 
     where `<qtpath>` is the QT 4.8 installation directory, either
     the one provided by your distribution or the ``qt/`` folder 
-    from step 2.
+    from step 2 above.
 
     On Ubuntu this is /usr/share/qt4 or /usr/
    
