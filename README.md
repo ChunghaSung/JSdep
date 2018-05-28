@@ -47,7 +47,7 @@ PROGRAM DEPENDENCIES
     * You can follow the instruction under artemis-modified directory to install it (it sometimes hard to install correctly, however due to the size limitation we cannot provide fully compiled version).
     * You have to use the version we provide because this version is modified to compare the previous version of Artemis and the modified version of Artemis which uses dependency relationships of our program.
     
-3. The link for VM with JSdep installed (https://drive.google.com/open?id=1O70KDlfWHaN4J06Y5nhTqopBqiqCiYrq). However, this has been updated very long time ago, so maybe it has some issues.
+3. The link for VM (ova file of Virtual Box) with JSdep installed (https://drive.google.com/open?id=1O70KDlfWHaN4J06Y5nhTqopBqiqCiYrq). However, this has been updated very long time ago, so maybe it has some issues.
 
 USAGE
 =========================
