@@ -1,5 +1,27 @@
 JSdep (DOM-DEPENDENCY ANALYSIS)
 =========================
+* Citing JSdep
+```
+@inproceedings{DBLP:conf/sigsoft/SungKS016,
+  author    = {Chungha Sung and
+               Markus Kusano and
+               Nishant Sinha and
+               Chao Wang},
+  title     = {Static {DOM} event dependency analysis for testing web applications},
+  booktitle = {Proceedings of the 24th {ACM} {SIGSOFT} International Symposium on
+               Foundations of Software Engineering, {FSE} 2016, Seattle, WA, USA,
+               November 13-18, 2016},
+  pages     = {447--459},
+  year      = {2016},
+  crossref  = {DBLP:conf/sigsoft/2016},
+  url       = {https://doi.org/10.1145/2950290.2950292},
+  doi       = {10.1145/2950290.2950292},
+  timestamp = {Tue, 06 Nov 2018 16:59:23 +0100},
+  biburl    = {https://dblp.org/rec/bib/conf/sigsoft/SungKS016},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+```
+
 * JSdep is a tool to find DOM-event dependency of a web application including traditional control and data-dependency using datalog constraints.
 
 * It traverses one JavaScript file statically and finds the relationship between two events of DOMs.
